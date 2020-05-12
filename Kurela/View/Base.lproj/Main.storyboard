@@ -38,7 +38,7 @@
             </objects>
             <point key="canvasLocation" x="2369.5652173913045" y="-563.16964285714278"/>
         </scene>
-        <!--My Journey-->
+        <!--My Journeys-->
         <scene sceneID="rlg-dE-0re">
             <objects>
                 <viewController id="4NY-Tz-fzv" sceneMemberID="viewController">
@@ -48,7 +48,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="FIB-Ew-cGs"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Journey" id="lua-Ju-Bha"/>
+                    <navigationItem key="navigationItem" title="My Journeys" id="lua-Ju-Bha"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9S-CN-gIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
