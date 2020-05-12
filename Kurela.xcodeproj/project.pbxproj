@@ -1,0 +1,379 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861A2464F7430067AE70 /* AppDelegate.swift */; };
+		ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861C2464F7430067AE70 /* SceneDelegate.swift */; };
+		ECBA86222464F7430067AE70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86202464F7430067AE70 /* Main.storyboard */; };
+		ECBA86272464F7440067AE70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86252464F7440067AE70 /* LaunchScreen.storyboard */; };
+		ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */; };
+		ECBA86362464FE4A0067AE70 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86352464FE4A0067AE70 /* Card.swift */; };
+		ECBA86392464FF980067AE70 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86372464FF980067AE70 /* CardCell.swift */; };
+		ECBA863A2464FF980067AE70 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86382464FF980067AE70 /* CardCell.xib */; };
+		ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBA863D246511C20067AE70 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		ECBA86172464F7430067AE70 /* Kurela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurela.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECBA861A2464F7430067AE70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ECBA861C2464F7430067AE70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ECBA86212464F7430067AE70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ECBA86262464F7440067AE70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECBA86282464F7440067AE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
+		ECBA86352464FE4A0067AE70 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		ECBA86372464FF980067AE70 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		ECBA86382464FF980067AE70 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
+		ECBA863D246511C20067AE70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ECBA86142464F7430067AE70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ECBA860E2464F7430067AE70 = {
+			isa = PBXGroup;
+			children = (
+				ECBA86192464F7430067AE70 /* Kurela */,
+				ECBA86182464F7430067AE70 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		ECBA86182464F7430067AE70 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA86172464F7430067AE70 /* Kurela.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ECBA86192464F7430067AE70 /* Kurela */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA861A2464F7430067AE70 /* AppDelegate.swift */,
+				ECBA861C2464F7430067AE70 /* SceneDelegate.swift */,
+				ECBA862E2464F7770067AE70 /* Model */,
+				ECBA862F2464F7870067AE70 /* View */,
+				ECBA86302464F7910067AE70 /* Controller */,
+				ECBA86252464F7440067AE70 /* LaunchScreen.storyboard */,
+				ECBA86282464F7440067AE70 /* Info.plist */,
+				ECBA863D246511C20067AE70 /* Assets.xcassets */,
+			);
+			path = Kurela;
+			sourceTree = "<group>";
+		};
+		ECBA862E2464F7770067AE70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA86352464FE4A0067AE70 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECBA862F2464F7870067AE70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA86202464F7430067AE70 /* Main.storyboard */,
+				ECBA86372464FF980067AE70 /* CardCell.swift */,
+				ECBA86382464FF980067AE70 /* CardCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECBA86302464F7910067AE70 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECBA86162464F7430067AE70 /* Kurela */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ECBA862B2464F7440067AE70 /* Build configuration list for PBXNativeTarget "Kurela" */;
+			buildPhases = (
+				ECBA86132464F7430067AE70 /* Sources */,
+				ECBA86142464F7430067AE70 /* Frameworks */,
+				ECBA86152464F7430067AE70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kurela;
+			productName = Kurela;
+			productReference = ECBA86172464F7430067AE70 /* Kurela.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ECBA860F2464F7430067AE70 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Group 16 MC2 2020";
+				TargetAttributes = {
+					ECBA86162464F7430067AE70 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = ECBA86122464F7430067AE70 /* Build configuration list for PBXProject "Kurela" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ECBA860E2464F7430067AE70;
+			productRefGroup = ECBA86182464F7430067AE70 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECBA86162464F7430067AE70 /* Kurela */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ECBA86152464F7430067AE70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBA86272464F7440067AE70 /* LaunchScreen.storyboard in Resources */,
+				ECBA86222464F7430067AE70 /* Main.storyboard in Resources */,
+				ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */,
+				ECBA863A2464FF980067AE70 /* CardCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ECBA86132464F7430067AE70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ECBA86392464FF980067AE70 /* CardCell.swift in Sources */,
+				ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */,
+				ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */,
+				ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */,
+				ECBA86362464FE4A0067AE70 /* Card.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		ECBA86202464F7430067AE70 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECBA86212464F7430067AE70 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ECBA86252464F7440067AE70 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ECBA86262464F7440067AE70 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ECBA86292464F7440067AE70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ECBA862A2464F7440067AE70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ECBA862C2464F7440067AE70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C46CAZW8L;
+				INFOPLIST_FILE = Kurela/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MC2G162020.Kurela;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ECBA862D2464F7440067AE70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C46CAZW8L;
+				INFOPLIST_FILE = Kurela/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.MC2G162020.Kurela;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ECBA86122464F7430067AE70 /* Build configuration list for PBXProject "Kurela" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECBA86292464F7440067AE70 /* Debug */,
+				ECBA862A2464F7440067AE70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ECBA862B2464F7440067AE70 /* Build configuration list for PBXNativeTarget "Kurela" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECBA862C2464F7440067AE70 /* Debug */,
+				ECBA862D2464F7440067AE70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ECBA860F2464F7430067AE70 /* Project object */;
+}
