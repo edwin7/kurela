@@ -8,11 +8,8 @@
 
 import UIKit
 
-class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    let category: [UIImageView] = []
-    let categoryName: [String] = ["Highlight", "COVID-19", "Children", "Education", "Disability", "Disaster"]
-    
+
+class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate {
     
     @IBOutlet weak var cardTableView: UITableView!
     
@@ -26,15 +23,52 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         view.backgroundColor = .white
         setupNavBar()
+        navigationController?.navigationBar.barStyle = .black
         
     }
+ 
     
     func setupNavBar(){
         navigationController?.navigationBar.prefersLargeTitles = true
+
         
+        //navbar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+
+        
+        //create search bar
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.delegate = self
+        
+        
+        let searchBar = searchController.searchBar
+        searchBar.tintColor = UIColor.white
+        searchBar.barTintColor = UIColor.white
+        searchBar.isTranslucent = false
+        searchBar.isOpaque = true
+
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.textColor = UIColor.black
+            if let backgroundview = textfield.subviews.first {
+
+                // Background color
+                backgroundview.backgroundColor = UIColor.white
+
+                // Rounded corner
+                backgroundview.layer.cornerRadius = 10;
+                backgroundview.clipsToBounds = true;
+            }
+        }
+       
     }
     
     // How many rows in the table view
