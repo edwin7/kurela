@@ -15,7 +15,7 @@ class ExploreCardCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    
+    @IBOutlet weak var titleView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,11 +29,13 @@ class ExploreCardCell: UITableViewCell {
         locationLabel.text = location
         
         
-        cardView.layer.shadowColor = UIColor.gray.cgColor
-        cardView.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
-        cardView.layer.shadowOpacity = 1.0
-        cardView.layer.masksToBounds = false
-        cardView.layer.cornerRadius = 2.0
+        cardView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
+        cardView.layer.shadowOpacity = 1
+        cardView.layer.shadowRadius = 10
+        titleView.clipsToBounds = true
+        titleView.layer.cornerRadius = 10
+        titleView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+
     }
     
     

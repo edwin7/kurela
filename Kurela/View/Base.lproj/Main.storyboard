@@ -35,6 +35,12 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="225" id="79T-RA-eMU"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="10"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkk-yh-Q4d">
                                                             <rect key="frame" x="0.0" y="138" width="357" height="105"/>
@@ -64,7 +70,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="0.25" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.25" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstItem="C5f-OU-3tP" firstAttribute="leading" secondItem="kkk-yh-Q4d" secondAttribute="leading" constant="8" id="CWz-29-ict"/>
                                                                 <constraint firstAttribute="trailing" secondItem="Y2L-5x-z7z" secondAttribute="trailing" constant="8" id="Dpw-Og-gDy"/>
@@ -106,6 +112,7 @@
                                             <outlet property="locationLabel" destination="C5f-OU-3tP" id="Fet-z0-ouZ"/>
                                             <outlet property="pictureView" destination="xtb-Ik-PPv" id="cnH-hH-Aub"/>
                                             <outlet property="titleLabel" destination="pOy-wP-IDS" id="LdI-Sg-vTn"/>
+                                            <outlet property="titleView" destination="kkk-yh-Q4d" id="Ymj-Q6-NeT"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

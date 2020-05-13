@@ -10,8 +10,6 @@ import UIKit
 
 class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var categoryView: UICollectionView!
-    
     let category: [UIImageView] = []
     let categoryName: [String] = ["Highlight", "COVID-19", "Children", "Education", "Disability", "Disaster"]
     
