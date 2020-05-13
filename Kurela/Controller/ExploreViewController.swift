@@ -8,51 +8,54 @@
 
 import UIKit
 
-class ExploreViewController: UIViewController {
+class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var categoryView: UICollectionView!
     
-    var cards: [Card] = [
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta")
-    ]
+    let category: [UIImageView] = []
+    let categoryName: [String] = ["Highlight", "COVID-19", "Children", "Education", "Disability", "Disaster"]
+    
+    
+    @IBOutlet weak var cardTableView: UITableView!
+    
+    let pictures: [UIImage] = [UIImage(named: "card1.png")!, UIImage(named: "card2.png")!, UIImage(named: "card3.png")!, UIImage(named: "card4.png")!]
+    let titles: [String] = ["Relawan Siaga Erupsi Gunung Merapi", "Kado untuk Anak Jalanan di Sekitar Kita", "Berbagi Sembako untuk Driver Online", "Donor Darah untuk Pasien COVID-19" ]
+    let date: [String] = ["20 Mei 2020", "30 Mei 2020", "15 Mei 2020", "15 Mei 2020" ]
+    let location: [String] = ["DIY Yogyakarta", "DKI Jakarta", "Tangerang Selatan", "Jakarta Pusat"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        setupNavBar()
+        
+    }
+    
+    func setupNavBar(){
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(UINib(nibName: "CardCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
     }
     
-}
-
-extension ExploreViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        print("3")
-    }
-}
-
-extension ExploreViewController: UITableViewDataSource {
+    // How many rows in the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+        return pictures.count
     }
     
+    //Defines what cells are being used
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! CardCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exploreCardCell", for: indexPath) as! ExploreCardCell
+        
+        cell.configure(picture: pictures[indexPath.row], date: date[indexPath.row], title: titles[indexPath.row], location: location[indexPath.row])
+        
         
         return cell
-    }
+}
+
+
+
     
-    
-    
+
 }
