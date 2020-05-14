@@ -58,15 +58,9 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
 
         if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
             textfield.textColor = UIColor.black
-            if let backgroundview = textfield.subviews.first {
-
-                // Background color
-                backgroundview.backgroundColor = UIColor.white
-
-                // Rounded corner
-                backgroundview.layer.cornerRadius = 10;
-                backgroundview.clipsToBounds = true;
-            }
+            textfield.backgroundColor = UIColor.white
+            textfield.layer.cornerRadius = 10
+            textfield.clipsToBounds = true
         }
        
     }
