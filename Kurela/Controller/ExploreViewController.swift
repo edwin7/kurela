@@ -36,12 +36,14 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         navigationController?.navigationBar.barStyle = .black
        // navigationController?.navigationBar.isTranslucent = false
         navigationItem.largeTitleDisplayMode = .always
+        
+
     }
  
     
     func setupNavBar(){
         //large title for navbar
-//        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         //navbar background color
         let appearance = UINavigationBarAppearance()
@@ -59,7 +61,7 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.delegate = self
-        
+
         //change search bar color
         let searchBar = searchController.searchBar
         searchBar.tintColor = UIColor.white
