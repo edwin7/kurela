@@ -41,18 +41,33 @@
         <!--My Journeys-->
         <scene sceneID="rlg-dE-0re">
             <objects>
-                <viewController id="4NY-Tz-fzv" sceneMemberID="viewController">
+                <viewController id="4NY-Tz-fzv" customClass="JourneyViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9c9-b8-xm8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hFf-L5-MHi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hFf-L5-MHi" firstAttribute="trailing" secondItem="FIB-Ew-cGs" secondAttribute="trailing" id="U75-7U-Umo"/>
+                            <constraint firstAttribute="bottom" secondItem="hFf-L5-MHi" secondAttribute="bottom" id="f0r-vN-a3j"/>
+                            <constraint firstItem="hFf-L5-MHi" firstAttribute="leading" secondItem="FIB-Ew-cGs" secondAttribute="leading" id="lPC-iL-ayc"/>
+                            <constraint firstItem="hFf-L5-MHi" firstAttribute="top" secondItem="9c9-b8-xm8" secondAttribute="top" id="r3I-TH-6SY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FIB-Ew-cGs"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Journeys" id="lua-Ju-Bha"/>
+                    <connections>
+                        <outlet property="tableView" destination="hFf-L5-MHi" id="OKf-Fm-guF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p9S-CN-gIZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2370" y="143"/>
+            <point key="canvasLocation" x="2369.5652173913045" y="142.63392857142856"/>
         </scene>
         <!--Profile-->
         <scene sceneID="J7R-xT-yhH">
@@ -68,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWh-PR-lXB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2370" y="836"/>
+            <point key="canvasLocation" x="2370" y="875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YSv-14-HNc">
@@ -144,7 +159,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXI-b5-W1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1483" y="836"/>
+            <point key="canvasLocation" x="1483" y="875"/>
         </scene>
     </scenes>
     <resources>

@@ -14,11 +14,8 @@ class ExploreViewController: UIViewController {
     
     var cards: [Card] = [
         Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
-        Card(infoName: "Judul Berita 1", location: "Jakarta")
+        Card(infoName: "Judul Berita 2", location: "Jakarta"),
+        Card(infoName: "Judul Berita 3", location: "Jakarta")
     ]
     
     override func viewDidLoad() {
@@ -44,12 +41,13 @@ extension ExploreViewController: UITableViewDelegate {
 
 extension ExploreViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! CardCell
         
+        cell.infoLabel.text = cards[indexPath.row].infoName
         return cell
     }
     

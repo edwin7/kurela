@@ -16,6 +16,9 @@
 		ECBA86392464FF980067AE70 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86372464FF980067AE70 /* CardCell.swift */; };
 		ECBA863A2464FF980067AE70 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86382464FF980067AE70 /* CardCell.xib */; };
 		ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBA863D246511C20067AE70 /* Assets.xcassets */; };
+		ECE2A75D246CEE5700AEC832 /* JourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE2A75C246CEE5700AEC832 /* JourneyViewController.swift */; };
+		ECE2A760246CF0EC00AEC832 /* JourneyCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE2A75E246CF0EC00AEC832 /* JourneyCardCell.swift */; };
+		ECE2A761246CF0EC00AEC832 /* JourneyCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE2A75F246CF0EC00AEC832 /* JourneyCardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		ECBA86372464FF980067AE70 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		ECBA86382464FF980067AE70 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		ECBA863D246511C20067AE70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECE2A75C246CEE5700AEC832 /* JourneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewController.swift; sourceTree = "<group>"; };
+		ECE2A75E246CF0EC00AEC832 /* JourneyCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCardCell.swift; sourceTree = "<group>"; };
+		ECE2A75F246CF0EC00AEC832 /* JourneyCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JourneyCardCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,8 @@
 				ECBA86202464F7430067AE70 /* Main.storyboard */,
 				ECBA86372464FF980067AE70 /* CardCell.swift */,
 				ECBA86382464FF980067AE70 /* CardCell.xib */,
+				ECE2A75E246CF0EC00AEC832 /* JourneyCardCell.swift */,
+				ECE2A75F246CF0EC00AEC832 /* JourneyCardCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */,
+				ECE2A75C246CEE5700AEC832 /* JourneyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -158,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE2A761246CF0EC00AEC832 /* JourneyCardCell.xib in Resources */,
 				ECBA86272464F7440067AE70 /* LaunchScreen.storyboard in Resources */,
 				ECBA86222464F7430067AE70 /* Main.storyboard in Resources */,
 				ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */,
@@ -174,9 +184,11 @@
 			files = (
 				ECBA86392464FF980067AE70 /* CardCell.swift in Sources */,
 				ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */,
+				ECE2A760246CF0EC00AEC832 /* JourneyCardCell.swift in Sources */,
 				ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */,
 				ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */,
 				ECBA86362464FE4A0067AE70 /* Card.swift in Sources */,
+				ECE2A75D246CEE5700AEC832 /* JourneyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

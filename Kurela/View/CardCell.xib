@@ -9,27 +9,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="405" id="KGk-i7-Jjw" customClass="CardCell" customModule="Kurela" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="969" height="405"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="491" id="KGk-i7-Jjw" customClass="CardCell" customModule="Kurela" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="1712" height="491"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="969" height="405"/>
+                <rect key="frame" x="0.0" y="0.0" width="1712" height="491"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYN-eu-zPb">
-                        <rect key="frame" x="16" y="0.0" width="937" height="243"/>
+                        <rect key="frame" x="16" y="0.0" width="1680" height="243"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7a9-fz-4rn">
-                                <rect key="frame" x="0.0" y="0.0" width="937" height="243"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1680" height="243"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="Ecm-c0-r8U">
-                                        <rect key="frame" x="0.0" y="0.0" width="830" height="152"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1680" height="152"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="152" id="pMm-4b-ld9"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0I-im-UvS">
-                                        <rect key="frame" x="23" y="160" width="891" height="83"/>
+                                        <rect key="frame" x="23" y="152" width="1634" height="91"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -37,7 +37,11 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="W0I-im-UvS" secondAttribute="trailing" constant="23" id="Mul-DE-9IV"/>
+                                    <constraint firstItem="Ecm-c0-r8U" firstAttribute="top" secondItem="7a9-fz-4rn" secondAttribute="top" id="PUc-Hb-BgO"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ecm-c0-r8U" secondAttribute="trailing" id="SAU-kn-8ik"/>
+                                    <constraint firstItem="W0I-im-UvS" firstAttribute="top" secondItem="Ecm-c0-r8U" secondAttribute="bottom" id="eFi-UJ-V8H"/>
                                     <constraint firstItem="W0I-im-UvS" firstAttribute="leading" secondItem="7a9-fz-4rn" secondAttribute="leading" constant="23" id="jjK-xQ-3PX"/>
+                                    <constraint firstItem="Ecm-c0-r8U" firstAttribute="leading" secondItem="7a9-fz-4rn" secondAttribute="leading" id="u8p-W2-d5l"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -61,9 +65,10 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="infoImage" destination="Ecm-c0-r8U" id="CZ4-46-2Iw"/>
+                <outlet property="infoLabel" destination="W0I-im-UvS" id="Ecy-hE-M3T"/>
                 <outlet property="view" destination="WYN-eu-zPb" id="J2B-DU-VbM"/>
             </connections>
-            <point key="canvasLocation" x="606.52173913043487" y="254.79910714285714"/>
+            <point key="canvasLocation" x="1142.0289855072465" y="283.59375"/>
         </tableViewCell>
     </objects>
     <resources>
