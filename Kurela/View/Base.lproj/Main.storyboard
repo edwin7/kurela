@@ -94,14 +94,14 @@
                                                             </constraints>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EYu-xa-3ue">
-                                                            <rect key="frame" x="259" y="0.0" width="69" height="74"/>
+                                                            <rect key="frame" x="269" y="0.0" width="69" height="74"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="74" id="4MG-HL-WcP"/>
                                                                 <constraint firstAttribute="width" constant="69" id="nTU-75-eUl"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0I-2b-9Iy">
-                                                            <rect key="frame" x="266" y="15" width="55" height="16"/>
+                                                            <rect key="frame" x="276" y="15" width="55" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="55" id="h1L-We-aK8"/>
                                                             </constraints>
@@ -113,11 +113,11 @@
                                                     <constraints>
                                                         <constraint firstItem="L0I-2b-9Iy" firstAttribute="centerX" secondItem="EYu-xa-3ue" secondAttribute="centerX" id="8Zn-uT-vZy"/>
                                                         <constraint firstAttribute="trailing" secondItem="kkk-yh-Q4d" secondAttribute="trailing" id="99L-aY-BMq"/>
-                                                        <constraint firstAttribute="trailing" secondItem="EYu-xa-3ue" secondAttribute="trailing" constant="29" id="DRE-xE-ufn"/>
                                                         <constraint firstAttribute="trailing" secondItem="xtb-Ik-PPv" secondAttribute="trailing" id="FHe-0d-uRt"/>
                                                         <constraint firstItem="kkk-yh-Q4d" firstAttribute="leading" secondItem="OWM-dO-Eh2" secondAttribute="leading" id="TOG-Qv-H4n"/>
                                                         <constraint firstItem="xtb-Ik-PPv" firstAttribute="top" secondItem="OWM-dO-Eh2" secondAttribute="top" id="VK6-3w-FpR"/>
-                                                        <constraint firstItem="EYu-xa-3ue" firstAttribute="leading" secondItem="OWM-dO-Eh2" secondAttribute="leading" constant="259" id="Xai-cI-CDH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EYu-xa-3ue" secondAttribute="trailing" constant="19" id="WLd-y7-pnp"/>
+                                                        <constraint firstItem="EYu-xa-3ue" firstAttribute="leading" secondItem="OWM-dO-Eh2" secondAttribute="leading" constant="269" id="WXb-gw-92d"/>
                                                         <constraint firstItem="kkk-yh-Q4d" firstAttribute="leading" secondItem="OWM-dO-Eh2" secondAttribute="leading" id="ZKf-dE-Nuz"/>
                                                         <constraint firstAttribute="bottom" secondItem="xtb-Ik-PPv" secondAttribute="bottom" id="glN-5C-0MH"/>
                                                         <constraint firstAttribute="bottom" secondItem="kkk-yh-Q4d" secondAttribute="bottom" id="iEt-Nt-4vP"/>
