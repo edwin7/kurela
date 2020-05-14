@@ -14,23 +14,27 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var cardTableView: UITableView!
     
     let pictures: [UIImage] = [UIImage(named: "card1.png")!, UIImage(named: "card2.png")!, UIImage(named: "card3.png")!, UIImage(named: "card4.png")!]
-    let titles: [String] = ["Relawan Siaga Erupsi Gunung Merapi", "Kado untuk Anak Jalanan di Sekitar Kita", "Berbagi Sembako untuk Driver Online", "Donor Darah untuk Pasien COVID-19" ]
+    let titles: [String] = ["Relawan Siaga Erupsi Gunung Merapi", "Kado untuk Anak Jalanan Sekitar Kita", "Berbagi Sembako untuk Driver Online", "Donor Darah untuk Pasien COVID-19" ]
     let date: [String] = ["20 Mei 2020", "30 Mei 2020", "15 Mei 2020", "15 Mei 2020" ]
     let location: [String] = ["DIY Yogyakarta", "DKI Jakarta", "Tangerang Selatan", "Jakarta Pusat"]
-    
+    let tag: [UIImage] = [UIImage(named: "tag.png")!,UIImage(named: "tag.png")!,UIImage(named: "tag.png")!,UIImage(named: "tag.png")!,]
+    let due: [String] = ["3 days left", "5 days left", "10 Mei 2020", "8 Mei 2020"]
+    let logo: [UIImage] = [UIImage(named: "logo1.png")!,UIImage(named: "logo2.png")!,UIImage(named: "logo2.png")!,UIImage(named: "logo3.png")!,]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .white
         setupNavBar()
         navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
         
     }
  
     
     func setupNavBar(){
+        //large title for navbar
         navigationController?.navigationBar.prefersLargeTitles = true
-
         
         //navbar background color
         let appearance = UINavigationBarAppearance()
@@ -41,7 +45,7 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         navigationItem.compactAppearance = appearance
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-
+        
         
         //create search bar
         let searchController = UISearchController(searchResultsController: nil)
@@ -49,7 +53,7 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.delegate = self
         
-        
+        //change search bar color
         let searchBar = searchController.searchBar
         searchBar.tintColor = UIColor.white
         searchBar.barTintColor = UIColor.white
@@ -74,8 +78,7 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exploreCardCell", for: indexPath) as! ExploreCardCell
         
-        cell.configure(picture: pictures[indexPath.row], date: date[indexPath.row], title: titles[indexPath.row], location: location[indexPath.row])
-        
+        cell.configure(picture: pictures[indexPath.row], date: date[indexPath.row], title: titles[indexPath.row], location: location[indexPath.row], tags: tag[indexPath.row], duedate: due[indexPath.row], logos: logo[indexPath.row])
         
         return cell
 }
