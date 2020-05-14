@@ -9,10 +9,12 @@
 import UIKit
 
 
-class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate {
-    
+class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+   
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var cardTableView: UITableView!
     
+    //content in card table view
     let pictures: [UIImage] = [UIImage(named: "card1.png")!, UIImage(named: "card2.png")!, UIImage(named: "card3.png")!, UIImage(named: "card4.png")!]
     let titles: [String] = ["Relawan Siaga Erupsi Gunung Merapi", "Kado untuk Anak Jalanan Sekitar Kita", "Berbagi Sembako untuk Driver Online", "Donor Darah untuk Pasien COVID-19" ]
     let date: [String] = ["20 Mei 2020", "30 Mei 2020", "15 Mei 2020", "15 Mei 2020" ]
@@ -21,20 +23,25 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
     let due: [String] = ["3 days left", "5 days left", "10 Mei 2020", "8 Mei 2020"]
     let logo: [UIImage] = [UIImage(named: "logo1.png")!,UIImage(named: "logo2.png")!,UIImage(named: "logo2.png")!,UIImage(named: "logo3.png")!,]
     
+    //content in category collection view
+    let icon: [UIImage] = [UIImage(named: "highlight.png")!,UIImage(named: "covid19.png")!,UIImage(named: "education.png")!,UIImage(named: "disability.png")!,UIImage(named: "children.png")!,]
+    let category: [String] = ["Highlight", "COVID-19", "Education", "Disability", "Children"]
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         setupNavBar()
         navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        
+       // navigationController?.navigationBar.isTranslucent = false
+        navigationItem.largeTitleDisplayMode = .always
     }
  
     
     func setupNavBar(){
         //large title for navbar
-        navigationController?.navigationBar.prefersLargeTitles = true
+//        navigationController?.navigationBar.prefersLargeTitles = true
         
         //navbar background color
         let appearance = UINavigationBarAppearance()
@@ -69,6 +76,15 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
        
     }
     
+    //Show header table view
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UICollectionView()
+//        let headerCell = tableView.dequeueReusableCell(withIdentifier: "categoryCell") as! CategoryCell
+//        headerView.addSubview(headerCell)
+//        return headerView
+//    }
+//
+    
     // How many rows in the table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return pictures.count
@@ -83,8 +99,16 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
 }
 
-
-
-    
-
+    //How many items in collection view
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           return 5
+       }
+       
+    //Defines the content of the collection view
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoriesCell", for: indexPath) as! CategoryCell
+        
+            cell.categorySet(icons: icon[indexPath.row], categoryname: category[indexPath.row])
+           return cell
+       }
 }
