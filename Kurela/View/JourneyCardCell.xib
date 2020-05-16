@@ -110,7 +110,7 @@
     <resources>
         <image name="sample" width="830" height="466"/>
         <namedColor name="AppColor">
-            <color red="0.0" green="0.70980392156862748" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.70999997854232788" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

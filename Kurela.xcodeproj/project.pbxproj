@@ -7,21 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ECA906C8246D8E2F003FADED /* ExploreCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA906C6246D8E2F003FADED /* ExploreCardCell.swift */; };
+		ECA906C9246D8E2F003FADED /* ExploreCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA906C7246D8E2F003FADED /* ExploreCardCell.xib */; };
 		ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861A2464F7430067AE70 /* AppDelegate.swift */; };
 		ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861C2464F7430067AE70 /* SceneDelegate.swift */; };
 		ECBA86222464F7430067AE70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86202464F7430067AE70 /* Main.storyboard */; };
 		ECBA86272464F7440067AE70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86252464F7440067AE70 /* LaunchScreen.storyboard */; };
 		ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */; };
 		ECBA86362464FE4A0067AE70 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86352464FE4A0067AE70 /* Card.swift */; };
-		ECBA86392464FF980067AE70 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86372464FF980067AE70 /* CardCell.swift */; };
-		ECBA863A2464FF980067AE70 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86382464FF980067AE70 /* CardCell.xib */; };
 		ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBA863D246511C20067AE70 /* Assets.xcassets */; };
+		ECD149CE246E604500CDBB7F /* KurelaDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECD149CC246E604500CDBB7F /* KurelaDataModel.xcdatamodeld */; };
+		ECDFB067246FA8FA00D4558B /* DataPreparation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDFB066246FA8FA00D4558B /* DataPreparation.swift */; };
+		ECDFB06D246FDE8F00D4558B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECDFB06C246FDE8F00D4558B /* DetailViewController.swift */; };
 		ECE2A75D246CEE5700AEC832 /* JourneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE2A75C246CEE5700AEC832 /* JourneyViewController.swift */; };
 		ECE2A760246CF0EC00AEC832 /* JourneyCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE2A75E246CF0EC00AEC832 /* JourneyCardCell.swift */; };
 		ECE2A761246CF0EC00AEC832 /* JourneyCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE2A75F246CF0EC00AEC832 /* JourneyCardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ECA906C6246D8E2F003FADED /* ExploreCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCardCell.swift; sourceTree = "<group>"; };
+		ECA906C7246D8E2F003FADED /* ExploreCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCardCell.xib; sourceTree = "<group>"; };
 		ECBA86172464F7430067AE70 /* Kurela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurela.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBA861A2464F7430067AE70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBA861C2464F7430067AE70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,9 +35,10 @@
 		ECBA86282464F7440067AE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
 		ECBA86352464FE4A0067AE70 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		ECBA86372464FF980067AE70 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		ECBA86382464FF980067AE70 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		ECBA863D246511C20067AE70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ECD149CD246E604500CDBB7F /* KurelaDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KurelaDataModel.xcdatamodel; sourceTree = "<group>"; };
+		ECDFB066246FA8FA00D4558B /* DataPreparation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPreparation.swift; sourceTree = "<group>"; };
+		ECDFB06C246FDE8F00D4558B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		ECE2A75C246CEE5700AEC832 /* JourneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyViewController.swift; sourceTree = "<group>"; };
 		ECE2A75E246CF0EC00AEC832 /* JourneyCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyCardCell.swift; sourceTree = "<group>"; };
 		ECE2A75F246CF0EC00AEC832 /* JourneyCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JourneyCardCell.xib; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				ECBA86352464FE4A0067AE70 /* Card.swift */,
+				ECD149CC246E604500CDBB7F /* KurelaDataModel.xcdatamodeld */,
+				ECDFB066246FA8FA00D4558B /* DataPreparation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				ECBA86202464F7430067AE70 /* Main.storyboard */,
-				ECBA86372464FF980067AE70 /* CardCell.swift */,
-				ECBA86382464FF980067AE70 /* CardCell.xib */,
 				ECE2A75E246CF0EC00AEC832 /* JourneyCardCell.swift */,
 				ECE2A75F246CF0EC00AEC832 /* JourneyCardCell.xib */,
+				ECA906C6246D8E2F003FADED /* ExploreCardCell.swift */,
+				ECA906C7246D8E2F003FADED /* ExploreCardCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 			children = (
 				ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */,
 				ECE2A75C246CEE5700AEC832 /* JourneyViewController.swift */,
+				ECDFB06C246FDE8F00D4558B /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -171,7 +180,7 @@
 				ECBA86272464F7440067AE70 /* LaunchScreen.storyboard in Resources */,
 				ECBA86222464F7430067AE70 /* Main.storyboard in Resources */,
 				ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */,
-				ECBA863A2464FF980067AE70 /* CardCell.xib in Resources */,
+				ECA906C9246D8E2F003FADED /* ExploreCardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,12 +191,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECBA86392464FF980067AE70 /* CardCell.swift in Sources */,
+				ECA906C8246D8E2F003FADED /* ExploreCardCell.swift in Sources */,
 				ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */,
 				ECE2A760246CF0EC00AEC832 /* JourneyCardCell.swift in Sources */,
+				ECD149CE246E604500CDBB7F /* KurelaDataModel.xcdatamodeld in Sources */,
 				ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */,
 				ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */,
 				ECBA86362464FE4A0067AE70 /* Card.swift in Sources */,
+				ECDFB06D246FDE8F00D4558B /* DetailViewController.swift in Sources */,
+				ECDFB067246FA8FA00D4558B /* DataPreparation.swift in Sources */,
 				ECE2A75D246CEE5700AEC832 /* JourneyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +398,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ECD149CC246E604500CDBB7F /* KurelaDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECD149CD246E604500CDBB7F /* KurelaDataModel.xcdatamodel */,
+			);
+			currentVersion = ECD149CD246E604500CDBB7F /* KurelaDataModel.xcdatamodel */;
+			path = KurelaDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ECBA860F2464F7430067AE70 /* Project object */;
 }

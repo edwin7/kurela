@@ -19,11 +19,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Results" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAA-Hr-2rL">
+                                <rect key="frame" x="20" y="435" width="374" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="evG-oa-wvm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="0lH-sj-qzZ"/>
+                            <constraint firstItem="SAA-Hr-2rL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Oat-l0-e0L"/>
+                            <constraint firstItem="SAA-Hr-2rL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Uq5-pK-HGn"/>
+                            <constraint firstItem="SAA-Hr-2rL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ab8-Zb-ALf"/>
                             <constraint firstItem="evG-oa-wvm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bAy-Er-ejb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SAA-Hr-2rL" secondAttribute="trailing" constant="20" id="ogR-fr-d7v"/>
                             <constraint firstItem="evG-oa-wvm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xhv-X4-m8R"/>
                             <constraint firstAttribute="bottom" secondItem="evG-oa-wvm" secondAttribute="bottom" id="yH4-jG-bFx"/>
                         </constraints>
@@ -31,12 +41,64 @@
                     </view>
                     <navigationItem key="navigationItem" title="Explore" id="Hr0-RG-WMo"/>
                     <connections>
+                        <outlet property="emptyLabel" destination="SAA-Hr-2rL" id="Igc-HT-mVk"/>
                         <outlet property="tableView" destination="evG-oa-wvm" id="10B-mz-YBO"/>
+                        <segue destination="J3s-c9-USj" kind="show" identifier="goToDetail" id="Hs3-YK-b5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2369.5652173913045" y="-563.16964285714278"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="F3W-5f-8eU">
+            <objects>
+                <viewController id="J3s-c9-USj" customClass="DetailViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LE9-ya-mv9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUv-TJ-GOW">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-E4-pTY">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9N-Cp-ZIG">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1000" id="I7x-SY-0cM"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="C2e-E4-pTY" firstAttribute="trailing" secondItem="WKY-bc-Aiy" secondAttribute="trailing" id="Ezg-rC-Rhh"/>
+                                    <constraint firstItem="C2e-E4-pTY" firstAttribute="width" secondItem="QVt-1N-4aa" secondAttribute="width" id="WFt-AT-1d9"/>
+                                    <constraint firstItem="C2e-E4-pTY" firstAttribute="bottom" secondItem="WKY-bc-Aiy" secondAttribute="bottom" id="kCh-dq-AOQ"/>
+                                    <constraint firstItem="C2e-E4-pTY" firstAttribute="leading" secondItem="WKY-bc-Aiy" secondAttribute="leading" id="v4f-8B-iXa"/>
+                                    <constraint firstItem="WKY-bc-Aiy" firstAttribute="top" secondItem="C2e-E4-pTY" secondAttribute="top" id="z1D-HM-nRq"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="WKY-bc-Aiy"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="QVt-1N-4aa"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BUv-TJ-GOW" firstAttribute="trailing" secondItem="fOG-oU-waA" secondAttribute="trailing" id="1S3-nD-0F6"/>
+                            <constraint firstItem="BUv-TJ-GOW" firstAttribute="top" secondItem="LE9-ya-mv9" secondAttribute="top" id="crD-hf-gfL"/>
+                            <constraint firstItem="BUv-TJ-GOW" firstAttribute="leading" secondItem="fOG-oU-waA" secondAttribute="leading" id="jaW-uV-lxm"/>
+                            <constraint firstAttribute="bottom" secondItem="BUv-TJ-GOW" secondAttribute="bottom" id="oSo-wg-0Xe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fOG-oU-waA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OqH-lP-CrR" customClass="test"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eYg-b3-K4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3331.884057971015" y="-563.16964285714278"/>
         </scene>
         <!--My Journeys-->
         <scene sceneID="rlg-dE-0re">
