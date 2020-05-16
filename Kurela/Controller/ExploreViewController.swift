@@ -9,7 +9,7 @@
 import UIKit
 
 
-class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var cardTableView: UITableView!
