@@ -190,23 +190,37 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="cnH-z6-Wjl">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tE7-9I-Dja">
+                                            <rect key="frame" x="156" y="22" width="102" height="102"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card3" translatesAutoresizingMaskIntoConstraints="NO" id="ntx-1R-0wV">
-                                            <rect key="frame" x="0.0" y="-143" width="414" height="233"/>
+                                            <rect key="frame" x="0.0" y="-91" width="414" height="237"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logodetail" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-uY-1HQ">
-                                            <rect key="frame" x="301" y="52" width="105" height="75"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-uY-1HQ">
+                                            <rect key="frame" x="309" y="103" width="105" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H6Z-Ae-AGm" userLabel="Explorer">
+                                            <rect key="frame" x="0.0" y="6" width="95" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0034088249063670413" alpha="0.65031015917116097" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title=" Explore " image="chevron.left" catalog="system"/>
+                                            <connections>
+                                                <action selector="backButtonPressed:" destination="9fw-EA-DIW" eventType="touchUpInside" id="BIa-qz-Jb7"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="510" id="g4I-MB-agk" customClass="ActivityHeaderTableViewCell" customModule="Kurela" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="118" width="414" height="510"/>
+                                        <rect key="frame" x="0.0" y="175" width="414" height="510"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g4I-MB-agk" id="Xjo-Si-P39">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="510"/>
@@ -250,8 +264,8 @@
                                                                 <constraint firstAttribute="width" constant="116" id="3hT-7x-wMr"/>
                                                                 <constraint firstAttribute="height" constant="35" id="H3F-n3-Wvk"/>
                                                             </constraints>
-                                                            <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <state key="normal" title="Button"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Apply"/>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -418,10 +432,6 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="Button" image="iconinactive3"/>
                                                         </button>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9nZ-Op-QEv">
-                                                            <rect key="frame" x="246" y="224" width="26" height="22"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     <constraints>
@@ -453,6 +463,7 @@
                                             <outlet property="informationTextLabel" destination="P0h-VP-bdi" id="sUS-E7-6b2"/>
                                             <outlet property="locationEventLabel" destination="Ki8-fJ-qj6" id="B4q-fy-eOk"/>
                                             <outlet property="organizationLabel" destination="UjK-S8-apq" id="J2s-IL-CfS"/>
+                                            <outlet property="stateButton" destination="K30-xA-Pd6" id="VSA-SU-o6m"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -467,9 +478,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9ys-z1-mTS"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GdX-wE-kvc"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="GdX-wE-kvc"/>
                     <connections>
                         <outlet property="activityTableView" destination="D8C-QU-oLk" id="5Ve-MC-G4T"/>
+                        <outlet property="backButton" destination="H6Z-Ae-AGm" id="OTc-dI-kjb"/>
+                        <outlet property="organizationImageView" destination="aZa-uY-1HQ" id="DY3-BH-upc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8r-fW-Qss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -543,7 +556,6 @@
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Loy-Zx-jew">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
@@ -605,12 +617,13 @@
         <image name="book.fill" catalog="system" width="128" height="100"/>
         <image name="calendar" width="19" height="21"/>
         <image name="card3" width="1092" height="606"/>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="duedate" width="22" height="20"/>
         <image name="iconactive1" width="50" height="50"/>
         <image name="iconinactive2" width="50" height="50"/>
         <image name="iconinactive3" width="50" height="50"/>
         <image name="location" width="13" height="20"/>
-        <image name="logodetail" width="75.5" height="75"/>
+        <image name="logo2" width="120" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="safari.fill" catalog="system" width="128" height="121"/>
     </resources>

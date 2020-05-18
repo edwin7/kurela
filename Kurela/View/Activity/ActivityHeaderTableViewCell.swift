@@ -21,9 +21,15 @@ class ActivityHeaderTableViewCell: UITableViewCell {
     
     @IBOutlet weak var informationTextLabel: UILabel!
     
+    
+    @IBOutlet weak var stateButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        stateButton.layer.cornerRadius = 15
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
