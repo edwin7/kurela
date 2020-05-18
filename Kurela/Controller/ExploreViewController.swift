@@ -17,11 +17,11 @@ class ExploreViewController: UIViewController{
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var cards: [Card] = [
-        Card(infoName: "Judul Berita 1", location: "Jakarta"),
+        Card(infoName: "Relawan Siaga Erupsi Gunung Merapi", location: "Yogyakarta"),
         Card(infoName: "Judul Berita 2", location: "Jakarta"),
         Card(infoName: "Judul Berita 3", location: "Jakarta")
     ]
-    
+    var selectedIndex: Int?
     var infoArray = [VolunteeringInfo]()
     
     var images = ["a", "b", "c"]
@@ -45,6 +45,7 @@ class ExploreViewController: UIViewController{
         
         saveFirstData()
         loadData()
+        
         
     }
     
@@ -90,8 +91,8 @@ class ExploreViewController: UIViewController{
                 formatter.dateFormat = "yyyy/MM/dd"
                 
                 let dataArray = [
-                    DataPreparation(activityImage: #imageLiteral(resourceName: "a"), activityName: "Berita 1", category: "Budaya", contact: "123456789012", date: formatter.date(from: "2020/6/08")!, daysLeft: 10, descriptions: "Ini contoh dekripsinya", location: "Lombok, NTB", organizationImage: #imageLiteral(resourceName: "c"), organizationName: "Peduli", peopleApplied: 100, requirement: "Contoh requirement"),
-                    DataPreparation(activityImage: #imageLiteral(resourceName: "c"), activityName: "Berita 2", category: "Budaya", contact: "123456789012", date: formatter.date(from: "2020/7/20")!, daysLeft: 4, descriptions: "Ini contoh dekripsinya", location: "Sumbawa, NTB", organizationImage: #imageLiteral(resourceName: "b"), organizationName: "Peduli", peopleApplied: 100, requirement: "Contoh requirement"),
+                    DataPreparation(activityImage: #imageLiteral(resourceName: "a"), activityName: "Gempa Lombok", category: "Bencana", contact: "123456789012", date: formatter.date(from: "2020/6/08")!, daysLeft: 10, descriptions: "Ini contoh dekripsinya", location: "Lombok, NTB", organizationImage: #imageLiteral(resourceName: "c"), organizationName: "Peduli", peopleApplied: 100, requirement: "Contoh requirement"),
+                    DataPreparation(activityImage: #imageLiteral(resourceName: "c"), activityName: "Relawan Siaga Erupsi Gunung Merapi", category: "Budaya", contact: "123456789012", date: formatter.date(from: "2020/7/20")!, daysLeft: 4, descriptions: "Ini contoh dekripsinya", location: "Sumbawa, NTB", organizationImage: #imageLiteral(resourceName: "b"), organizationName: "Peduli", peopleApplied: 100, requirement: "Contoh requirement"),
                     DataPreparation(activityImage: #imageLiteral(resourceName: "b"), activityName: "Berita 3", category: "Budaya", contact: "123456789012", date: formatter.date(from: "2020/6/03")!, daysLeft: 5, descriptions: "Ini contoh dekripsinya", location: "Jakarta", organizationImage: #imageLiteral(resourceName: "c"), organizationName: "Peduli", peopleApplied: 100, requirement: "Contoh requirement")
                 ]
                 
@@ -118,22 +119,11 @@ class ExploreViewController: UIViewController{
             print("Error fetching data from contex, \(error)")
         }
         
-        
-        
-        
-        
     }
     
 }
 
 //MARK: - Table View Delegate
-extension ExploreViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "goToDetail", sender: self)
-    }
-}
-
 extension ExploreViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         emptyLabel.isHidden = true
@@ -155,13 +145,31 @@ extension ExploreViewController: UITableViewDataSource {
         cell.locationLabel.text = infoArray[indexPath.row].location
         cell.organizationImageView.image = UIImage(data: infoArray[indexPath.row].organizationImage!)
         cell.daysLeftLabel.text = "\(infoArray[indexPath.row].daysLeft) days left"
-        
+    
         return cell
     }
     
+}
+
+extension ExploreViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "goToDetail", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! DetailViewController
+        if let indexPath = selectedIndex {
+            destinationVC.data = infoArray[indexPath]
+        }
+        
+    }
     
 }
+
+
+
 
 extension ExploreViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

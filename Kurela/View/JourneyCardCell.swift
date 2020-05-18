@@ -12,6 +12,11 @@ class JourneyCardCell: UITableViewCell {
 
 
     @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var date2Label: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -30,7 +30,7 @@ class ExploreCardCell: UITableViewCell {
         cardView.layer.shadowOffset = CGSize(width: 0.0, height: 2.25)
         
         imageCardView.layer.cornerRadius = 20
-        organizationImageView.layer.cornerRadius = 20
+        organizationImageView.layer.cornerRadius = organizationImageView.frame.height / 2.0
         
         viewTransparent.layer.cornerRadius = 20
         viewTransparent.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]

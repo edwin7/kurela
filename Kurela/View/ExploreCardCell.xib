@@ -68,9 +68,9 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgr-W4-sjW">
-                                <rect key="frame" x="298" y="0.0" width="46" height="51"/>
+                                <rect key="frame" x="292" y="0.0" width="46" height="51"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sample" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-2T-LCI">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tags" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-2T-LCI">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="51"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY4-7V-kco">
@@ -80,7 +80,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="1Iz-R2-3G6"/>
                                     <constraint firstAttribute="trailing" secondItem="bqq-2T-LCI" secondAttribute="trailing" id="5FU-Ac-N5A"/>
@@ -97,7 +96,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xgr-W4-sjW" secondAttribute="trailing" constant="14" id="3Ly-PR-VKK"/>
+                            <constraint firstAttribute="trailing" secondItem="xgr-W4-sjW" secondAttribute="trailing" constant="20" id="3Ly-PR-VKK"/>
                             <constraint firstAttribute="trailing" secondItem="QOe-8J-Phh" secondAttribute="trailing" id="N6f-kQ-qz5"/>
                             <constraint firstAttribute="bottom" secondItem="ohB-DZ-wTC" secondAttribute="bottom" id="Qhi-Hu-VnG"/>
                             <constraint firstItem="QOe-8J-Phh" firstAttribute="leading" secondItem="HcN-bS-Vj8" secondAttribute="leading" id="R6W-wy-3Hv"/>
@@ -133,5 +132,6 @@
     </objects>
     <resources>
         <image name="sample" width="830" height="466"/>
+        <image name="tags" width="40" height="51"/>
     </resources>
 </document>
