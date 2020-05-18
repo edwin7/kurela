@@ -7,18 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C318698246C42E100F87D4D /* ExploreCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C318696246C42E100F87D4D /* ExploreCardCell.swift */; };
+		8C318699246C42E100F87D4D /* ExploreCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C318697246C42E100F87D4D /* ExploreCardCell.xib */; };
+		8C31869C246C526F00F87D4D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31869A246C526F00F87D4D /* CategoryCell.swift */; };
+		8C31869D246C526F00F87D4D /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C31869B246C526F00F87D4D /* CategoryCell.xib */; };
 		ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861A2464F7430067AE70 /* AppDelegate.swift */; };
 		ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861C2464F7430067AE70 /* SceneDelegate.swift */; };
 		ECBA86222464F7430067AE70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86202464F7430067AE70 /* Main.storyboard */; };
 		ECBA86272464F7440067AE70 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86252464F7440067AE70 /* LaunchScreen.storyboard */; };
 		ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */; };
-		ECBA86362464FE4A0067AE70 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86352464FE4A0067AE70 /* Card.swift */; };
-		ECBA86392464FF980067AE70 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA86372464FF980067AE70 /* CardCell.swift */; };
-		ECBA863A2464FF980067AE70 /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86382464FF980067AE70 /* CardCell.xib */; };
 		ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECBA863D246511C20067AE70 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C318696246C42E100F87D4D /* ExploreCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCardCell.swift; sourceTree = "<group>"; };
+		8C318697246C42E100F87D4D /* ExploreCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCardCell.xib; sourceTree = "<group>"; };
+		8C31869A246C526F00F87D4D /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8C31869B246C526F00F87D4D /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		ECBA86172464F7430067AE70 /* Kurela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurela.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBA861A2464F7430067AE70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBA861C2464F7430067AE70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,9 +31,6 @@
 		ECBA86262464F7440067AE70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECBA86282464F7440067AE70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewController.swift; sourceTree = "<group>"; };
-		ECBA86352464FE4A0067AE70 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		ECBA86372464FF980067AE70 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
-		ECBA86382464FF980067AE70 /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		ECBA863D246511C20067AE70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +79,6 @@
 		ECBA862E2464F7770067AE70 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				ECBA86352464FE4A0067AE70 /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -86,8 +87,10 @@
 			isa = PBXGroup;
 			children = (
 				ECBA86202464F7430067AE70 /* Main.storyboard */,
-				ECBA86372464FF980067AE70 /* CardCell.swift */,
-				ECBA86382464FF980067AE70 /* CardCell.xib */,
+				8C318696246C42E100F87D4D /* ExploreCardCell.swift */,
+				8C318697246C42E100F87D4D /* ExploreCardCell.xib */,
+				8C31869A246C526F00F87D4D /* CategoryCell.swift */,
+				8C31869B246C526F00F87D4D /* CategoryCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -158,10 +161,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C31869D246C526F00F87D4D /* CategoryCell.xib in Resources */,
 				ECBA86272464F7440067AE70 /* LaunchScreen.storyboard in Resources */,
+				8C318699246C42E100F87D4D /* ExploreCardCell.xib in Resources */,
 				ECBA86222464F7430067AE70 /* Main.storyboard in Resources */,
 				ECBA863E246511C20067AE70 /* Assets.xcassets in Resources */,
-				ECBA863A2464FF980067AE70 /* CardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,11 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECBA86392464FF980067AE70 /* CardCell.swift in Sources */,
 				ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */,
+				8C318698246C42E100F87D4D /* ExploreCardCell.swift in Sources */,
 				ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */,
 				ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */,
-				ECBA86362464FE4A0067AE70 /* Card.swift in Sources */,
+				8C31869C246C526F00F87D4D /* CategoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
