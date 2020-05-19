@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var cardTableView: UITableView!
@@ -72,7 +72,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-        searchController.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
 
         //change search bar color
         let searchBar = searchController.searchBar
@@ -179,7 +180,10 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
                 formatter.dateFormat = "yyyy/MM/dd"
                 
                 let dataArray = [
-                    DataPreparation(activityImage: #imageLiteral(resourceName: "card3"), activityName: "Berbagi Sembako untuk Driver Online", category: "Donation", contactDetail: "WHO merupakan organisasi dunia yang berfokus pada hal yang mempunyai impact di kesehatan. Untuk mengenal komunitas kami lebih jauh, Anda dapat mengunjungi alawat web diatas.", date: formatter.date(from: "2020/5/29")!, daysLeft: 4, descriptions: "Dalam bagian dari solusi menghadapi krisis Pandemic Covid-19, program ini merupakan program berbagi 5kg beras kepada driver online di Sumatera Barat khususnya untuk driver yang sedang kesulitan untuk memenuhi kebutuhan sehari-hari.", location: "Sumatera Barat", organizationAddress: "Jl. Prof. Dr. Hamka No.2A, Air Tawar Tim., Kec. Padang Utara, Kota Padang, Sumatera Barat 25173", organizationEmail: "https://www.who.int/", organizationImage: #imageLiteral(resourceName: "logo3"), organizationName: "WHO", organizationPhone: "Mega (0869-3645-3733-2344)", peopleApplied: 115, requirement: "Adapun kriteria relawan yang kami butuhkan\n- Berjiwa sosial\n- Jujur\n- Supel\n- Dapat dipercaya (amanah)\n- Semangat dalam tujuan membantu sesama\n- Mampu menerapkan praktek \"social distancing\" dalam setiap aktivitas penyaluran bantuan")
+                    DataPreparation(activityImage: #imageLiteral(resourceName: "card3"), activityName: "Berbagi Sembako untuk Driver Online", category: "Donation", contactDetail: "WHO merupakan organisasi dunia yang berfokus pada hal yang mempunyai impact di kesehatan. Untuk mengenal komunitas kami lebih jauh, Anda dapat mengunjungi alawat web diatas.", date: formatter.date(from: "2020/5/29")!, daysLeft: 4, descriptions: "Dalam bagian dari solusi menghadapi krisis Pandemic Covid-19, program ini merupakan program berbagi 5kg beras kepada driver online di Sumatera Barat khususnya untuk driver yang sedang kesulitan untuk memenuhi kebutuhan sehari-hari.", location: "Sumatera Barat", organizationAddress: "Jl. Prof. Dr. Hamka No.2A, Air Tawar Tim., Kec. Padang Utara, Kota Padang, Sumatera Barat 25173", organizationEmail: "https://www.who.int/", organizationImage: #imageLiteral(resourceName: "logo3"), organizationName: "WHO", organizationPhone: "Mega (0869-3645-3733-2344)", peopleApplied: 115, requirement: "Adapun kriteria relawan yang kami butuhkan\n- Berjiwa sosial\n- Jujur\n- Supel\n- Dapat dipercaya (amanah)\n- Semangat dalam tujuan membantu sesama\n- Mampu menerapkan praktek \"social distancing\" dalam setiap aktivitas penyaluran bantuan"),
+                    DataPreparation(activityImage: #imageLiteral(resourceName: "card1"), activityName: "Relawan Siaga Erupsi Gunung Merapi", category: "Disaster", contactDetail: "BNPB (Badan Nasional Penanggulangan Bencana) merupakan Lembaga yang memberikan pedoman dan pengarahan terhadap usaha penanggulangan bencana yang mencakup pencegahan bencana, penanganan keadaan darurat bencana, rehabilitasi, dan rekonstruksi secara adil dan setara", date: formatter.date(from: "2020/8/17")!, daysLeft: 3, descriptions: "udah kembali menjadi fitrahnya bahwa hidup di Indonesia akan dikelilingi oleh gunung berapi aktif. Akhir-akhir ini aktivitas gunang merapi belum menunjukkan untuk mereda. Oleh karena itu kegiatan relawan saat ini memantau aktivitas Gunung Merapi dan memberikan informasi serta menjalankan evakusi kepada warga sekitar apabila terjadi erupsi.", location: "DIY Yogyakarta", organizationAddress: "Graha BNPB - Jl. Pramuka Kav.38 Jakarta Timur 13120", organizationEmail: "contact@bnpb.go.id", organizationImage: #imageLiteral(resourceName: "logo1"), organizationName: "BNPB", organizationPhone: "Pusdalop BNPB (+62 21 29827444)", peopleApplied: 89, requirement: "Requirement :\n- Telah berumur lebih dari 18 tahun\n- Sehat secara fisik dan mental\n- Tidak mudah menyerah\n- Siap untuk berkontribusi lebih\n- Memahami penggunaan alat perlindungan diri\n- Memahami skenario evakuasi jika terjadi erupsi"),
+                    DataPreparation(activityImage: #imageLiteral(resourceName: "card6"), activityName: "Donasi Masker & Gloves", category: "COVID-19", contactDetail: "Apple Peduli merupakan NGO yang bergerak di bidang sosial dan kesehatan. Concern saat ini adalah untuk memenuhi perlengkapan tenaga medis antara lain masker, APD, sarung tangan, kacamata, dll. Untuk disalurkan ke RS yang sedang kekurangan perlengkapan tenaga medis.", date: formatter.date(from: "2020/5/18")!, daysLeft: 4, descriptions: "Yuk #BerjuangDariRumah hadapi Corona dengan ikutan donasi masker dan sarung tangan untuk Rumah Sakit rujukan yang sedang kesulitan mendapatkan masker dan sarung tangan untuk menangani pasien positif covid-19. Ini adalah kesempatan kamu bersolidaritas untuk bangsa ini dengan cara dirumah aja dan membantu tim medis untuk tetap terjaga dari Covid-19. #Berjuangdarirumah #hadapicorona", location: "Jakarta Selatan", organizationAddress: "Jl. Kemang Raya No.10, RT.9/RW.1, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan 12730", organizationEmail: "contact@applepeduli.id", organizationImage: #imageLiteral(resourceName: "logo6"), organizationName: "Apple Peduli", organizationPhone: "(+62 5194 8414 944)", peopleApplied: 47, requirement: "Requirement :\n- Berjiwa sosial\n- Berdonasi seikhlasnya"),
+                    DataPreparation(activityImage: #imageLiteral(resourceName: "card2"), activityName: "Kado untuk Anak Jalanan", category: "Children", contactDetail: "Sahabat Anak merupakan NGO yang bergerak di bidang sosial kemanusiaan. Concern utamanya tertuju pada anak jalanan dan anak yatim piatu. Melihat semakin banyaknya anak jalanan di Kota Kendari khususnya di seputaran kawasan pusat perekonomian seperti pasar ataupun pertokoan yang bekerja pada saat saat sekolah, dimana mereka seharusnya mendapatkan pendidikan yang layak, mendapatkan hak untuk bermain, dan hak-hak anak lainnya tidak diperoleh, namun karena kondisi ekonomi yang tidak memungkinkan maka memaksa mereka untuk memenuhi kebutuhan diri sendiri dan keluarganya. Hal inilah yang memotivasi kami untuk menghimpun dan mewadahi mereka.", date: formatter.date(from: "2020/6/9")!, daysLeft: 7, descriptions: "Kado untuk anak jalanan merupakan program rutin setiap 3 bulan untuk memberikan kado kepada anak jalanan yang telah kami himpun. Saat ini Sahabat Anak telah menghimpun kurang lebih 50 anak jalanan. Kami ingin memberikan rasa keceriaan kepada anak-anak kami ditengah wabah covid-19 dengan memberikan kado surprise untuk mereka.", location: "Jakarta Barat", organizationAddress: "Jl. Kemang Raya No.10, RT.9/RW.1, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan 12730", organizationEmail: "contact@sahabatanak.id", organizationImage: #imageLiteral(resourceName: "logo2"), organizationName: "ahabat Anak", organizationPhone: "(+62 2129 8274 944)", peopleApplied: 56, requirement: "Requirement :\n- Berjiwa sosial\n- Memberikan kado yang dibungkus rapi dengan harga minimal 20.000 rupiah\n- Semangat dalam tujuan membantu sesama\n- Mampu menerapkan praktek \"social distancing\" dalam setiap aktivitas memberikan kado")
                 ]
                 
                 for index in 0..<dataArray.count {
@@ -208,5 +212,17 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         } catch {
             print("Error fetching data from contex, \(error)")
         }
+    }
+    
+    //MARK: - Search
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let predicate = NSPredicate(format: "activityName CONTAINS[cd] %@", searchBar.text!)
+        loadData(predicate: predicate)
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        loadData()
     }
 }

@@ -47,12 +47,13 @@ class JourneyDetailViewController: UIViewController {
     
     
     @IBAction func detailPressed(_ sender: UIButton) {
-        
+        performSegue(withIdentifier: "journeyToDetail", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let destinationVC = segue.destination as! ActivityViewController
+        destinationVC.data = journeyDetail?.infoDetail
     
     }
     

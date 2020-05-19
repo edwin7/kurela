@@ -305,7 +305,7 @@
                                                     <rect key="frame" x="30" y="0.0" width="354" height="117"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wSn-f7-2fZ">
-                                                            <rect key="frame" x="329" y="0.5" width="25" height="25"/>
+                                                            <rect key="frame" x="331" y="0.5" width="25" height="25"/>
                                                             <color key="tintColor" red="0.0023181964640000001" green="0.70986419919999999" blue="0.86482656000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="25" id="Cee-Ln-eKq"/>
@@ -313,7 +313,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berbagi Sembako untuk Driver Online" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igc-ez-5Ku">
-                                                            <rect key="frame" x="0.0" y="5" width="318" height="67"/>
+                                                            <rect key="frame" x="0.0" y="5" width="320" height="67"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="67" id="QAX-ET-zO0"/>
                                                             </constraints>
@@ -348,7 +348,12 @@
                                                                 <constraint firstAttribute="height" constant="35" id="H3F-n3-Wvk"/>
                                                             </constraints>
                                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <state key="normal" title="Apply"/>
+                                                            <state key="normal" title="Apply">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <connections>
+                                                                <action selector="applyButtonPressed:" destination="9fw-EA-DIW" eventType="touchUpInside" id="Ur0-fY-mWs"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -566,14 +571,16 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="GdX-wE-kvc"/>
                     <connections>
+                        <outlet property="activityImage" destination="ntx-1R-0wV" id="onU-zi-DtY"/>
                         <outlet property="activityTableView" destination="D8C-QU-oLk" id="5Ve-MC-G4T"/>
                         <outlet property="backButton" destination="H6Z-Ae-AGm" id="OTc-dI-kjb"/>
+                        <outlet property="organizationImage" destination="aZa-uY-1HQ" id="VGq-6Q-dc0"/>
                         <outlet property="organizationImageView" destination="aZa-uY-1HQ" id="DY3-BH-upc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S8r-fW-Qss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3214.4927536231885" y="-563.16964285714278"/>
+            <point key="canvasLocation" x="4130" y="-563"/>
         </scene>
         <!--Journey-->
         <scene sceneID="rlg-dE-0re">
@@ -1167,6 +1174,7 @@
                         <outlet property="threeFourView" destination="tcb-98-S6L" id="5S2-Bi-ZPz"/>
                         <outlet property="titleLabel" destination="AqZ-iF-nsB" id="CsE-KF-pgJ"/>
                         <outlet property="twoThreeView" destination="C1f-p0-2H2" id="5Kt-4Q-RmC"/>
+                        <segue destination="9fw-EA-DIW" kind="show" identifier="journeyToDetail" id="BKL-jU-nk1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hyo-yk-Whx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1931,6 +1939,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="F5H-SA-d0c">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="AppColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1965,11 +1974,14 @@
             <point key="canvasLocation" x="1483" y="836"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BKL-jU-nk1"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="applied" width="21" height="19"/>
-        <image name="calendar" width="19" height="21"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar" width="19" height="21"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="card3" width="364" height="202"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
