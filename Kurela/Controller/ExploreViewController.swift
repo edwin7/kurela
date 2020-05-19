@@ -24,7 +24,7 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
     let logo: [UIImage] = [UIImage(named: "logo1.png")!,UIImage(named: "logo2.png")!,UIImage(named: "logo3.png")!,UIImage(named: "logo4.png")!,UIImage(named: "logo5.png")!,UIImage(named: "logo6.png")!,]
     
     //content in category collection view
-    let icon: [UIImage] = [UIImage(named: "category1.png")!,UIImage(named: "category3.png")!,UIImage(named: "category2.png")!,UIImage(named: "category4.png")!,UIImage(named: "category5.png")!,UIImage(named: "category6.png")!,UIImage(named: "category7.png")!,UIImage(named: "category8.png")!]
+    let icon: [UIImage] = [UIImage(named: "category1.png")!,UIImage(named: "category2.png")!,UIImage(named: "category3.png")!,UIImage(named: "category4.png")!,UIImage(named: "category5.png")!,UIImage(named: "category6.png")!,UIImage(named: "category7.png")!,UIImage(named: "category8.png")!]
     let category: [String] = ["Highlight", "COVID-19", "Children", "Education", "Disablity", "Disaster", "Donation", "On-Site"]
 
     
