@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+
 
 class ActivityViewController: UIViewController {
 
@@ -32,6 +34,9 @@ class ActivityViewController: UIViewController {
         self.navigationController?.popViewController(animated:true)
     }
 
+    @IBAction func playVideoButton(_ sender: UIButton) {
+        playVideo()
+    }
 }
 
 
@@ -146,6 +151,26 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
                 
         return cell
 
+    }
+    
+    func playVideo() {
+        
+        guard let url = URL(string: "https://assets.mixkit.co/videos/preview/mixkit-daytime-city-traffic-aerial-view-56-large.mp4") else {
+            return
+        }
+        // Create an AVPlayer, passing it the HTTP Live Streaming URL.
+        let player = AVPlayer(url: url)
+
+        // Create a new AVPlayerViewController and pass it a reference to the player.
+        let controller = AVPlayerViewController()
+        controller.player = player
+
+        // Modally present the player and call the player's play() method when complete.
+        present(controller, animated: true) {
+            player.play()
+        }
+        
+        
     }
     
     

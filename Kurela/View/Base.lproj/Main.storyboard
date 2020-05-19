@@ -215,6 +215,17 @@
                                                 <action selector="backButtonPressed:" destination="9fw-EA-DIW" eventType="touchUpInside" id="BIa-qz-Jb7"/>
                                             </connections>
                                         </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-fW-7yk">
+                                            <rect key="frame" x="180" y="33" width="54" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                            <state key="normal" title="I" image="play.circle" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="playVideoButton:" destination="9fw-EA-DIW" eventType="touchUpInside" id="W7U-WV-WYJ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
@@ -229,6 +240,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRK-hS-pzi" userLabel="Header View">
                                                     <rect key="frame" x="30" y="0.0" width="354" height="117"/>
                                                     <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wSn-f7-2fZ">
+                                                            <rect key="frame" x="331" y="0.5" width="25" height="25"/>
+                                                            <color key="tintColor" red="0.0023181964640000001" green="0.70986419919999999" blue="0.86482656000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="25" id="Cee-Ln-eKq"/>
+                                                                <constraint firstAttribute="height" constant="26" id="aC0-ze-cj7"/>
+                                                            </constraints>
+                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berbagi Sembako untuk Driver Online" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igc-ez-5Ku">
                                                             <rect key="frame" x="0.0" y="5" width="320" height="67"/>
                                                             <constraints>
@@ -277,8 +296,11 @@
                                                         <constraint firstAttribute="bottom" secondItem="UjK-S8-apq" secondAttribute="bottom" constant="28" id="NOS-X5-gPE"/>
                                                         <constraint firstAttribute="bottom" secondItem="K30-xA-Pd6" secondAttribute="bottom" constant="20" id="RSa-xS-avz"/>
                                                         <constraint firstAttribute="trailing" secondItem="igc-ez-5Ku" secondAttribute="trailing" constant="34" id="U5v-Td-UUE"/>
+                                                        <constraint firstItem="wSn-f7-2fZ" firstAttribute="top" secondItem="tRK-hS-pzi" secondAttribute="top" id="UcL-O5-K2j"/>
+                                                        <constraint firstItem="wSn-f7-2fZ" firstAttribute="leading" secondItem="igc-ez-5Ku" secondAttribute="trailing" constant="11" id="kcm-fX-JTx"/>
                                                         <constraint firstItem="igc-ez-5Ku" firstAttribute="leading" secondItem="tRK-hS-pzi" secondAttribute="leading" id="lhW-vi-48G"/>
                                                         <constraint firstItem="UjK-S8-apq" firstAttribute="top" secondItem="igc-ez-5Ku" secondAttribute="bottom" constant="1" id="mhj-ce-vPz"/>
+                                                        <constraint firstAttribute="trailing" secondItem="wSn-f7-2fZ" secondAttribute="trailing" id="nAo-kJ-mZB"/>
                                                         <constraint firstItem="lUP-sl-cJ8" firstAttribute="leading" secondItem="tRK-hS-pzi" secondAttribute="leading" id="y1L-2S-4yI"/>
                                                         <constraint firstItem="K30-xA-Pd6" firstAttribute="leading" secondItem="UjK-S8-apq" secondAttribute="trailing" constant="11" id="yQR-p1-7fN"/>
                                                     </constraints>
@@ -617,6 +639,7 @@
         <image name="book.fill" catalog="system" width="128" height="100"/>
         <image name="calendar" width="19" height="21"/>
         <image name="card3" width="1092" height="606"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="duedate" width="22" height="20"/>
         <image name="iconactive1" width="50" height="50"/>
@@ -625,6 +648,7 @@
         <image name="location" width="13" height="20"/>
         <image name="logo2" width="120" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="play.circle" catalog="system" width="128" height="121"/>
         <image name="safari.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
