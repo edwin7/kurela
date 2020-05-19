@@ -42,8 +42,8 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
        //navigationController?.navigationBar.barStyle = .black
        // navigationController?.navigationBar.isTranslucent = false
         navigationItem.largeTitleDisplayMode = .always
-        edgesForExtendedLayout = []
-        navigationController?.navigationBar.isTranslucent = false
+        //edgesForExtendedLayout = []
+        //navigationController?.navigationBar.isTranslucent = false
         
         saveFirstData()
         loadData()
