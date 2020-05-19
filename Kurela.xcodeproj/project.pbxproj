@@ -11,6 +11,7 @@
 		8C318699246C42E100F87D4D /* ExploreCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C318697246C42E100F87D4D /* ExploreCardCell.xib */; };
 		8C31869C246C526F00F87D4D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31869A246C526F00F87D4D /* CategoryCell.swift */; };
 		8C31869D246C526F00F87D4D /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C31869B246C526F00F87D4D /* CategoryCell.xib */; };
+		E6CEC8E924735B14009BCE31 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CEC8E824735B14009BCE31 /* ProfileViewController.swift */; };
 		BA41509E247039B20062B613 /* ActivityHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41509D247039B20062B613 /* ActivityHeaderTableViewCell.swift */; };
 		BA4150A1247051C50062B613 /* ActivityInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4150A0247051C50062B613 /* ActivityInformationTableViewCell.swift */; };
 		BA882582246FEE09008409B2 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA882581246FEE09008409B2 /* ActivityViewController.swift */; };
@@ -27,6 +28,7 @@
 		8C318697246C42E100F87D4D /* ExploreCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCardCell.xib; sourceTree = "<group>"; };
 		8C31869A246C526F00F87D4D /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8C31869B246C526F00F87D4D /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		E6CEC8E824735B14009BCE31 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BA41509D247039B20062B613 /* ActivityHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		BA4150A0247051C50062B613 /* ActivityInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInformationTableViewCell.swift; sourceTree = "<group>"; };
 		BA882581246FEE09008409B2 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */,
+				E6CEC8E824735B14009BCE31 /* ProfileViewController.swift */,
 				BA882581246FEE09008409B2 /* ActivityViewController.swift */,
 			);
 			path = Controller;
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CEC8E924735B14009BCE31 /* ProfileViewController.swift in Sources */,
 				ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */,
 				BA882582246FEE09008409B2 /* ActivityViewController.swift in Sources */,
 				8C318698246C42E100F87D4D /* ExploreCardCell.swift in Sources */,
