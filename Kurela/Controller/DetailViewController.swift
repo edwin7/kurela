@@ -11,6 +11,7 @@ import CoreData
 
 class DetailViewController: UIViewController {
 
+
     @IBOutlet weak var applyButton: UIButton!
     @IBOutlet weak var organizationImage: UIImageView!
     @IBOutlet weak var activityNameLabel: UILabel!
@@ -70,6 +71,9 @@ class DetailViewController: UIViewController {
         
         let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+//        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
+//            tabBarController.selectedIndex = indexToWhichYouWantToMove;
+//        }))
 
         self.present(alert, animated: true)
     }

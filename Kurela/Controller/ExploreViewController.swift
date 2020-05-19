@@ -21,6 +21,7 @@ class ExploreViewController: UIViewController{
         Card(infoName: "Judul Berita 2", location: "Jakarta"),
         Card(infoName: "Judul Berita 3", location: "Jakarta")
     ]
+    
     var selectedIndex: Int?
     var infoArray = [VolunteeringInfo]()
     

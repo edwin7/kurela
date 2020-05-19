@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		EC3E32FC247128CB00CF07A0 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E32FB247128CB00CF07A0 /* ProfileViewController.swift */; };
 		EC3E32FE247131FF00CF07A0 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3E32FD247131FF00CF07A0 /* GeneralViewController.swift */; };
+		EC9A8279247399AB007DF9B1 /* JourneyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A8278247399AA007DF9B1 /* JourneyDetailViewController.swift */; };
 		ECA906C8246D8E2F003FADED /* ExploreCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA906C6246D8E2F003FADED /* ExploreCardCell.swift */; };
 		ECA906C9246D8E2F003FADED /* ExploreCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECA906C7246D8E2F003FADED /* ExploreCardCell.xib */; };
 		ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861A2464F7430067AE70 /* AppDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		EC3E32FB247128CB00CF07A0 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EC3E32FD247131FF00CF07A0 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		EC9A8278247399AA007DF9B1 /* JourneyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyDetailViewController.swift; sourceTree = "<group>"; };
 		ECA906C6246D8E2F003FADED /* ExploreCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCardCell.swift; sourceTree = "<group>"; };
 		ECA906C7246D8E2F003FADED /* ExploreCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCardCell.xib; sourceTree = "<group>"; };
 		ECBA86172464F7430067AE70 /* Kurela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurela.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +122,7 @@
 				ECDFB06C246FDE8F00D4558B /* DetailViewController.swift */,
 				EC3E32FB247128CB00CF07A0 /* ProfileViewController.swift */,
 				EC3E32FD247131FF00CF07A0 /* GeneralViewController.swift */,
+				EC9A8278247399AA007DF9B1 /* JourneyDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */,
 				ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */,
 				EC3E32FC247128CB00CF07A0 /* ProfileViewController.swift in Sources */,
+				EC9A8279247399AB007DF9B1 /* JourneyDetailViewController.swift in Sources */,
 				ECBA86362464FE4A0067AE70 /* Card.swift in Sources */,
 				ECDFB06D246FDE8F00D4558B /* DetailViewController.swift in Sources */,
 				ECDFB067246FA8FA00D4558B /* DataPreparation.swift in Sources */,

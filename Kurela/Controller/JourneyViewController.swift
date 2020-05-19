@@ -12,12 +12,15 @@ import CoreData
 class JourneyViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var emptyView: UIView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var journeyArray = [UserJourney]()
     
+    var selectedIndex: Int?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        tableView.delegate = self
         loadData()
     }
     
@@ -49,11 +52,17 @@ class JourneyViewController: UIViewController {
 
 extension JourneyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        emptyView.isHidden = true
+        if journeyArray.count == 0 {
+            emptyView.isHidden = false
+        }
         return journeyArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JourneyReusableCell", for: indexPath) as! JourneyCardCell
+        
+        print(journeyArray[indexPath.row].infoDetail?.activityName)
         
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, d MMM yyyy"
@@ -73,5 +82,19 @@ extension JourneyViewController: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension JourneyViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        selectedIndex = indexPath.row
+        performSegue(withIdentifier: "goToJourneyDetail", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! JourneyDetailViewController
+        if let indexPath = selectedIndex {
+            destinationVC.journeyDetail = journeyArray[indexPath]
+        }
+    }
 }
