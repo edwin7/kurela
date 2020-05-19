@@ -1242,19 +1242,6 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqz-uK-UlX">
-                                <rect key="frame" x="157" y="570" width="100" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.70980392160000005" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Back"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="4oQ-jm-4yv"/>
@@ -1362,20 +1349,19 @@
     </scenes>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="journey" width="25" height="20"/>
         <image name="applied" width="21" height="19"/>
-        <image name="book.fill" catalog="system" width="128" height="100"/>
-        <image name="camera" catalog="system" width="128" height="96"/>
-        <image name="help" width="21" height="24"/>
         <image name="calendar" width="19" height="21"/>
-        <image name="card3" width="1092" height="606"/>
+        <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="card3" width="364" height="202"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="duedate" width="22" height="20"/>
+        <image name="help" width="21" height="24"/>
         <image name="iconactive1" width="50" height="50"/>
         <image name="iconinactive2" width="50" height="50"/>
         <image name="iconinactive3" width="50" height="50"/>
+        <image name="journey" width="25" height="20"/>
         <image name="location" width="13" height="20"/>
-        <image name="logo2" width="120" height="121"/>
+        <image name="logo2" width="40" height="40"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="profileinactive" width="50" height="50"/>
         <image name="profileinactive2" width="50" height="50"/>
