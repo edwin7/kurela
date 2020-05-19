@@ -16,6 +16,8 @@ class ActivityViewController: UIViewController {
     
     var activityTitle: String = ""
     var information_text: String = ""
+    
+    var data: VolunteeringInfo?
 
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var organizationImageView: UIImageView!
@@ -28,6 +30,7 @@ class ActivityViewController: UIViewController {
         
         backButton.layer.cornerRadius = 13
         backButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {

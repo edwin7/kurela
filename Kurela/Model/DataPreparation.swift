@@ -13,13 +13,16 @@ struct DataPreparation {
     let activityImage: UIImage
     let activityName: String
     let category: String
-    let contact: String
+    let contactDetail: String
     let date: Date
     let daysLeft: Int
     let descriptions: String
     let location: String
+    let organizationAddress: String
+    let organizationEmail: String
     let organizationImage: UIImage
     let organizationName: String
+    let organizationPhone: String
     let peopleApplied: Int
     let requirement: String
 }
