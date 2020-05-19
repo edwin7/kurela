@@ -62,12 +62,10 @@ class DetailViewController: UIViewController {
         newJourney.infoDetail = data
         newJourney.status = 1
         newJourney.applyDate = Date()
-        newJourney.title = data?.activityName
-        newJourney.date = data?.date
-        newJourney.location = data?.location
         saveData()
         applyButton.isEnabled = false
         applyButton.backgroundColor = .gray
+        applyButton.setTitle("Applied", for: .normal)
         
         let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))

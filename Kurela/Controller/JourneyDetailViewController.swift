@@ -42,29 +42,20 @@ class JourneyDetailViewController: UIViewController {
         fourthTabButton.layer.cornerRadius = firstTabButton.frame.height / 2
         detailButton.layer.cornerRadius = 15
         
-        titleLabel.text = journeyDetail?.title
+        titleLabel.text = journeyDetail?.infoDetail?.activityName
     }
     
     
     @IBAction func detailPressed(_ sender: UIButton) {
-        let request: NSFetchRequest<VolunteeringInfo> = VolunteeringInfo.fetchRequest()
-        let predicate = NSPredicate(format: "activityName CONTAINS[cd] %@", journeyDetail!.title!)
-        request.predicate = predicate
-        do {
-            sendParameter = try context.fetch(request)
-            performSegue(withIdentifier: "journeyToDetail", sender: self)
-        } catch {
-            print(error)
-        }
+        performSegue(withIdentifier: "journeyToDetail", sender: self)
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! DetailViewController
-        
-        if let parameter = sendParameter?[0] {
-            destinationVC.data = parameter
-        }
+
+        destinationVC.data = journeyDetail?.infoDetail
+    
     }
     
     @IBAction func tabProgressPressed(_ sender: UIButton) {

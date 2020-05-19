@@ -13,6 +13,7 @@ class JourneyViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
+    @IBOutlet weak var tabView: UIView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var journeyArray = [UserJourney]()
@@ -53,8 +54,10 @@ class JourneyViewController: UIViewController {
 extension JourneyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         emptyView.isHidden = true
+        tabView.isHidden = false
         if journeyArray.count == 0 {
             emptyView.isHidden = false
+            tabView.isHidden = true
         }
         return journeyArray.count
     }
@@ -62,17 +65,15 @@ extension JourneyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "JourneyReusableCell", for: indexPath) as! JourneyCardCell
         
-        print(journeyArray[indexPath.row].infoDetail?.activityName)
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, d MMM yyyy"
         
         let formatter2 = DateFormatter()
         formatter2.dateFormat = "d MMM yyyy"
         
-        cell.titleLabel.text = journeyArray[indexPath.row].title
-        cell.dateLabel.text = formatter.string(from: journeyArray[indexPath.row].date!)
-        cell.locationLabel.text = journeyArray[indexPath.row].location
+        cell.titleLabel.text = journeyArray[indexPath.row].infoDetail?.activityName
+        cell.dateLabel.text = formatter.string(from: journeyArray[indexPath.row].infoDetail!.date!)
+        cell.locationLabel.text = journeyArray[indexPath.row].infoDetail?.location
         if journeyArray[indexPath.row].status == 1 {
             cell.statusLabel.text = "Applied"
             cell.date2Label.text = "Applied on \(formatter2.string(from: journeyArray[indexPath.row].applyDate!))"
