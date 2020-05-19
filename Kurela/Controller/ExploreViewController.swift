@@ -31,6 +31,7 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
+        view.backgroundColor = .white
         navigationItem.largeTitleDisplayMode = .always
         edgesForExtendedLayout = []
         navigationController?.navigationBar.isTranslucent = false
