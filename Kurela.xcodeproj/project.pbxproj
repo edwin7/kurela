@@ -11,6 +11,7 @@
 		8C318699246C42E100F87D4D /* ExploreCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C318697246C42E100F87D4D /* ExploreCardCell.xib */; };
 		8C31869C246C526F00F87D4D /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C31869A246C526F00F87D4D /* CategoryCell.swift */; };
 		8C31869D246C526F00F87D4D /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C31869B246C526F00F87D4D /* CategoryCell.xib */; };
+		E6CEC8E924735B14009BCE31 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6CEC8E824735B14009BCE31 /* ProfileViewController.swift */; };
 		ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861A2464F7430067AE70 /* AppDelegate.swift */; };
 		ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861C2464F7430067AE70 /* SceneDelegate.swift */; };
 		ECBA86222464F7430067AE70 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECBA86202464F7430067AE70 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 		8C318697246C42E100F87D4D /* ExploreCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExploreCardCell.xib; sourceTree = "<group>"; };
 		8C31869A246C526F00F87D4D /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8C31869B246C526F00F87D4D /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		E6CEC8E824735B14009BCE31 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		ECBA86172464F7430067AE70 /* Kurela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurela.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBA861A2464F7430067AE70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECBA861C2464F7430067AE70 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */,
+				E6CEC8E824735B14009BCE31 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6CEC8E924735B14009BCE31 /* ProfileViewController.swift in Sources */,
 				ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */,
 				8C318698246C42E100F87D4D /* ExploreCardCell.swift in Sources */,
 				ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */,
