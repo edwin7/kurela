@@ -9,7 +9,7 @@
 import UIKit
 
 
-class  ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
    
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var cardTableView: UITableView!
@@ -32,6 +32,9 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         setupNavBar()
         view.backgroundColor = .white
+        setupNavBar()
+       //navigationController?.navigationBar.barStyle = .black
+       // navigationController?.navigationBar.isTranslucent = false
         navigationItem.largeTitleDisplayMode = .always
         edgesForExtendedLayout = []
         navigationController?.navigationBar.isTranslucent = false
@@ -49,14 +52,14 @@ class  ExploreViewController: UIViewController, UITableViewDelegate, UITableView
         appearance.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
         
         //change title color
+
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
-        
-        
+      
         //create search bar
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
