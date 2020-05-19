@@ -252,8 +252,12 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         cell.appliedPersonLabel.text = "\(data!.peopleApplied) applied"
         cell.locationEventLabel.text = data?.location
         cell.dayLeftLabel.text = "\(data!.daysLeft) days left"
-        cell.informationTextLabel.text = data?.descriptions
-        
+        cell.descriptionTextLabel.text = data?.descriptions
+        cell.requirementTextLabel.text = data?.requirement
+        cell.phoneLabel.text = data?.organizationPhone
+        cell.emailLabel.text = data?.organizationEmail
+        cell.addressLabel.text = data?.organizationAddress
+
         var tmp = [UserJourney]()
         let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
         let predicate = NSPredicate(format: "infoDetail.activityName MATCHES %@", data!.activityName!)
