@@ -33,7 +33,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         view.backgroundColor = .white
         setupNavBar()
-        navigationController?.navigationBar.barStyle = .black
+       //navigationController?.navigationBar.barStyle = .black
        // navigationController?.navigationBar.isTranslucent = false
         navigationItem.largeTitleDisplayMode = .always
         
@@ -49,13 +49,13 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
+
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.compactAppearance = appearance
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        
-        
+      
         //create search bar
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
