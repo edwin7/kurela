@@ -58,9 +58,9 @@ class ProfileViewController: UIViewController {
         emergencyView.isHidden = false
     }
     
-    func configureView() {
-        <#function body#>
-    }
+//    func configureView() {
+//        <#function body#>
+//    }
 
     //    func configure(picture: UIImage, date: String, title: String, location: String, tags: UIImage, duedate: String, logos: UIImage){
     //        pictureView.image = picture
