@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import AVKit
+import CoreData
+
 
 class ActivityViewController: UIViewController {
 
     @IBOutlet weak var activityTableView: UITableView!
+    @IBOutlet weak var activityImage: UIImageView!
+    @IBOutlet weak var organizationImage: UIImageView!
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var activityTitle: String = ""
     var information_text: String = ""
+    
+    var data: VolunteeringInfo?
 
+    let rightButton : UIButton = UIButton(type: UIButton.ButtonType.custom)
+    
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var organizationImageView: UIImageView!
     
@@ -26,12 +37,44 @@ class ActivityViewController: UIViewController {
         
         backButton.layer.cornerRadius = 13
         backButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+        
+        setData()
     }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated:true)
     }
 
+    @IBAction func playVideoButton(_ sender: UIButton) {
+        playVideo()
+    }
+    @IBAction func applyButtonPressed(_ sender: UIButton) {
+        let newJourney = UserJourney(context: self.context)
+        newJourney.infoDetail = data
+        newJourney.status = 1
+        newJourney.applyDate = Date()
+        saveData()
+        sender.setTitle("Applied", for: .normal)
+        sender.isEnabled = false
+        sender.backgroundColor = .gray
+        
+        rightButton.setTitle("Applied", for: .normal)
+        rightButton.isEnabled = false
+        rightButton.backgroundColor = .gray
+        
+        let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
+        //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
+        //        }))
+        
+        self.present(alert, animated: true)
+    }
+    
+    func setData() {
+        activityImage.image = UIImage(data: data!.activityImage!)
+        organizationImage.image = UIImage(data: data!.organizationImage!)
+    }
 }
 
 
@@ -114,15 +157,75 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         
         navigationItem.hidesBackButton = false
 
-        let rightButton : UIButton = UIButton(type: UIButton.ButtonType.custom)
         rightButton.setTitle("Apply", for: .normal)
         rightButton.titleLabel!.font = .systemFont(ofSize: 14)
         rightButton.frame.size = CGSize(width: 80, height: 30)
         rightButton.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
         rightButton.layer.cornerRadius = 15
+        
+        var tmp = [UserJourney]()
+        let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
+        let predicate = NSPredicate(format: "infoDetail.activityName MATCHES %@", data!.activityName!)
+        request.predicate = predicate
+        do {
+            tmp = try context.fetch(request)
+            if tmp.count != 0 {
+                rightButton.isEnabled = false
+                rightButton.setTitle("Applied", for: .normal)
+                rightButton.backgroundColor = .gray
+            }
+        } catch {
+            print("Error fetching UserJourney, \(error)")
+        }
 
         let customRightBarButtonItem = UIBarButtonItem(customView: rightButton)
         navigationItem.rightBarButtonItem = customRightBarButtonItem
+        
+        rightButton.addTarget(self, action: #selector(pressed), for: .touchUpInside)
+
+    }
+    
+    @objc func pressed(sender: UIButton!) {
+        var tmp = [UserJourney]()
+        let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
+        let predicate = NSPredicate(format: "infoDetail.activityName MATCHES %@", data!.activityName!)
+        request.predicate = predicate
+        do {
+            tmp = try context.fetch(request)
+            if tmp.count == 0 {
+                let newJourney = UserJourney(context: self.context)
+                newJourney.infoDetail = data
+                newJourney.status = 1
+                newJourney.applyDate = Date()
+                saveData()
+                sender.setTitle("Applied", for: .normal)
+                sender.isEnabled = false
+                sender.backgroundColor = .gray
+                
+                let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
+                //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
+                //        }))
+                
+                self.present(alert, animated: true)
+                
+                activityTableView.reloadData()
+            }
+        } catch {
+            print("Error fetching UserJourney, \(error)")
+        }
+        
+        
+         
+    }
+    
+    func saveData() {
+        do {
+            try context.save()
+        } catch {
+            print(error)
+        }
     }
     
  
@@ -141,11 +244,59 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         
         activityTitle = "Berbagi "
 
-        information_text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
-        cell.informationTextLabel.text = information_text
-                
+        cell.activityLabel.text = data?.activityName
+        cell.organizationLabel.text = data?.organizationName
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, d MMM yyyy"
+        cell.dateEventLabel.text = formatter.string(from: data!.date!)
+        cell.appliedPersonLabel.text = "\(data!.peopleApplied) applied"
+        cell.locationEventLabel.text = data?.location
+        cell.dayLeftLabel.text = "\(data!.daysLeft) days left"
+        cell.descriptionTextLabel.text = data?.descriptions
+        cell.requirementTextLabel.text = data?.requirement
+        cell.phoneLabel.text = data?.organizationPhone
+        cell.emailLabel.text = data?.organizationEmail
+        cell.addressLabel.text = data?.organizationAddress
+
+        var tmp = [UserJourney]()
+        let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
+        let predicate = NSPredicate(format: "infoDetail.activityName MATCHES %@", data!.activityName!)
+        request.predicate = predicate
+        do {
+            tmp = try context.fetch(request)
+            if tmp.count != 0 {
+                cell.stateButton.isEnabled = false
+                cell.stateButton.backgroundColor = .gray
+                cell.stateButton.setTitle("Applied", for: .normal)
+            }
+        } catch {
+            print("Error fetching UserJourney, \(error)")
+        }
+        
+        
+        
         return cell
 
+    }
+    
+    func playVideo() {
+        
+        guard let url = URL(string: "https://assets.mixkit.co/videos/preview/mixkit-daytime-city-traffic-aerial-view-56-large.mp4") else {
+            return
+        }
+        // Create an AVPlayer, passing it the HTTP Live Streaming URL.
+        let player = AVPlayer(url: url)
+
+        // Create a new AVPlayerViewController and pass it a reference to the player.
+        let controller = AVPlayerViewController()
+        controller.player = player
+
+        // Modally present the player and call the player's play() method when complete.
+        present(controller, animated: true) {
+            player.play()
+        }
+        
+        
     }
     
     

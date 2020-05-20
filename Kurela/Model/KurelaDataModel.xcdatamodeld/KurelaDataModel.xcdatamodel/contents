@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="UserJourney" representedClassName="UserJourney" syncable="YES" codeGenerationType="class">
+        <attribute name="applayDetail" optional="YES" attributeType="String"/>
+        <attribute name="applyDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="inreviewDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="inreviewDetail" optional="YES" attributeType="String"/>
+        <attribute name="interviewDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="interviewDetail" optional="YES" attributeType="String"/>
+        <attribute name="resultDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="resultDetail" optional="YES" attributeType="String"/>
+        <attribute name="status" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="infoDetail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VolunteeringInfo" inverseName="userJourneys" inverseEntity="VolunteeringInfo"/>
+    </entity>
+    <entity name="UsersProfile" representedClassName="UsersProfile" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="allergy" optional="YES" attributeType="String"/>
+        <attribute name="birthDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="bloodType" optional="YES" attributeType="String"/>
+        <attribute name="email" attributeType="String"/>
+        <attribute name="genderIsMale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="insurance" optional="YES" attributeType="String"/>
+        <attribute name="medicalSheet" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="password" attributeType="String"/>
+        <attribute name="phone" attributeType="String"/>
+        <attribute name="usersPhoto" optional="YES" attributeType="Binary"/>
+        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="VolunteeringInfo" representedClassName="VolunteeringInfo" syncable="YES" codeGenerationType="class">
+        <attribute name="activityImage" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="activityName" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="contactDetail" optional="YES" attributeType="String"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="daysLeft" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="descriptions" attributeType="String"/>
+        <attribute name="location" attributeType="String"/>
+        <attribute name="organizationAddress" attributeType="String"/>
+        <attribute name="organizationEmail" attributeType="String"/>
+        <attribute name="organizationImage" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="organizationName" attributeType="String"/>
+        <attribute name="organizationPhone" attributeType="String"/>
+        <attribute name="peopleApplied" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="requirement" attributeType="String"/>
+        <relationship name="userJourneys" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserJourney" inverseName="infoDetail" inverseEntity="UserJourney"/>
+    </entity>
+    <elements>
+        <element name="UserJourney" positionX="-243" positionY="171" width="128" height="193"/>
+        <element name="UsersProfile" positionX="-54" positionY="63" width="128" height="253"/>
+        <element name="VolunteeringInfo" positionX="-461.12890625" positionY="75.9375" width="128" height="283"/>
+    </elements>
+</model>
