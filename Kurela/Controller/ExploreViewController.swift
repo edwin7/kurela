@@ -44,9 +44,9 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         navigationItem.largeTitleDisplayMode = .always
         //edgesForExtendedLayout = []
         //navigationController?.navigationBar.isTranslucent = false
-        
         saveFirstData()
         loadData()
+        categoryCollectionView.delegate = self
     }
  
     
@@ -142,6 +142,14 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
            return cell
        }
     
+    //Select collection view cell
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+            print("Selected Category: \(category[indexPath.row])")
+        
+       }
+       
+    
     //MARK: - Core Data
     
     func loadData(predicate: NSPredicate? = nil) {
@@ -226,4 +234,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         loadData()
     }
+
 }
+
+    
