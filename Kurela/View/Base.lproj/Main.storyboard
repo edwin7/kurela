@@ -183,8 +183,8 @@
                             <constraint firstItem="oJ6-5h-9YI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="EbE-ZO-Xei"/>
                             <constraint firstItem="QCg-E6-7iv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="R4Y-DZ-hmM"/>
                             <constraint firstItem="QCg-E6-7iv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WsY-S7-F3A"/>
-                            <constraint firstAttribute="bottom" secondItem="oJ6-5h-9YI" secondAttribute="bottom" id="brp-6W-Gj6"/>
                             <constraint firstItem="QCg-E6-7iv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="v1u-6T-yd7"/>
+                            <constraint firstItem="oJ6-5h-9YI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="83" id="vsl-Oi-hRi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -2077,8 +2077,8 @@
     <resources>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar" width="19" height="21"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="card3" width="364" height="202"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
