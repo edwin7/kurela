@@ -209,7 +209,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
 
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
 
-        configureRightButton()q
+        configureRightButton()
     }
     
     func configureNavBarABeforeScroll() {
