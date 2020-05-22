@@ -14,8 +14,12 @@ import CoreData
 class ActivityViewController: UIViewController {
 
     @IBOutlet weak var activityTableView: UITableView!
-    @IBOutlet weak var activityImage: UIImageView!
     @IBOutlet weak var organizationImage: UIImageView!
+    
+    
+    @IBOutlet weak var activityImage: UIImageView!
+    @IBOutlet weak var headerView: UIView!
+    
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -23,11 +27,23 @@ class ActivityViewController: UIViewController {
     var information_text: String = ""
     
     var data: VolunteeringInfo?
+    
+    var mediaImages = [#imageLiteral(resourceName: "a"), #imageLiteral(resourceName: "card2"), #imageLiteral(resourceName: "card3")]
 
     let rightButton : UIButton = UIButton(type: UIButton.ButtonType.custom)
     
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var organizationImageView: UIImageView!
+    
+    @IBOutlet weak var mediaCollectionView: UICollectionView!
+    
+    @IBOutlet weak var mediaPageControl: UIPageControl!
+    
+    
+    var timer = Timer()
+    var counter = 0
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +51,36 @@ class ActivityViewController: UIViewController {
         activityTableView.delegate = self
         activityTableView.dataSource = self
         
+        mediaCollectionView.delegate = self
+        mediaCollectionView.dataSource = self
+        
         backButton.layer.cornerRadius = 13
         backButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
+        mediaPageControl.numberOfPages = mediaImages.count
+        mediaPageControl.currentPage = 0
+        
+        //TImer to change image automatically
+//        DispatchQueue.main.async {
+//            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
+//        }
+//
         setData()
+        
     }
+    
+//    @objc func changeImage() {
+//
+//        let indexPath = IndexPath.init(item: counter, section: 0)
+//
+//        self.mediaCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+//
+//        if counter < mediaImages.count {
+//            counter += 1
+//        } else {
+//            counter = 0
+//        }
+//    }
     
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated:true)
@@ -74,9 +115,52 @@ class ActivityViewController: UIViewController {
     func setData() {
         activityImage.image = UIImage(data: data!.activityImage!)
         organizationImage.image = UIImage(data: data!.organizationImage!)
+        activityImage.contentMode = .scaleAspectFit
     }
+    
 }
 
+extension ActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return mediaImages.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = mediaCollectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath)
+        
+        if let vc = cell.viewWithTag(111) as? UIImageView {
+            vc.image = mediaImages[indexPath.row]
+        } else if let ab = cell.viewWithTag(222) as? UIPageControl {
+            ab.currentPage = indexPath.row
+        }
+        
+        return cell
+    }
+    
+}
+
+extension ActivityViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let size = collectionView.frame.size
+ 
+        return CGSize(width: size.width, height: size.height)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+}
 
 extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -125,7 +209,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
 
         self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
 
-        configureRightButton()
+        configureRightButton()q
     }
     
     func configureNavBarABeforeScroll() {

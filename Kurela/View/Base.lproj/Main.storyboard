@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Me0-9r-v6O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Me0-9r-v6O">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -253,16 +253,53 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <inset key="separatorInset" minX="24" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="cnH-z6-Wjl">
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="cnH-z6-Wjl" userLabel="Header View">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tE7-9I-Dja">
-                                            <rect key="frame" x="156" y="22" width="102" height="102"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </view>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card3" translatesAutoresizingMaskIntoConstraints="NO" id="ntx-1R-0wV">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cOb-sc-t7W">
+                                            <rect key="frame" x="0.0" y="-91" width="414" height="238"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="j8V-QI-mB8">
+                                                <size key="itemSize" width="414" height="238"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="mediaCell" id="GXf-qI-0jr" customClass="ActivityMediaCollectionViewCell" customModule="Kurela" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bP2-fM-Ucj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="111" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="a" translatesAutoresizingMaskIntoConstraints="NO" id="bpK-MF-ROD">
+                                                                <rect key="frame" x="0.0" y="0.0" width="414" height="238"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-fW-7yk">
+                                                                <rect key="frame" x="182" y="95" width="49" height="48"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                                <state key="normal" image="play.circle" catalog="system">
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="playVideoButton:" destination="9fw-EA-DIW" eventType="touchUpInside" id="W7U-WV-WYJ"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </collectionViewCellContentView>
+                                                    <size key="customSize" width="414" height="238"/>
+                                                    <connections>
+                                                        <outlet property="mediaImageView" destination="bpK-MF-ROD" id="EDW-gB-lHY"/>
+                                                        <outlet property="playMediaButton" destination="sjK-fW-7yk" id="7dc-Sh-1Aa"/>
+                                                    </connections>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
+                                        <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="card3" translatesAutoresizingMaskIntoConstraints="NO" id="ntx-1R-0wV">
                                             <rect key="frame" x="0.0" y="-91" width="414" height="237"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -279,19 +316,20 @@
                                                 <action selector="backButtonPressed:" destination="9fw-EA-DIW" eventType="touchUpInside" id="BIa-qz-Jb7"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjK-fW-7yk">
-                                            <rect key="frame" x="183" y="8" width="49" height="48"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
-                                            <state key="normal" image="play.circle" catalog="system">
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="playVideoButton:" destination="9fw-EA-DIW" eventType="touchUpInside" id="W7U-WV-WYJ"/>
-                                            </connections>
-                                        </button>
+                                        <pageControl opaque="NO" tag="222" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="bET-jZ-HOH">
+                                            <rect key="frame" x="0.0" y="110" width="414" height="37"/>
+                                        </pageControl>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="cOb-sc-t7W" secondAttribute="bottom" id="8kI-FR-lAo"/>
+                                        <constraint firstItem="cOb-sc-t7W" firstAttribute="top" secondItem="cnH-z6-Wjl" secondAttribute="top" constant="-91" id="9Zz-N0-zUp"/>
+                                        <constraint firstItem="bET-jZ-HOH" firstAttribute="trailing" secondItem="cOb-sc-t7W" secondAttribute="trailing" id="I4h-ot-BDY"/>
+                                        <constraint firstItem="bET-jZ-HOH" firstAttribute="bottom" secondItem="cOb-sc-t7W" secondAttribute="bottom" id="Itt-l3-wUC"/>
+                                        <constraint firstItem="bET-jZ-HOH" firstAttribute="leading" secondItem="cOb-sc-t7W" secondAttribute="leading" id="KsT-WP-0kJ"/>
+                                        <constraint firstItem="cOb-sc-t7W" firstAttribute="leading" secondItem="cnH-z6-Wjl" secondAttribute="leading" id="fFX-ic-FZE"/>
+                                        <constraint firstAttribute="trailing" secondItem="cOb-sc-t7W" secondAttribute="trailing" id="lIf-L1-p3B"/>
+                                    </constraints>
                                 </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" indentationWidth="10" reuseIdentifier="activityCell" rowHeight="761" id="g4I-MB-agk" customClass="ActivityHeaderTableViewCell" customModule="Kurela" customModuleProvider="target">
@@ -712,6 +750,9 @@
                         <outlet property="activityImage" destination="ntx-1R-0wV" id="onU-zi-DtY"/>
                         <outlet property="activityTableView" destination="D8C-QU-oLk" id="5Ve-MC-G4T"/>
                         <outlet property="backButton" destination="H6Z-Ae-AGm" id="OTc-dI-kjb"/>
+                        <outlet property="headerView" destination="cnH-z6-Wjl" id="uyx-OZ-lJa"/>
+                        <outlet property="mediaCollectionView" destination="cOb-sc-t7W" id="UpM-Ep-GNo"/>
+                        <outlet property="mediaPageControl" destination="bET-jZ-HOH" id="LxB-Ay-FQm"/>
                         <outlet property="organizationImage" destination="aZa-uY-1HQ" id="VGq-6Q-dc0"/>
                         <outlet property="organizationImageView" destination="aZa-uY-1HQ" id="DY3-BH-upc"/>
                     </connections>
@@ -2117,10 +2158,11 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="a" width="2500" height="1875"/>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
-        <image name="calendar" width="19" height="21"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar" width="19" height="21"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="card3" width="364" height="202"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
