@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -163,55 +162,14 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="K3j-WD-zGt"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="2" id="PlU-uD-OWz">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="PlU-uD-OWz">
                                     <size key="itemSize" width="80" height="80"/>
                                     <size key="estimatedItemSize" width="90" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="categoriesCell" id="DiI-HC-Mze" customClass="CategoryCell" customModule="Kurela" customModuleProvider="target">
-                                        <rect key="frame" x="15" y="0.0" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Vi-tD-wLQ" customClass="CategoryCell" customModule="Kurela" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0Q-Fk-zWH">
-                                                    <rect key="frame" x="0.0" y="59" width="80" height="16"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="80" id="7DC-Ap-ezq"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iBe-sj-edY">
-                                                    <rect key="frame" x="13" y="0.0" width="55" height="55"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="55" id="Fge-0y-28v"/>
-                                                        <constraint firstAttribute="width" constant="55" id="dOf-K5-OsA"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="iBe-sj-edY" firstAttribute="top" secondItem="2Vi-tD-wLQ" secondAttribute="top" id="0iA-Ay-JS5"/>
-                                                <constraint firstAttribute="trailing" secondItem="iBe-sj-edY" secondAttribute="trailing" constant="12" id="OSN-ga-Gtm"/>
-                                                <constraint firstItem="iBe-sj-edY" firstAttribute="leading" secondItem="2Vi-tD-wLQ" secondAttribute="leading" constant="13" id="Re0-BC-HiS"/>
-                                                <constraint firstAttribute="trailing" secondItem="j0Q-Fk-zWH" secondAttribute="trailing" id="UoR-5H-tiG"/>
-                                                <constraint firstItem="j0Q-Fk-zWH" firstAttribute="leading" secondItem="2Vi-tD-wLQ" secondAttribute="leading" id="bvf-Af-fhV"/>
-                                                <constraint firstItem="j0Q-Fk-zWH" firstAttribute="top" secondItem="iBe-sj-edY" secondAttribute="bottom" constant="4" id="yFj-Ct-fHl"/>
-                                                <constraint firstAttribute="bottom" secondItem="j0Q-Fk-zWH" secondAttribute="bottom" constant="5" id="yqQ-Mz-SBZ"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="80" height="80"/>
-                                        <connections>
-                                            <outlet property="categoryIcon" destination="iBe-sj-edY" id="esF-zN-qrT"/>
-                                            <outlet property="categoryLabel" destination="j0Q-Fk-zWH" id="bnd-Jw-BiJ"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
+                                <cells/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="iBt-1t-zTv"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="efz-mq-d37"/>
