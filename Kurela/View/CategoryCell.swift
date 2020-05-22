@@ -16,11 +16,19 @@ class CategoryCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+    
     }
 
     
-    func categorySet(icons: UIImage, categoryname: String) {
+    func categoryDeselect(icons: UIImage, categoryname: String) {
         categoryIcon.image = icons
         categoryLabel.text = categoryname
+        categoryLabel.textColor = .black
+    }
+    
+    func categorySelected(selected: UIImage, categoryname: String){
+        categoryIcon.image = selected
+        categoryLabel.text = categoryname
+        categoryLabel.textColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
     }
 }
