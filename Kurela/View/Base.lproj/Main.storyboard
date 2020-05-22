@@ -2119,8 +2119,8 @@
     <resources>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
-        <image name="calendar" width="19" height="21"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar" width="19" height="21"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="card3" width="364" height="202"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
