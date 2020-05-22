@@ -30,24 +30,28 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     //    let logo: [UIImage] = [UIImage(named: "logo1.png")!,UIImage(named: "logo2.png")!,UIImage(named: "logo3.png")!,UIImage(named: "logo4.png")!,UIImage(named: "logo5.png")!,UIImage(named: "logo6.png")!,]
     //
     //content in category collection view
-    let icon: [UIImage] = [UIImage(named: "category1.png")!,UIImage(named: "category2.png")!,UIImage(named: "category3.png")!,UIImage(named: "category6.png")!,UIImage(named: "category7.png")!,UIImage(named: "category4.png")!,UIImage(named: "category5.png")!,UIImage(named: "category8.png")!]
+    let icon: [UIImage] = [UIImage(named: "category1inactive.png")!,UIImage(named: "category2.png")!,UIImage(named: "category3.png")!,UIImage(named: "category6.png")!,UIImage(named: "category7.png")!,UIImage(named: "category4.png")!,UIImage(named: "category5.png")!,UIImage(named: "category8.png")!]
     let category: [String] = ["Highlight", "COVID-19", "Children", "Disaster", "Donation", "Education", "Disability", "On-Site"]
+    let selectedicon: [UIImage] = [UIImage(named: "category1.png")!,UIImage(named: "category2active.png")!,UIImage(named: "category3active.png")!,UIImage(named: "category6active.png")!,UIImage(named: "category7active.png")!,UIImage(named: "category4active.png")!,UIImage(named: "category5active.png")!,UIImage(named: "category8active.png")!]
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupNavBar()
         view.backgroundColor = .white
         setupNavBar()
-        //navigationController?.navigationBar.barStyle = .black
-        // navigationController?.navigationBar.isTranslucent = false
-        navigationItem.largeTitleDisplayMode = .always
-        //edgesForExtendedLayout = []
-        //navigationController?.navigationBar.isTranslucent = false
         saveFirstData()
         loadData()
+        
+        //collection view
         categoryCollectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "myCell")
         categoryCollectionView.delegate = self
+        categoryCollectionView.allowsMultipleSelection = false
+        categoryCollectionView.dataSource = self
+        let selectedIndexPath = IndexPath(item: 0, section: 0)
+          categoryCollectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
+        
     }
     
     
@@ -91,6 +95,9 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
             textfield.clipsToBounds = true
         }
         
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.navigationBar.sizeToFit()
+        }
     }
     
     // How many rows in the table view
@@ -112,7 +119,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.locationLabel.text = infoArray[indexPath.row].location
         cell.tagLabel.text = "\(infoArray[indexPath.row].daysLeft) days left"
         cell.logoView.image = UIImage(data: infoArray[indexPath.row].organizationImage!)
-        
+
         return cell
     }
     
@@ -137,24 +144,33 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     //Defines the content of the collection view
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CategoryCell
-        
-        cell.categorySet(icons: icon[indexPath.row], categoryname: category[indexPath.row])
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! CategoryCell
+        cell.categoryDeselect(icons: icon[indexPath.row], categoryname: category[indexPath.row])
+        if (indexPath.row == 0) {
+            cell.categorySelected(selected: selectedicon[indexPath.row], categoryname: category[indexPath.row])
+        }
         return cell
     }
     
     //Select collection view cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell
+            cell?.categorySelected(selected: selectedicon[indexPath.row], categoryname: category[indexPath.row])
         if indexPath.row != 0 {
             let predicate = NSPredicate(format: "category = %@", category[indexPath.row])
             loadData(predicate: predicate)
-
         } else {
             loadData()
         }
-        
     }
     
+    //Deselect collection view cell
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? CategoryCell
+        cell?.categoryDeselect(icons: icon[indexPath.row], categoryname: category[indexPath.row])
+    }
+    
+
     //MARK: - Core Data
     
     func loadData(predicate: NSPredicate? = nil) {
