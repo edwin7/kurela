@@ -16,8 +16,6 @@ class ActivityViewController: UIViewController {
     @IBOutlet weak var activityTableView: UITableView!
     @IBOutlet weak var organizationImage: UIImageView!
     
-    
-    @IBOutlet weak var activityImage: UIImageView!
     @IBOutlet weak var headerView: UIView!
     
     
@@ -28,8 +26,10 @@ class ActivityViewController: UIViewController {
     
     var data: VolunteeringInfo?
     
-    var mediaImages = [#imageLiteral(resourceName: "a"), #imageLiteral(resourceName: "card2"), #imageLiteral(resourceName: "card3")]
-
+    var mediaImages: [UIImage] = []
+    var mediaResources = Dictionary<String, Any>()
+    var videoUrl = ""
+    
     let rightButton : UIButton = UIButton(type: UIButton.ButtonType.custom)
     
     @IBOutlet weak var backButton: UIButton!
@@ -39,15 +39,28 @@ class ActivityViewController: UIViewController {
     
     @IBOutlet weak var mediaPageControl: UIPageControl!
     
-    
     var timer = Timer()
     var counter = 0
     
+    var mediaImagesData: [Data] = []
 
+    var mediaResourcesCollections: [Dictionary<String, Any>] = []
+
+    func createDummyData() {
+        mediaResources["images"] = data!.activityImage!
+        mediaResources["videoUrl"] = "https://assets.mixkit.co/videos/preview/mixkit-daytime-city-traffic-aerial-view-56-large.mp4"
+        
+        mediaResourcesCollections.append(mediaResources)
+               mediaResources["videoUrl"] = ""
+        mediaResourcesCollections.append(mediaResources)
+              mediaResources["videoUrl"] = ""
+        mediaResourcesCollections.append(mediaResources)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         activityTableView.delegate = self
         activityTableView.dataSource = self
         
@@ -85,10 +98,7 @@ class ActivityViewController: UIViewController {
     @IBAction func backButtonPressed(_ sender: Any) {
         self.navigationController?.popViewController(animated:true)
     }
-
-    @IBAction func playVideoButton(_ sender: UIButton) {
-        playVideo()
-    }
+    
     @IBAction func applyButtonPressed(_ sender: UIButton) {
         let newJourney = UserJourney(context: self.context)
         newJourney.infoDetail = data
@@ -113,25 +123,33 @@ class ActivityViewController: UIViewController {
     }
     
     func setData() {
-        activityImage.image = UIImage(data: data!.activityImage!)
+        
+        createDummyData()
         organizationImage.image = UIImage(data: data!.organizationImage!)
-        activityImage.contentMode = .scaleAspectFit
     }
-    
+
 }
 
 extension ActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mediaImages.count
+
+        return mediaResourcesCollections.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = mediaCollectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath)
-        
+
+        let cell = mediaCollectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath) as! ActivityMediaCollectionViewCell
+            
         if let vc = cell.viewWithTag(111) as? UIImageView {
-            vc.image = mediaImages[indexPath.row]
-        } else if let ab = cell.viewWithTag(222) as? UIPageControl {
+
+            let imageView = UIImage(data: mediaResourcesCollections[indexPath.row]["images"] as! Data)
+            
+            cell.configure(controller: self, media: imageView!, videoURL: mediaResourcesCollections[indexPath.row]["videoUrl"] as! String)
+
+            //vc.image = mediaImages[indexPath.row]
+        } else if let ab = cell.viewWithTag(222) as?
+            UIPageControl {
+            
             ab.currentPage = indexPath.row
         }
         
@@ -363,9 +381,9 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
 
     }
     
-    func playVideo() {
+    func playVideo(_ videoUrl: String) {
         
-        guard let url = URL(string: "https://assets.mixkit.co/videos/preview/mixkit-daytime-city-traffic-aerial-view-56-large.mp4") else {
+        guard let url = URL(string: videoUrl) else {
             return
         }
         // Create an AVPlayer, passing it the HTTP Live Streaming URL.

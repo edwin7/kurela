@@ -286,7 +286,7 @@
                                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="42"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="playVideoButton:" destination="9fw-EA-DIW" eventType="touchUpInside" id="W7U-WV-WYJ"/>
+                                                                    <action selector="playMediaButton:" destination="GXf-qI-0jr" eventType="touchUpInside" id="R4j-Wc-zrY"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -747,7 +747,6 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="GdX-wE-kvc"/>
                     <connections>
-                        <outlet property="activityImage" destination="ntx-1R-0wV" id="onU-zi-DtY"/>
                         <outlet property="activityTableView" destination="D8C-QU-oLk" id="5Ve-MC-G4T"/>
                         <outlet property="backButton" destination="H6Z-Ae-AGm" id="OTc-dI-kjb"/>
                         <outlet property="headerView" destination="cnH-z6-Wjl" id="uyx-OZ-lJa"/>
@@ -2154,7 +2153,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BKL-jU-nk1"/>
+        <segue reference="agt-uA-c8t"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
