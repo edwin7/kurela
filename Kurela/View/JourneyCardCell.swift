@@ -17,6 +17,7 @@ class JourneyCardCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var date2Label: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var tagsImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

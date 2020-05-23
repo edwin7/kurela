@@ -7,6 +7,7 @@
         <attribute name="inreviewDetail" optional="YES" attributeType="String"/>
         <attribute name="interviewDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="interviewDetail" optional="YES" attributeType="String"/>
+        <attribute name="rejectedStatus" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="resultDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="resultDetail" optional="YES" attributeType="String"/>
         <attribute name="status" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -47,7 +48,7 @@
         <relationship name="userJourneys" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserJourney" inverseName="infoDetail" inverseEntity="UserJourney"/>
     </entity>
     <elements>
-        <element name="UserJourney" positionX="-243" positionY="171" width="128" height="193"/>
+        <element name="UserJourney" positionX="-243" positionY="171" width="128" height="208"/>
         <element name="UsersProfile" positionX="-54" positionY="63" width="128" height="253"/>
         <element name="VolunteeringInfo" positionX="-461.12890625" positionY="75.9375" width="128" height="283"/>
     </elements>
