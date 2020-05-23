@@ -2,7 +2,7 @@
 //  ProfileViewController.swift
 //  Kurela
 //
-//  Created by Feby Lailani on 19/05/20.
+//  Created by Feby Lailani on 20/05/20.
 //  Copyright © 2020 Group 16 MC2 2020. All rights reserved.
 //
 
@@ -10,195 +10,58 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    
-    //Profile Pic Control
-    
-    
-    //Segment Button control
-    @IBOutlet weak var aboutButton: UIButton!
-    @IBOutlet weak var aboutLabel: UILabel!
-    @IBOutlet weak var medicalButton: UIButton!
-    @IBOutlet weak var medicalLabel: UILabel!
-    @IBOutlet weak var documentButton: UIButton!
-    @IBOutlet weak var documentLabel: UILabel!
-    @IBOutlet weak var emergencyButton: UIButton!
-    @IBOutlet weak var emergencyLabel: UILabel!
-    
-    //View Button control
-    @IBOutlet weak var aboutView: UIView!
-    @IBOutlet weak var medicalView: UIView!
-    @IBOutlet weak var documentView: UIView!
-    @IBOutlet weak var emergencyView: UIView!
-    
-    //Textfield control
-    //About View
-    @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var birthdayTextField: UITextField!
-    @IBOutlet weak var genderTextField: UITextField!
-    @IBOutlet weak var addressTextField: UITextField!
-    
-    //Medical View
-    @IBOutlet weak var bloodTextField: UITextField!
-    @IBOutlet weak var weightTextField: UITextField!
-    @IBOutlet weak var insuranceTextField: UITextField!
-    @IBOutlet weak var heightTextField: UITextField!
-    @IBOutlet weak var allergyTextField: UITextField!
-    @IBOutlet weak var medsheetTextField: UITextField!
-    
-    //Document View
-    @IBOutlet weak var cvTextField: UITextField!
-    @IBOutlet weak var portfolioTextField: UITextField!
-    
-    //Emergency View
-    @IBOutlet weak var nameEmergencyTextField: UITextField!
-    @IBOutlet weak var relationshipTextField: UITextField!
-    @IBOutlet weak var addressEmergencyTextField: UITextField!
-    @IBOutlet weak var phoneEmergencyTextField: UITextField!
-    
-    
-    //Scroll View
-    @IBOutlet weak var scrollView: UIScrollView!
-    
-    //background View
-    @IBOutlet weak var backgroundView: UIView!
-    
-    //Store current text field
-    var activeTextField : UITextField? = nil
-    
+    @IBOutlet weak var settingsView: UIView!
+    @IBOutlet weak var helpView: UIView!
+    @IBOutlet weak var signoutView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
+        configureView()
+    }
+    func setupNavBar(){
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ProfileViewController.backgroundTap))
-        self.view.addGestureRecognizer(tapGestureRecognizer)
-        // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ProfileViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        //large title for navbar
+        navigationController?.navigationBar.prefersLargeTitles = true
         
-        //Texfield delegate
-        //About View
-//        nameTextField.delegate = self
-//        emailTextField.delegate = self
-//        phoneTextField.delegate = self
-//        birthdayTextField.delegate = self
-//        genderTextField.delegate = self
-//        addressTextField.delegate = self
+        //navbar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
+        
+        //change title color
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+    }
+    func configureView(){
+      settingsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        settingsView.layer.shadowOpacity = 0.5
+      settingsView.layer.shadowRadius = 5
+        settingsView.layer.cornerRadius = 10
+      helpView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        helpView.layer.shadowOpacity = 0.5
+      helpView.layer.shadowRadius = 10
+        helpView.layer.cornerRadius = 10
+      signoutView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        signoutView.layer.shadowOpacity = 0.5
+      signoutView.layer.shadowRadius = 10
+        signoutView.layer.cornerRadius = 10
+        // inside viewDidLoad
+
+        // the color of the shadow
+//        settingsView.layer.shadowColor = UIColor.darkGray.cgColor
 //
-//        //Medical View
-//        bloodTextField.delegate = self
-//        weightTextField.delegate = self
-//        insuranceTextField.delegate = self
-//        heightTextField.delegate = self
-//        allergyTextField.delegate = self
-//        medsheetTextField.delegate = self
+//        // the shadow will be 5pt right and 5pt below the image view
+//        // negative value will place it on left / above of the image view
+//        settingsView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
 //
-//        //Document View
-//        cvTextField.delegate = self
-//        portfolioTextField.delegate = self
+//        // how long the shadow will be. The longer the shadow, the more blurred it will be
+//        settingsView.layer.shadowRadius = 10.0
 //
-//        //Emergency View
-//        nameEmergencyTextField.delegate = self
-//        relationshipTextField.delegate = self
-//        addressEmergencyTextField.delegate = self
-//        phoneEmergencyTextField.delegate = self
+//        // opacity of the shadow
+//        settingsView.layer.shadowOpacity = 0.9
     }
-    
-    
-    func prepareAboutView () {
-        aboutView.isHidden = false
-        medicalView.isHidden = true
-        documentView.isHidden = true
-        emergencyView.isHidden = true
-    }
-    
-    func prepareMedicalView () {
-        aboutView.isHidden = true
-        medicalView.isHidden = false
-        documentView.isHidden = true
-        emergencyView.isHidden = true
-    }
-    
-    func prepareDocumentView() {
-        aboutView.isHidden = true
-        medicalView.isHidden = true
-        documentView.isHidden = false
-        emergencyView.isHidden = true
-    }
-    
-    func prepareEmergencyView() {
-        aboutView.isHidden = true
-        medicalView.isHidden = true
-        documentView.isHidden = true
-        emergencyView.isHidden = false
-    }
-    
-    @IBAction func aboutTapped(_ sender: Any) {
-        prepareAboutView()
-        
-    }
-    
-    @IBAction func medicalTapped(_ sender: Any) {
-        prepareMedicalView()
-        
-    }
-    
-    @IBAction func documentTapped(_ sender: UIButton) {
-        prepareDocumentView()
-    }
-    
-    @IBAction func emergencyTapped(_ sender: UIButton) {
-        prepareEmergencyView()
-    }
-    
-    //Keyboard functions
-    
-    @objc func keyboardWillShow(notification: NSNotification){
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
-        else {
-            // if keyboard size is not available for some reason, dont do anything
-            return
-        }
-        var shouldMoveViewUp = false
-        
-        if let activateTextField = activeTextField {
-            let bottomOfTextField = activateTextField.convert(activateTextField.bounds, to: self.backgroundView).maxY;
-            let topOfKeyboard = self.backgroundView.frame.height - keyboardSize.height
-            if bottomOfTextField > topOfKeyboard {
-                shouldMoveViewUp = true
-            }
-            
-        }
-        
-        if (shouldMoveViewUp) {
-            self.backgroundView.frame.origin.y = 0 - keyboardSize.height
-        }
-        
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
-        
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc func keyboardWillHide(notification: NSNotification){
-        self.backgroundView.frame.origin.y = 0
-    }
-    
-    @objc func backgroundTap(_ sender: UITapGestureRecognizer) {
-        // go through all of the textfield inside the view, and end editing thus resigning first responder
-        // ie. it will trigger a keyboardWillHide notification
-        self.backgroundView.endEditing(true)
-    }
-    
-    
-    
 }
-extension ProfileViewController : UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.activeTextField = textField
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.activeTextField = nil
-    }
-    
-}
+
