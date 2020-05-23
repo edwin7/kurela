@@ -23,6 +23,12 @@ class ExploreCardCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cardView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        cardView.layer.shadowOpacity = 1
+        cardView.layer.shadowRadius = 10
+        titleView.clipsToBounds = true
+        titleView.layer.cornerRadius = 10
+        titleView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
     }
 
     func configure(picture: UIImage, date: String, title: String, location: String, tags: UIImage, duedate: String, logos: UIImage){
@@ -33,14 +39,6 @@ class ExploreCardCell: UITableViewCell {
         flagView.image = tags
         tagLabel.text = duedate
         logoView.image = logos
-        
-        cardView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        cardView.layer.shadowOpacity = 1
-        cardView.layer.shadowRadius = 10
-        titleView.clipsToBounds = true
-        titleView.layer.cornerRadius = 10
-        titleView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-
     }
     
     
