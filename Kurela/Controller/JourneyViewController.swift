@@ -60,6 +60,12 @@ class JourneyViewController: UIViewController {
         super.viewDidLoad()
         let searchBar = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchBar
+        searchBar.searchBar.delegate = self
+        searchBar.obscuresBackgroundDuringPresentation = false
+        searchBar.searchBar.placeholder = "Activity"
+        definesPresentationContext = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -68,10 +74,16 @@ class JourneyViewController: UIViewController {
         
     }
 
-    func loadData(predicate: NSPredicate) {
+    func loadData(predicate: NSPredicate, searchPredicate: NSPredicate? = nil) {
         let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "applyDate", ascending: false)]
-        request.predicate = predicate
+        
+        if let additionalPredicate = searchPredicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicate, additionalPredicate])
+        } else {
+            request.predicate = predicate
+        }
+        
         
         do {
             journeyArray = try context.fetch(request)
@@ -156,5 +168,28 @@ extension JourneyViewController: UITableViewDelegate {
         if let indexPath = selectedIndex {
             destinationVC.journeyDetail = journeyArray[indexPath]
         }
+    }
+}
+
+extension JourneyViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        var predicate = NSPredicate()
+        let serchPredicate = NSPredicate(format: "infoDetail.activityName CONTAINS[cd] %@", searchBar.text!)
+        if isOngoingOpened {
+            predicate = NSPredicate(format: "status != 4")
+        } else {
+            predicate = NSPredicate(format: "status = 4")
+        }
+        loadData(predicate: predicate, searchPredicate: serchPredicate)
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        if isOngoingOpened {
+            loadData(predicate: NSPredicate(format: "status != 4"))
+        } else {
+            loadData(predicate: NSPredicate(format: "status = 4"))
+        }
+        
     }
 }
