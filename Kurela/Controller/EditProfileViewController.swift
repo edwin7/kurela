@@ -79,6 +79,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         //Texfield delegate
         pickerView.delegate = self
+        
         birthdayTextField.inputView = birthdayPicker
         genderTextField.inputView = pickerView
         bloodTextField.inputView = pickerView
@@ -115,6 +116,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func prepareScreen(){
         setDefaultStyleExcept(type: "about")
         createBirthdayPicker()
+        
     }
     func prepareAboutView () {
         aboutView.isHidden = false
@@ -251,6 +253,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let row = pickerView.selectedRow(inComponent: 0)
         if genderTextField.isFirstResponder{
             genderTextField.text = genderPickerData[row]
         } else if bloodTextField.isFirstResponder{
