@@ -14,31 +14,64 @@ class JourneyViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var emptyView: UIView!
     @IBOutlet weak var tabView: UIView!
+    @IBOutlet weak var ongoingTabButton: UIButton!
+    @IBOutlet weak var historyTabButton: UIButton!
+    @IBOutlet weak var ongoingLabel: UILabel!
+    @IBOutlet weak var historyLabel: UILabel!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var journeyArray = [UserJourney]()
+    var isOngoingOpened = true
     
     var selectedIndex: Int?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        tableView.delegate = self
-        loadData()
+        if isOngoingOpened {
+            loadData(predicate: NSPredicate(format: "status != 4"))
+        } else {
+            loadData(predicate: NSPredicate(format: "status = 4"))
+        }
+        
     }
+    @IBAction func ongoingPressed(_ sender: UIButton) {
+        isOngoingOpened = true
+        ongoingTabButton.setImage(#imageLiteral(resourceName: "ongoingactive"), for: .normal)
+        historyTabButton.setImage(#imageLiteral(resourceName: "historyinactive"), for: .normal)
+        ongoingLabel.textColor = UIColor(named: "AppColor")
+        historyLabel.textColor = .black
+        
+        let predicate = NSPredicate(format: "status != 4")
+        loadData(predicate: predicate)
+        
+    }
+    @IBAction func historyPressed(_ sender: UIButton) {
+        isOngoingOpened = false
+        ongoingTabButton.setImage(#imageLiteral(resourceName: "ongoinginactive"), for: .normal)
+        historyTabButton.setImage(#imageLiteral(resourceName: "historyactive"), for: .normal)
+        ongoingLabel.textColor = .black
+        historyLabel.textColor = UIColor(named: "AppColor")
+        
+        let predicate = NSPredicate(format: "status = 4")
+        loadData(predicate: predicate)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let searchBar = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchBar
         
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "JourneyCardCell", bundle: nil), forCellReuseIdentifier: "JourneyReusableCell")
-
+        
         
     }
 
-    func loadData() {
+    func loadData(predicate: NSPredicate) {
         let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "applyDate", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "applyDate", ascending: false)]
+        request.predicate = predicate
         
         do {
             journeyArray = try context.fetch(request)
@@ -48,16 +81,17 @@ class JourneyViewController: UIViewController {
         
         tableView.reloadData()
     }
+    
 
 }
 
 extension JourneyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         emptyView.isHidden = true
-        tabView.isHidden = false
+//        tabView.isHidden = false
         if journeyArray.count == 0 {
             emptyView.isHidden = false
-            tabView.isHidden = true
+//            tabView.isHidden = true
         }
         return journeyArray.count
     }
@@ -74,9 +108,34 @@ extension JourneyViewController: UITableViewDataSource {
         cell.titleLabel.text = journeyArray[indexPath.row].infoDetail?.activityName
         cell.dateLabel.text = formatter.string(from: journeyArray[indexPath.row].infoDetail!.date!)
         cell.locationLabel.text = journeyArray[indexPath.row].infoDetail?.location
-        if journeyArray[indexPath.row].status == 1 {
+        cell.tagsImage.image = #imageLiteral(resourceName: "tags")
+        cell.date2Label.textColor = UIColor(named: "AppColor")
+        switch journeyArray[indexPath.row].status {
+        case 1:
             cell.statusLabel.text = "Applied"
             cell.date2Label.text = "Applied on \(formatter2.string(from: journeyArray[indexPath.row].applyDate!))"
+        case 2:
+            cell.statusLabel.text = "Interview"
+            cell.date2Label.text = "Interview on \(formatter2.string(from: journeyArray[indexPath.row].interviewDate!))"
+        case 3:
+            cell.statusLabel.text = "In Review"
+            cell.date2Label.text = "In Review until \(formatter2.string(from: journeyArray[indexPath.row].inreviewDate!))"
+        case 4:
+            if journeyArray[indexPath.row].rejectedStatus > 0 {
+                cell.statusLabel.text = "Rejected"
+                cell.tagsImage.image = #imageLiteral(resourceName: "redtag")
+                cell.date2Label.text = "Rejected on \(formatter2.string(from: journeyArray[indexPath.row].resultDate!))"
+                cell.date2Label.textColor = UIColor(named: "AppRejectedColor")
+            } else {
+                cell.statusLabel.text = "Accepted"
+                cell.tagsImage.image = #imageLiteral(resourceName: "greentag")
+                cell.date2Label.text = "Accepted on \(formatter2.string(from: journeyArray[indexPath.row].resultDate!))"
+                cell.date2Label.textColor = UIColor(named: "AppAcceptedColor")
+            }
+            
+            
+        default:
+            print("next update")
         }
         
         
