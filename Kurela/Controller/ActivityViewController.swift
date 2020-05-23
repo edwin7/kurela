@@ -70,9 +70,6 @@ class ActivityViewController: UIViewController {
         backButton.layer.cornerRadius = 13
         backButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
         
-        mediaPageControl.numberOfPages = mediaImages.count
-        mediaPageControl.currentPage = 0
-        
         //TImer to change image automatically
 //        DispatchQueue.main.async {
 //            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
@@ -80,18 +77,21 @@ class ActivityViewController: UIViewController {
 //
         setData()
         
+        mediaPageControl.numberOfPages = mediaResourcesCollections.count
+        mediaPageControl.currentPage = 0
+        
     }
     
 //    @objc func changeImage() {
 //
 //        let indexPath = IndexPath.init(item: counter, section: 0)
 //
-//        self.mediaCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-//
-//        if counter < mediaImages.count {
+//        if counter < mediaResourcesCollections.count {
+    //        self.mediaCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 //            counter += 1
 //        } else {
 //            counter = 0
+    //        self.mediaCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
 //        }
 //    }
     
@@ -131,6 +131,12 @@ class ActivityViewController: UIViewController {
 }
 
 extension ActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let scrollPos = scrollView.contentOffset.x / view.frame.width
+                mediaPageControl.currentPage = Int(scrollPos)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
         return mediaResourcesCollections.count
