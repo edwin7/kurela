@@ -107,6 +107,7 @@
                 <outlet property="dateLabel" destination="FGU-As-g2z" id="mdH-0V-v9b"/>
                 <outlet property="locationLabel" destination="Sal-1a-iVs" id="wrj-TJ-vdj"/>
                 <outlet property="statusLabel" destination="SNa-Pe-H55" id="cNj-Y1-h5x"/>
+                <outlet property="tagsImage" destination="Di1-w0-cRp" id="b5P-Wk-lhE"/>
                 <outlet property="titleLabel" destination="N7F-6D-Tbl" id="fj2-Ab-dlH"/>
             </connections>
             <point key="canvasLocation" x="228.2608695652174" y="143.30357142857142"/>

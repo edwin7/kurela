@@ -2,7 +2,7 @@
 //  ProfileViewController.swift
 //  Kurela
 //
-//  Created by Feby Lailani on 19/05/20.
+//  Created by Feby Lailani on 20/05/20.
 //  Copyright © 2020 Group 16 MC2 2020. All rights reserved.
 //
 
@@ -10,96 +10,58 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var aboutButton: UIButton!
-    @IBOutlet weak var aboutLabel: UILabel!
-    @IBOutlet weak var medicalButton: UIButton!
-    @IBOutlet weak var medicalLabel: UILabel!
-    @IBOutlet weak var documentButton: UIButton!
-    @IBOutlet weak var documentLabel: UILabel!
-    @IBOutlet weak var emergencyButton: UIButton!
-    @IBOutlet weak var emergencyLabel: UILabel!
-    @IBOutlet weak var aboutView: UIView!
-    @IBOutlet weak var MedicalView: UIView!
-    @IBOutlet weak var documentView: UIView!
-    @IBOutlet weak var emergencyView: UIView!
-    
-    
+    @IBOutlet weak var settingsView: UIView!
+    @IBOutlet weak var helpView: UIView!
+    @IBOutlet weak var signoutView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupNavBar()
+        configureView()
     }
-    
-    func prepareAboutView () {
-        aboutView.isHidden = false
-        MedicalView.isHidden = true
-        documentView.isHidden = true
-        emergencyView.isHidden = true
-    }
-    
-    func prepareMedicalView () {
-        aboutView.isHidden = true
-        MedicalView.isHidden = false
-        documentView.isHidden = true
-        emergencyView.isHidden = true
-    }
-    
-    func prepareDocumentView() {
-        aboutView.isHidden = true
-        MedicalView.isHidden = true
-        documentView.isHidden = false
-        emergencyView.isHidden = true
-    }
-    
-    func prepareEmergencyView() {
-        aboutView.isHidden = true
-        MedicalView.isHidden = true
-        documentView.isHidden = true
-        emergencyView.isHidden = false
-    }
-    
-    
-    
-    @IBAction func aboutTapped(_ sender: Any) {
-        prepareAboutView()
+    func setupNavBar(){
         
-    }
-    
-    @IBAction func medicalTapped(_ sender: Any) {
-        prepareMedicalView()
+        //large title for navbar
+        navigationController?.navigationBar.prefersLargeTitles = true
         
+        //navbar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
+        
+        //change title color
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
     }
-    
-    @IBAction func documentTapped(_ sender: UIButton) {
-        prepareDocumentView()
-    }
-    
-    @IBAction func emergencyTapped(_ sender: UIButton) {
-        prepareEmergencyView()
-    }
-    
-    
-    
-    // @IBAction func selectSegment(_ sender: UISegmentedControl) {
-//        if sender.selectedSegmentIndex == 0 {
-//            currentSegmentedIndex = .idol
-//
-//        } else {
-//            currentSegmentedIndex = .cuisine
-//
-//        }
-//
-//        exploreCollectionView.reloadData()
-//    }
-    /*
-    // MARK: - Navigation
+    func configureView(){
+      settingsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        settingsView.layer.shadowOpacity = 0.5
+      settingsView.layer.shadowRadius = 5
+        settingsView.layer.cornerRadius = 10
+      helpView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        helpView.layer.shadowOpacity = 0.5
+      helpView.layer.shadowRadius = 10
+        helpView.layer.cornerRadius = 10
+      signoutView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        signoutView.layer.shadowOpacity = 0.5
+      signoutView.layer.shadowRadius = 10
+        signoutView.layer.cornerRadius = 10
+        // inside viewDidLoad
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        // the color of the shadow
+//        settingsView.layer.shadowColor = UIColor.darkGray.cgColor
+//
+//        // the shadow will be 5pt right and 5pt below the image view
+//        // negative value will place it on left / above of the image view
+//        settingsView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+//
+//        // how long the shadow will be. The longer the shadow, the more blurred it will be
+//        settingsView.layer.shadowRadius = 10.0
+//
+//        // opacity of the shadow
+//        settingsView.layer.shadowOpacity = 0.9
     }
-    */
-  
-    
-    
 }
+
