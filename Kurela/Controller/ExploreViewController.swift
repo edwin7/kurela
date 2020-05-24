@@ -50,7 +50,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         categoryCollectionView.allowsMultipleSelection = false
         categoryCollectionView.dataSource = self
         let selectedIndexPath = IndexPath(item: 0, section: 0)
-          categoryCollectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
+        categoryCollectionView.selectItem(at: selectedIndexPath, animated: false, scrollPosition: .left)
         
     }
     

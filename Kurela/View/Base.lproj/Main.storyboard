@@ -12,7 +12,7 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="mainVC" title="Main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ExploreViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainVC" title="Main" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ExploreViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -203,7 +203,7 @@
         <!--Activity View Controller-->
         <scene sceneID="CLj-oN-zY0">
             <objects>
-                <viewController id="9fw-EA-DIW" customClass="ActivityViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="9fw-EA-DIW" customClass="ActivityViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Qb-Kd-LIG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -729,7 +729,7 @@
         <!--Journey-->
         <scene sceneID="rlg-dE-0re">
             <objects>
-                <viewController storyboardIdentifier="journeyVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4NY-Tz-fzv" customClass="JourneyViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="journeyVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4NY-Tz-fzv" customClass="JourneyViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9c9-b8-xm8">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -889,7 +889,7 @@
         <!--Journey Detail View Controller-->
         <scene sceneID="tKd-3W-jpA">
             <objects>
-                <viewController id="KM4-3Y-06A" customClass="JourneyDetailViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="KM4-3Y-06A" customClass="JourneyDetailViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2WJ-aH-QVE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1354,7 +1354,7 @@
         <!--Profile-->
         <scene sceneID="J7R-xT-yhH">
             <objects>
-                <viewController storyboardIdentifier="profileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JWR-qt-Cc9" customClass="ProfileViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profileVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JWR-qt-Cc9" customClass="ProfileViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jmt-1F-60c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1479,7 +1479,7 @@
         <!--Edit Profile-->
         <scene sceneID="aSw-Hs-KDJ">
             <objects>
-                <viewController id="22g-0F-J8z" customClass="EditProfileViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="22g-0F-J8z" customClass="EditProfileViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4wT-wG-22d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1933,7 +1933,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="YSv-14-HNc">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarIdentifier" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Me0-9r-v6O" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarIdentifier" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Me0-9r-v6O" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JIG-CL-GyY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1959,7 +1959,7 @@
         <!--Explore-->
         <scene sceneID="mQD-Li-SHo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="apc-XD-h7a" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="apc-XD-h7a" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Explore" image="safari.fill" catalog="system" id="UIF-Jt-mmb"/>
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
@@ -1985,7 +1985,7 @@
         <!--Journey-->
         <scene sceneID="4Mb-Xw-dDf">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hnn-VG-ykC" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="hnn-VG-ykC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Journey" image="journey" id="r9V-o4-I0J"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F5H-SA-d0c">
@@ -2005,7 +2005,7 @@
         <!--Profile-->
         <scene sceneID="6fD-yN-YYu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1dB-v6-Thb" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="1dB-v6-Thb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="egA-vM-2eN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="PRC-0h-VpN">
@@ -2027,7 +2027,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="agt-uA-c8t"/>
+        <segue reference="BKL-jU-nk1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>

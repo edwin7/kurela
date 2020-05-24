@@ -13,8 +13,6 @@
 		8C31869D246C526F00F87D4D /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C31869B246C526F00F87D4D /* CategoryCell.xib */; };
 		8C359B4924796FE100AC39C5 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C359B4824796FE100AC39C5 /* OnboardingViewController.swift */; };
 		8C359B4B24797AF300AC39C5 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C359B4A24797AF300AC39C5 /* Onboarding.storyboard */; };
-		8C359B4D24797F3C00AC39C5 /* Onboarding2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C359B4C24797F3C00AC39C5 /* Onboarding2ViewController.swift */; };
-		8C359B4F24797F4800AC39C5 /* Onboarding3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C359B4E24797F4800AC39C5 /* Onboarding3ViewController.swift */; };
 		BA41509E247039B20062B613 /* ActivityHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41509D247039B20062B613 /* ActivityHeaderTableViewCell.swift */; };
 		BA4150A1247051C50062B613 /* ActivityInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4150A0247051C50062B613 /* ActivityInformationTableViewCell.swift */; };
 		BA7E56332477E6E200761557 /* ActivityMediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7E56322477E6E200761557 /* ActivityMediaCollectionViewCell.swift */; };
@@ -42,8 +40,6 @@
 		8C31869B246C526F00F87D4D /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		8C359B4824796FE100AC39C5 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8C359B4A24797AF300AC39C5 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
-		8C359B4C24797F3C00AC39C5 /* Onboarding2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding2ViewController.swift; sourceTree = "<group>"; };
-		8C359B4E24797F4800AC39C5 /* Onboarding3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding3ViewController.swift; sourceTree = "<group>"; };
 		BA41509D247039B20062B613 /* ActivityHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		BA4150A0247051C50062B613 /* ActivityInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInformationTableViewCell.swift; sourceTree = "<group>"; };
 		BA7E56322477E6E200761557 /* ActivityMediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityMediaCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -147,8 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				8C359B4824796FE100AC39C5 /* OnboardingViewController.swift */,
-				8C359B4C24797F3C00AC39C5 /* Onboarding2ViewController.swift */,
-				8C359B4E24797F4800AC39C5 /* Onboarding3ViewController.swift */,
 				ECBA86312464FBCF0067AE70 /* ExploreViewController.swift */,
 				ECE2A75C246CEE5700AEC832 /* JourneyViewController.swift */,
 				EC9A8278247399AA007DF9B1 /* JourneyDetailViewController.swift */,
@@ -237,7 +231,6 @@
 				E6CEC8E924735B14009BCE31 /* EditProfileViewController.swift in Sources */,
 				ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */,
 				ECE2A760246CF0EC00AEC832 /* JourneyCardCell.swift in Sources */,
-				8C359B4F24797F4800AC39C5 /* Onboarding3ViewController.swift in Sources */,
 				8C359B4924796FE100AC39C5 /* OnboardingViewController.swift in Sources */,
 				ECD149CE246E604500CDBB7F /* KurelaDataModel.xcdatamodeld in Sources */,
 				BA882582246FEE09008409B2 /* ActivityViewController.swift in Sources */,
@@ -247,7 +240,6 @@
 				BA41509E247039B20062B613 /* ActivityHeaderTableViewCell.swift in Sources */,
 				ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */,
 				EC9A8279247399AB007DF9B1 /* JourneyDetailViewController.swift in Sources */,
-				8C359B4D24797F3C00AC39C5 /* Onboarding2ViewController.swift in Sources */,
 				ECDFB067246FA8FA00D4558B /* DataPreparation.swift in Sources */,
 				ECE2A75D246CEE5700AEC832 /* JourneyViewController.swift in Sources */,
 				E6CEC8EB24751E34009BCE31 /* ProfileViewController.swift in Sources */,
