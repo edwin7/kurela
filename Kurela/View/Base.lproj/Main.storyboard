@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Me0-9r-v6O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Me0-9r-v6O">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -299,7 +300,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRK-hS-pzi" userLabel="Header View">
                                                     <rect key="frame" x="30" y="0.0" width="354" height="117"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wSn-f7-2fZ">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="wSn-f7-2fZ">
                                                             <rect key="frame" x="329" y="0.5" width="25" height="25"/>
                                                             <color key="tintColor" red="0.0023181964640000001" green="0.70986419919999999" blue="0.86482656000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
@@ -308,7 +309,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Berbagi Sembako untuk Driver Online" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igc-ez-5Ku">
-                                                            <rect key="frame" x="0.0" y="5" width="318" height="67"/>
+                                                            <rect key="frame" x="0.0" y="5" width="320" height="67"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="67" id="QAX-ET-zO0"/>
                                                             </constraints>
@@ -1483,12 +1484,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEo-AL-ItM">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEo-AL-ItM">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5b-nM-owr">
-                                        <rect key="frame" x="0.0" y="-99" width="414" height="1096"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5b-nM-owr">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eeR-vw-2r0">
                                                 <rect key="frame" x="0.0" y="377" width="414" height="401"/>
@@ -1867,8 +1867,18 @@
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="oJC-Bq-meS"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="z5b-nM-owr" firstAttribute="bottom" secondItem="Fc6-DB-08Y" secondAttribute="bottom" id="AMx-NU-pjb"/>
+                                    <constraint firstItem="z5b-nM-owr" firstAttribute="width" secondItem="Kkx-O2-teu" secondAttribute="width" id="TXM-mQ-6p9"/>
+                                    <constraint firstItem="z5b-nM-owr" firstAttribute="trailing" secondItem="Fc6-DB-08Y" secondAttribute="trailing" id="WFQ-sa-9bx"/>
+                                    <constraint firstItem="z5b-nM-owr" firstAttribute="leading" secondItem="Fc6-DB-08Y" secondAttribute="leading" id="XKO-bR-bXl"/>
+                                    <constraint firstItem="Fc6-DB-08Y" firstAttribute="top" secondItem="z5b-nM-owr" secondAttribute="top" id="s0R-D7-hDD"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="Fc6-DB-08Y"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Kkx-O2-teu"/>
                             </scrollView>
@@ -1927,7 +1937,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRu-21-ycA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3182.608695652174" y="835.71428571428567"/>
+            <point key="canvasLocation" x="3332" y="877"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="YSv-14-HNc">
@@ -2035,6 +2045,7 @@
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar" width="19" height="21"/>
         <image name="camera" catalog="system" width="128" height="96"/>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="duedate" width="22" height="20"/>
