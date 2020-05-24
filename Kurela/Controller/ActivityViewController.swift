@@ -31,8 +31,7 @@ class ActivityViewController: UIViewController {
     var videoUrl = ""
     
     let rightButton : UIButton = UIButton(type: UIButton.ButtonType.custom)
-    
-    @IBOutlet weak var backButton: UIButton!
+
     @IBOutlet weak var organizationImageView: UIImageView!
     
     @IBOutlet weak var mediaCollectionView: UICollectionView!
@@ -67,19 +66,18 @@ class ActivityViewController: UIViewController {
         mediaCollectionView.delegate = self
         mediaCollectionView.dataSource = self
         
-        backButton.layer.cornerRadius = 13
-        backButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+
+        setData()
+        
+        mediaPageControl.numberOfPages = mediaResourcesCollections.count
+        mediaPageControl.currentPage = 0
         
         //TImer to change image automatically
 //        DispatchQueue.main.async {
 //            self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.changeImage), userInfo: nil, repeats: true)
 //        }
 //
-        setData()
-        
-        mediaPageControl.numberOfPages = mediaResourcesCollections.count
-        mediaPageControl.currentPage = 0
-        
+
     }
     
 //    @objc func changeImage() {
@@ -95,16 +93,18 @@ class ActivityViewController: UIViewController {
 //        }
 //    }
     
-    @IBAction func backButtonPressed(_ sender: Any) {
-        self.navigationController?.popViewController(animated:true)
-    }
+//    @IBAction func backButtonPressed(_ sender: Any) {
+//        self.navigationController?.popViewController(animated:true)
+//    }
     
     @IBAction func applyButtonPressed(_ sender: UIButton) {
+        
         let newJourney = UserJourney(context: self.context)
         newJourney.infoDetail = data
         newJourney.status = 1
         newJourney.applyDate = Date()
         saveData()
+        
         sender.setTitle("Applied", for: .normal)
         sender.isEnabled = false
         sender.backgroundColor = .gray
@@ -130,6 +130,7 @@ class ActivityViewController: UIViewController {
 
 }
 
+// MARK: Collection View Extension
 extension ActivityViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -146,18 +147,9 @@ extension ActivityViewController: UICollectionViewDelegate, UICollectionViewData
 
         let cell = mediaCollectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath) as! ActivityMediaCollectionViewCell
             
-        //if let vc = cell.viewWithTag(111) as? UIImageView {
-
             let imageView = UIImage(data: mediaResourcesCollections[indexPath.row]["images"] as! Data)
             
             cell.configure(controller: self, media: imageView!, videoURL: mediaResourcesCollections[indexPath.row]["videoUrl"] as! String)
-       // }
-            //vc.image = mediaImages[indexPath.row]
-//        } else if let ab = cell.viewWithTag(222) as?
-//            UIPageControl {
-//
-//            ab.currentPage = indexPath.row
-//        }
         
         return cell
     }
@@ -186,11 +178,12 @@ extension ActivityViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+//MARK: Table View Extension
 extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
 
-        let maximumVerticalOffset = CGFloat(120)
+        let maximumVerticalOffset = CGFloat(135)
         let currentVerticalOffset = scrollView.contentOffset.y
         let percentageVerticalOffset = currentVerticalOffset / maximumVerticalOffset
 
@@ -205,6 +198,69 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    func setCustomBarButtonItemAppearance() -> UIBarButtonItemAppearance {
+         let barButtonItemApperance = UIBarButtonItemAppearance()
+         barButtonItemApperance.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
+
+        return barButtonItemApperance
+    }
+    
+    func setCustomNavBarAppearance() -> UINavigationBarAppearance {
+        //Custom Standard & Compact Nav Bar
+        let newStandardAppearance = UINavigationBarAppearance()
+        
+        newStandardAppearance.configureWithTransparentBackground()
+        
+        newStandardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        newStandardAppearance.buttonAppearance = setCustomBarButtonItemAppearance()
+        newStandardAppearance.setBackIndicatorImage(UIImage(systemName: "arrow.left.circle.fill"),
+             transitionMaskImage: UIImage(systemName: "arrow.left.circle.fill"))
+        
+        return newStandardAppearance
+    }
+    
+    func setAfterScrollCustomBarButtonItemAppearance() -> UIBarButtonItemAppearance {
+        
+        let barButtonItemApperance = UIBarButtonItemAppearance()
+        barButtonItemApperance.normal.titleTextAttributes = [.foregroundColor: UIColor(named: "AppColor")!]
+        
+        return barButtonItemApperance
+    }
+    
+    func setAfterScrollCustomNavBarAppearance() -> UINavigationBarAppearance {
+
+        let newStandardAppearance = UINavigationBarAppearance()
+        
+        newStandardAppearance.configureWithOpaqueBackground()
+        
+        newStandardAppearance.buttonAppearance = setAfterScrollCustomBarButtonItemAppearance()
+        newStandardAppearance.setBackIndicatorImage(nil,
+                                                    transitionMaskImage: nil)
+        newStandardAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+
+        return newStandardAppearance
+    }
+    
+    func configureNavBarABeforeScroll() {
+        
+        self.title = ""
+        self.navigationItem.titleView = nil
+        self.navigationItem.rightBarButtonItem = nil
+        
+        self.navigationController?.navigationBar.tintColor = .white
+
+        configureBeforeScrollLeftButton()
+                
+        navigationItem.hidesBackButton = false
+
+        let newStandardAppearance = setCustomNavBarAppearance()
+
+        navigationItem.standardAppearance = newStandardAppearance
+        navigationItem.compactAppearance = newStandardAppearance
+        navigationItem.scrollEdgeAppearance = newStandardAppearance
+        
+    }
+    
     func configureNavBarAfterScroll() {
                 
         self.title = activityTitle
@@ -216,56 +272,28 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         tlabel.adjustsFontSizeToFitWidth = true
         tlabel.textAlignment = .center
         self.navigationItem.titleView = tlabel
-        
-        let barButtonItemApperance = UIBarButtonItemAppearance()
-        barButtonItemApperance.normal.titleTextAttributes = [.foregroundColor: UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)]
+
 
         //Configure Standard & Compact Nav Bar
-        let newStandardAppearance = UINavigationBarAppearance()
-        newStandardAppearance.configureWithOpaqueBackground()
-
-        newStandardAppearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        newStandardAppearance.buttonAppearance = barButtonItemApperance
-        
+        let newStandardAppearance = setAfterScrollCustomNavBarAppearance()
+                   
         navigationItem.standardAppearance = newStandardAppearance
         navigationItem.compactAppearance = newStandardAppearance
         navigationItem.scrollEdgeAppearance = newStandardAppearance
 
-        self.navigationController?.navigationBar.tintColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "AppColor")
 
         configureRightButton()
+        configureAfterScrollLeftButton()
     }
     
-    func configureNavBarABeforeScroll() {
-        navigationItem.rightBarButtonItem = nil
-        self.title = ""
-        self.navigationItem.titleView = nil
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        navigationItem.hidesBackButton = true
-
-        
-        // bar button styling
-        let barButtonItemApperance = UIBarButtonItemAppearance()
-        barButtonItemApperance.normal.titleTextAttributes = [.foregroundColor: UIColor.white]
-
-        //Configure Standard & Compact Nav Bar
-        let newStandardAppearance = UINavigationBarAppearance()
-        newStandardAppearance.configureWithTransparentBackground()
-
-        newStandardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-        newStandardAppearance.buttonAppearance = barButtonItemApperance
-
-        navigationItem.standardAppearance = newStandardAppearance
-        navigationItem.compactAppearance = newStandardAppearance
-        navigationItem.scrollEdgeAppearance = newStandardAppearance
-        
-    }
         
     func configureRightButton() {
         
         navigationItem.hidesBackButton = false
 
         rightButton.setTitle("Apply", for: .normal)
+        
         rightButton.titleLabel!.font = .systemFont(ofSize: 14)
         rightButton.frame.size = CGSize(width: 80, height: 30)
         rightButton.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
@@ -291,6 +319,45 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         
         rightButton.addTarget(self, action: #selector(pressed), for: .touchUpInside)
 
+    }
+    
+    func configureBeforeScrollLeftButton() {
+        
+        navigationItem.hidesBackButton = false
+        
+        let leftButtonCustomView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+        //let  leftButton = UIButton(frame: CGRect(x: -30, y: 10 , width: 80, height: 30))
+        let leftButton = UIButton(frame: CGRect(origin: CGPoint(x: -30, y: 0),
+                                                size: CGSize(width: 100, height: 30)))
+        
+        //leftButton.alpha = 0.5
+
+        leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        leftButton.setTitle("Back", for: .normal)
+        
+        leftButton.titleLabel!.font = .systemFont(ofSize: 14)
+        //leftButton.frame.size = CGSize(width: 80, height: 30)
+        //leftButton.frame = CGRect.init(x: -40, y: 0, width: 130, height: 30)
+        leftButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.65)
+        leftButton.layer.cornerRadius = 13
+        leftButton.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
+
+        leftButton.transform = CGAffineTransform(translationX: -5, y: 0)
+        leftButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+
+        leftButtonCustomView.addSubview(leftButton)
+
+        let customLeftBarButtonItem = UIBarButtonItem(customView: leftButtonCustomView)
+        navigationItem.leftBarButtonItem = customLeftBarButtonItem
+        
+     }
+    
+    func configureAfterScrollLeftButton() {
+        navigationItem.leftBarButtonItem = nil
+     }
+    
+    @objc func backAction() {
+        self.navigationController?.popViewController(animated:true)
     }
     
     @objc func pressed(sender: UIButton!) {
@@ -325,7 +392,6 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         
-         
     }
     
     func saveData() {
@@ -380,8 +446,6 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         } catch {
             print("Error fetching UserJourney, \(error)")
         }
-        
-        
         
         return cell
 
