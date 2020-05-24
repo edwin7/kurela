@@ -258,19 +258,10 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-uY-1HQ">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-uY-1HQ">
                                             <rect key="frame" x="309" y="103" width="105" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="H6Z-Ae-AGm" userLabel="Explorer">
-                                            <rect key="frame" x="0.0" y="6" width="95" height="27"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" white="0.0034088249063670413" alpha="0.65031015917116097" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <state key="normal" title=" Explore " image="chevron.left" catalog="system"/>
-                                            <connections>
-                                                <action selector="backButtonPressed:" destination="9fw-EA-DIW" eventType="touchUpInside" id="BIa-qz-Jb7"/>
-                                            </connections>
-                                        </button>
                                         <pageControl opaque="NO" tag="222" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jib-3t-RC5">
                                             <rect key="frame" x="0.0" y="110" width="414" height="37"/>
                                         </pageControl>
@@ -572,8 +563,8 @@
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="azX-3B-Vlg" userLabel="Contact View">
                                                             <rect key="frame" x="0.0" y="119" width="354" height="367"/>
                                                             <subviews>
-                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="D9S-ah-uzg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="20.5" height="20.5"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="D9S-ah-uzg">
+                                                                    <rect key="frame" x="0.0" y="1" width="20.5" height="20.5"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMA-X5-Zle">
                                                                     <rect key="frame" x="0.0" y="126" width="354" height="0.0"/>
@@ -706,7 +697,6 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="GdX-wE-kvc"/>
                     <connections>
                         <outlet property="activityTableView" destination="D8C-QU-oLk" id="5Ve-MC-G4T"/>
-                        <outlet property="backButton" destination="H6Z-Ae-AGm" id="OTc-dI-kjb"/>
                         <outlet property="headerView" destination="cnH-z6-Wjl" id="uyx-OZ-lJa"/>
                         <outlet property="mediaCollectionView" destination="cOb-sc-t7W" id="UpM-Ep-GNo"/>
                         <outlet property="mediaPageControl" destination="jib-3t-RC5" id="9a0-GM-7J9"/>
@@ -2095,11 +2085,10 @@
     <resources>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
+        <image name="arrow" width="128" height="128"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar" width="19" height="21"/>
         <image name="camera" catalog="system" width="128" height="96"/>
-        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="duedate" width="22" height="20"/>
         <image name="email" width="24" height="19"/>
@@ -2112,7 +2101,6 @@
         <image name="journey" width="25" height="20"/>
         <image name="journey1" width="201.5" height="250"/>
         <image name="location" width="13" height="20"/>
-        <image name="logo2" width="40" height="40"/>
         <image name="nojourney" width="148" height="148"/>
         <image name="ongoingactive" width="50" height="50"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
