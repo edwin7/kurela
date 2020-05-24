@@ -11,6 +11,9 @@ import UIKit
 
 struct DataPreparation {
     let activityImage: UIImage
+    let activityImage2: UIImage
+    let activityImage3: UIImage
+    let activityVideoUrl: String
     let activityName: String
     let category: String
     let contactDetail: String
