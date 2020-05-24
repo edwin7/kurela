@@ -46,14 +46,21 @@ class ActivityViewController: UIViewController {
     var mediaResourcesCollections: [Dictionary<String, Any>] = []
 
     func createDummyData() {
+        
         mediaResources["images"] = data!.activityImage!
-        mediaResources["videoUrl"] = "https://assets.mixkit.co/videos/preview/mixkit-daytime-city-traffic-aerial-view-56-large.mp4"
+        mediaResources["videoUrl"] = data!.activityVideoUrl!
         
         mediaResourcesCollections.append(mediaResources)
-               mediaResources["videoUrl"] = ""
+        
+        mediaResources["images"] = data!.activityImage2!
+        mediaResources["videoUrl"] = ""
         mediaResourcesCollections.append(mediaResources)
-              mediaResources["videoUrl"] = ""
+        
+        
+        mediaResources["images"] = data!.activityImage3!
+        mediaResources["videoUrl"] = ""
         mediaResourcesCollections.append(mediaResources)
+              
     }
     
     

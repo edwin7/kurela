@@ -31,7 +31,10 @@
     </entity>
     <entity name="VolunteeringInfo" representedClassName="VolunteeringInfo" syncable="YES" codeGenerationType="class">
         <attribute name="activityImage" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="activityImage2" optional="YES" attributeType="Binary"/>
+        <attribute name="activityImage3" optional="YES" attributeType="Binary"/>
         <attribute name="activityName" attributeType="String"/>
+        <attribute name="activityVideoUrl" optional="YES" attributeType="String"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="contactDetail" optional="YES" attributeType="String"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
@@ -50,6 +53,6 @@
     <elements>
         <element name="UserJourney" positionX="-243" positionY="171" width="128" height="208"/>
         <element name="UsersProfile" positionX="-54" positionY="63" width="128" height="253"/>
-        <element name="VolunteeringInfo" positionX="-461.12890625" positionY="75.9375" width="128" height="283"/>
+        <element name="VolunteeringInfo" positionX="-461.12890625" positionY="75.9375" width="128" height="328"/>
     </elements>
 </model>
