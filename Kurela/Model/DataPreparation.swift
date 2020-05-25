@@ -267,6 +267,7 @@ struct DataPreparation {
                                          Adek kita Dinda sedang dalam masa kritis. Dinda sedang membutuhkan banyak darah AB. Mari kita mulai aksi baikmu dengan mendonorkan darahmu kepada Adek Dinda. Setetes darahmu akan memberikan manfaat yang sangat berarti untuk menyelamatkan Adek Dinda.
                                          
                                          Tugas Relawan:
+
                                          Relawan donor darah akan bertugas untuk mendonorkan darahnya
                                          
                                          Perlengkapan Relawan:
@@ -312,7 +313,8 @@ struct DataPreparation {
                                                BNI : (009) 1234 5678 9098 7654 321
                                                BRI : (002) 1234 5678 9098 7654 321
                                                
-                                               Informasi tambahan
+                                               Informasi tambahan:
+
                                                Donasi yang terkumpul akan dibelikan APD (Alat Pelindung Diri) dan disinfektan yang kemudian di salurkan ke RS Kali Adem, RS Kita Semua, RS Bunga Biru dan RS Peduli Sahabat yang merupakan Rumah Sakit dengan pasien covid terbanyak.
                                                """,
                                            location: "Jakarta Selatan",
@@ -332,7 +334,7 @@ struct DataPreparation {
                                            activityImage2: #imageLiteral(resourceName: "Pelatihan Internet 2"),
                                            activityImage3: #imageLiteral(resourceName: "Pelatihan Internet 3"),
                                            activityVideoUrl: "https://www.pexels.com/video/women-of-tribe-performing-a-traditional-dance-2927943/",
-                                           activityName: "Relawan Pelatihan Internet untuk Desa Kapak Rimba",
+                                           activityName: "Relawan Pelatihan Internet untuk Desa Kapak",
                                            category: "Education",
                                            contactDetail: "",
                                            date: formatter.date(from: "2020/5/29")!,
@@ -340,7 +342,7 @@ struct DataPreparation {
                                            descriptions: """
                                                Minimnya fasilitas jaringan internet dan listrik bukan berarti menutup diri dari pembelaran berbasis TIK. Penggunaan komputer dan internet sudah bisa dirasakan oleh masyarakat sekalipun di daerah terpencil. Masyarakat di pedalaman, khususnya di tempat saya mengajar, salah satu daerah terpencil di Papua Nugini. Banyak yang memiliki ketertarikan akan penggunaan internet, karena dirasa juga bisa lebih banyak informasi yang didapat serta lebih mudah dalam menunjang segala aspek, salah satunya pendidikan.
                                                
-                                               Tugas Relawan.
+                                               Tugas Relawan:
 
                                                Memberikan pelatihan komputer dan internet kepada pemuda-pemudi kurang lebih 50 orang di Desa Kapak Rimba selama 7 hari.
                                                
