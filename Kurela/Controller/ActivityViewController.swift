@@ -220,8 +220,8 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         
         newStandardAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         newStandardAppearance.buttonAppearance = setCustomBarButtonItemAppearance()
-        newStandardAppearance.setBackIndicatorImage(UIImage(systemName: "arrow.left.circle.fill"),
-             transitionMaskImage: UIImage(systemName: "arrow.left.circle.fill"))
+        //newStandardAppearance.setBackIndicatorImage(UIImage(systemName: "arrow.left.circle.fill"),
+        //     transitionMaskImage: UIImage(systemName: "arrow.left.circle.fill"))
         
         return newStandardAppearance
     }
