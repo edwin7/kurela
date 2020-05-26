@@ -54,7 +54,7 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         
         descriptionButton.setImage(#imageLiteral(resourceName: "profileactive3"), for: .normal)
         requirementButton.setImage(#imageLiteral(resourceName: "iconinactive2"), for: .normal)
-        contactButton.setImage(#imageLiteral(resourceName: "iconinactive3"), for: .normal)
+        contactButton.setImage(#imageLiteral(resourceName: "Contact-disable"), for: .normal)
         
         descriptionButtonLabel.textColor = UIColor(named: "AppColor")
         requirementButtonLabel.textColor = .black
@@ -69,7 +69,7 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         
         descriptionButton.setImage(#imageLiteral(resourceName: "profileinactive3"), for: .normal)
         requirementButton.setImage(#imageLiteral(resourceName: "iconactive2"), for: .normal)
-        contactButton.setImage(#imageLiteral(resourceName: "iconinactive3"), for: .normal)
+        contactButton.setImage(#imageLiteral(resourceName: "Contact-disable"), for: .normal)
         
         descriptionButtonLabel.textColor = .black
         requirementButtonLabel.textColor = UIColor(named: "AppColor")
@@ -84,7 +84,7 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         
         descriptionButton.setImage(#imageLiteral(resourceName: "iconinactive1"), for: .normal)
         requirementButton.setImage(#imageLiteral(resourceName: "iconinactive2"), for: .normal)
-        contactButton.setImage(#imageLiteral(resourceName: "iconactive3"), for: .normal)
+        contactButton.setImage(#imageLiteral(resourceName: "Contact"), for: .normal)
         
         descriptionButtonLabel.textColor = .black
         requirementButtonLabel.textColor = .black

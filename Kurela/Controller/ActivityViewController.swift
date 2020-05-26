@@ -18,6 +18,7 @@ class ActivityViewController: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var cornerRadiusImageView: UIView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -66,7 +67,10 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+               
+        cornerRadiusImageView.layer.cornerRadius = 9
+        cornerRadiusImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
         activityTableView.delegate = self
         activityTableView.dataSource = self
         
@@ -189,7 +193,6 @@ extension ActivityViewController: UICollectionViewDelegate, UICollectionViewData
             let imageView = UIImage(data: mediaResourcesCollections[indexPath.row]["images"] as! Data)
             
             cell.configure(controller: self, media: imageView!, videoURL: mediaResourcesCollections[indexPath.row]["videoUrl"] as! String)
-        
         return cell
     }
     

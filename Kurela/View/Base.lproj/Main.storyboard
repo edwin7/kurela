@@ -259,12 +259,17 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sZk-Yj-9XY" userLabel="corner radius Image View">
+                                            <rect key="frame" x="0.0" y="141" width="414" height="10"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aZa-uY-1HQ">
                                             <rect key="frame" x="309" y="103" width="105" height="75"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <pageControl opaque="NO" tag="222" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="jib-3t-RC5">
-                                            <rect key="frame" x="0.0" y="110" width="414" height="37"/>
+                                            <rect key="frame" x="0.0" y="105" width="414" height="37"/>
                                         </pageControl>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -274,8 +279,7 @@
                                         <constraint firstItem="cOb-sc-t7W" firstAttribute="top" secondItem="cnH-z6-Wjl" secondAttribute="top" constant="-91" id="9Zz-N0-zUp"/>
                                         <constraint firstAttribute="trailing" secondItem="jib-3t-RC5" secondAttribute="trailing" id="AEk-LH-lc3"/>
                                         <constraint firstItem="jib-3t-RC5" firstAttribute="leading" secondItem="cnH-z6-Wjl" secondAttribute="leading" id="M1p-Gs-F5g"/>
-                                        <constraint firstAttribute="bottom" secondItem="jib-3t-RC5" secondAttribute="bottom" id="X94-WT-E2K"/>
-                                        <constraint firstAttribute="bottom" secondItem="jib-3t-RC5" secondAttribute="bottom" id="fDt-wZ-Frb"/>
+                                        <constraint firstAttribute="bottom" secondItem="jib-3t-RC5" secondAttribute="bottom" constant="5" id="X94-WT-E2K"/>
                                         <constraint firstItem="cOb-sc-t7W" firstAttribute="leading" secondItem="cnH-z6-Wjl" secondAttribute="leading" id="fFX-ic-FZE"/>
                                         <constraint firstAttribute="trailing" secondItem="cOb-sc-t7W" secondAttribute="trailing" id="lIf-L1-p3B"/>
                                         <constraint firstItem="jib-3t-RC5" firstAttribute="leading" secondItem="cnH-z6-Wjl" secondAttribute="leading" id="qFT-th-9ZT"/>
@@ -544,7 +548,7 @@
                                                                                 <constraint firstAttribute="height" constant="50" id="Y9y-Ik-Hkh"/>
                                                                                 <constraint firstAttribute="width" constant="50" id="z3R-us-MPG"/>
                                                                             </constraints>
-                                                                            <state key="normal" title="Button" image="iconinactive3"/>
+                                                                            <state key="normal" title="Button" image="Contact-disable"/>
                                                                             <connections>
                                                                                 <action selector="contactButton:" destination="g4I-MB-agk" eventType="touchUpInside" id="N4v-pm-XEl"/>
                                                                             </connections>
@@ -773,6 +777,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="GdX-wE-kvc"/>
                     <connections>
                         <outlet property="activityTableView" destination="D8C-QU-oLk" id="5Ve-MC-G4T"/>
+                        <outlet property="cornerRadiusImageView" destination="sZk-Yj-9XY" id="NGh-3J-eUj"/>
                         <outlet property="headerView" destination="cnH-z6-Wjl" id="uyx-OZ-lJa"/>
                         <outlet property="mediaCollectionView" destination="cOb-sc-t7W" id="UpM-Ep-GNo"/>
                         <outlet property="mediaPageControl" destination="jib-3t-RC5" id="9a0-GM-7J9"/>
@@ -2159,6 +2164,7 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
+        <image name="Contact-disable" width="50" height="50"/>
         <image name="Globe" width="23" height="23"/>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
@@ -2173,7 +2179,6 @@
         <image name="historyinactive" width="50" height="50"/>
         <image name="iconactive1" width="50" height="50"/>
         <image name="iconinactive2" width="50" height="50"/>
-        <image name="iconinactive3" width="50" height="50"/>
         <image name="journey" width="25" height="20"/>
         <image name="journey1" width="201.5" height="250"/>
         <image name="location" width="13" height="20"/>
