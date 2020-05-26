@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Onboarding View Controller-->
+        <scene sceneID="MY1-ow-jMd">
+            <objects>
+                <viewController storyboardIdentifier="onBoarding" modalTransitionStyle="crossDissolve" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rwm-FL-CGH" customClass="OnboardingViewController" customModule="Kurela" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="475-dt-iaD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView verifyAmbiguity="off" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dVo-5A-wd1">
+                                <rect key="frame" x="0.0" y="44" width="414" height="629"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="sc7-YR-NtY"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="yT7-TG-vlI"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="6bs-mw-ipS">
+                                <rect key="frame" x="188" y="681" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="Imc-19-sat"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="currentPageIndicatorTintColor" red="0.0" green="0.70980392160000005" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH1-3z-O4i">
+                                <rect key="frame" x="40" y="742" width="334" height="50"/>
+                                <color key="backgroundColor" name="AppColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Gwp-JX-uhv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Let's Start!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskBound" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startButton:" destination="Rwm-FL-CGH" eventType="touchUpInside" id="TDh-6z-raI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dVo-5A-wd1" firstAttribute="leading" secondItem="azT-yG-mXv" secondAttribute="leading" id="HuW-68-PKF"/>
+                            <constraint firstItem="azT-yG-mXv" firstAttribute="trailing" secondItem="6bs-mw-ipS" secondAttribute="trailing" constant="187" id="IXl-Mv-Lwh"/>
+                            <constraint firstItem="6bs-mw-ipS" firstAttribute="top" secondItem="dVo-5A-wd1" secondAttribute="bottom" id="ekf-Tl-RB2"/>
+                            <constraint firstItem="dVo-5A-wd1" firstAttribute="trailing" secondItem="azT-yG-mXv" secondAttribute="trailing" id="gbk-Lp-Ezr"/>
+                            <constraint firstItem="dVo-5A-wd1" firstAttribute="top" secondItem="azT-yG-mXv" secondAttribute="top" id="hZq-j4-LtC"/>
+                            <constraint firstItem="azT-yG-mXv" firstAttribute="trailing" secondItem="CH1-3z-O4i" secondAttribute="trailing" constant="40" id="rrh-95-ec5"/>
+                            <constraint firstItem="CH1-3z-O4i" firstAttribute="leading" secondItem="azT-yG-mXv" secondAttribute="leading" constant="40" id="seh-xk-OGP"/>
+                            <constraint firstItem="azT-yG-mXv" firstAttribute="bottom" secondItem="CH1-3z-O4i" secondAttribute="bottom" constant="70" id="uIb-rg-spk"/>
+                            <constraint firstItem="CH1-3z-O4i" firstAttribute="top" secondItem="6bs-mw-ipS" secondAttribute="bottom" constant="24" id="ybg-eC-ijw"/>
+                            <constraint firstItem="6bs-mw-ipS" firstAttribute="leading" secondItem="azT-yG-mXv" secondAttribute="leading" constant="188" id="zu5-qB-BZL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="azT-yG-mXv"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageControl" destination="6bs-mw-ipS" id="1CS-zM-dBg"/>
+                        <outlet property="scrollView" destination="dVo-5A-wd1" id="bvK-Fm-Gpw"/>
+                        <outlet property="startBtn" destination="CH1-3z-O4i" id="ha6-fZ-8Wr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4bs-FV-RO4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236.23188405797103" y="-299.33035714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AppColor">
+            <color red="0.0" green="0.70999997854232788" blue="0.86699998378753662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

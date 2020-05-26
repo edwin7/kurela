@@ -11,10 +11,11 @@ import AVFoundation
 import CoreData
 
 @UIApplicationMain
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -26,10 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Setting category to AVAudioSessionCategoryPlayback failed.")
         }
         print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+      
         return true
-        
-       
-    }
+        }
 
     // MARK: UISceneSession Lifecycle
 
@@ -92,4 +92,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
