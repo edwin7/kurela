@@ -29,7 +29,7 @@ class JourneyDetailViewController: UIViewController {
     var journeyDetail: UserJourney?
     var sendParameter: [VolunteeringInfo]?
     
-    let statusStrings = ["Terima kasih pendaftaran Anda sudah diverifikasi. Mohon menunggu untuk proses screening berdasarkan data diri dan CV Anda.", "Selamat !! Anda masuk lolos ketahap selanjutnya yaitu interview. Untuk interview akan dilakukan secara online pada link dibawah.", "Terima kasih telah mengikuti proses wawancara. Hasil wawancara masih kami review. Silahkan menunggu untuk keseluruhan proses seleksi relawan. Hasil seleksi akan diinfokan pada Rabu, 10 Juni 2020.", "Selamat! Anda lolos dalam proses seleksi menjadi relawan. Selanjutnya, tim kami akan segera menghubungi Anda langsung melalui Whatsapp. Apabila ada pertanyaan dapat menghubungi kami langsung melalui:"]
+    let statusStrings = ["Terima kasih pendaftaran Anda sudah diverifikasi. Mohon menunggu untuk proses screening berdasarkan data diri dan CV Anda.", "Selamat !! Anda masuk lolos ketahap selanjutnya yaitu interview. Untuk interview akan dilakukan secara online pada link dibawah.", "Terima kasih telah mengikuti proses wawancara. Hasil wawancara masih kami review. Silahkan menunggu untuk keseluruhan proses seleksi relawan. Hasil seleksi akan diinfokan pada Rabu, 10 Juni 2020.", "Selamat! Anda lolos dalam proses seleksi menjadi relawan. Selanjutnya, silahkan cek email anda untuk info selanjutnya"]
     let statusRejected = "Terima kasih atas partisipasi Anda, tetapi mohon maaf Anda belum bisa bergabung dengan kami saat ini karena Anda belum memenuhi ekspektasi kami untuk bergabung dalam kegiatan ini. Kami mengharapkan partisipasi Anda pada lain waktu."
     
     override func viewWillAppear(_ animated: Bool) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -29,12 +29,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7F-6D-Tbl">
                                 <rect key="frame" x="16" y="32" width="873" height="48"/>
                                 <string key="text">Label \n dfdfd Label \n dfdfd Label \n dfdfd Label \n dfdfd Label \n dfdfd Label \n dfdfd Label \n dfdfd Label \n dfdfd Label \n dfdfd</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location jfdajfkjf kajfkajf kajfkajfk jakfj askfjkasfj ksjfkajfk ajfkjaskfj askjfk asjfk jfkajskfj" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sal-1a-iVs">
-                                <rect key="frame" x="16" y="80" width="873" height="16"/>
+                                <rect key="frame" x="16" y="85" width="873" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -75,7 +75,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Sal-1a-iVs" firstAttribute="top" secondItem="N7F-6D-Tbl" secondAttribute="bottom" id="0o2-GQ-BUv"/>
+                            <constraint firstItem="Sal-1a-iVs" firstAttribute="top" secondItem="N7F-6D-Tbl" secondAttribute="bottom" constant="5" id="0o2-GQ-BUv"/>
                             <constraint firstItem="dxh-fq-xls" firstAttribute="leading" secondItem="FGU-As-g2z" secondAttribute="trailing" constant="16" id="73X-Ki-3kA"/>
                             <constraint firstAttribute="trailing" secondItem="dxh-fq-xls" secondAttribute="trailing" constant="16" id="ERJ-yd-fma"/>
                             <constraint firstAttribute="height" constant="130" id="Eny-7h-TP3"/>

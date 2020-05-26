@@ -23,6 +23,8 @@ class JourneyViewController: UIViewController {
     var journeyArray = [UserJourney]()
     var isOngoingOpened = true
     
+    let defaults = UserDefaults.standard
+    
     var selectedIndex: Int?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -58,20 +60,59 @@ class JourneyViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let searchBar = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchBar
-        searchBar.searchBar.delegate = self
-        searchBar.obscuresBackgroundDuringPresentation = false
-        searchBar.searchBar.placeholder = "Activity"
-        definesPresentationContext = true
-        navigationItem.hidesSearchBarWhenScrolling = false
-
+        setupNavBar()
         
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "JourneyCardCell", bundle: nil), forCellReuseIdentifier: "JourneyReusableCell")
         
         
+    }
+    
+    func setupNavBar(){
+        //large title for navbar
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        //navbar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
+        
+        //change title color
+        
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+        navigationItem.compactAppearance = appearance
+        
+        //create search bar
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for Activity"
+        
+        //change search bar color
+        let searchBar = searchController.searchBar
+        searchBar.tintColor = UIColor.white
+        searchBar.barTintColor = UIColor.white
+        searchBar.isTranslucent = false
+        searchBar.isOpaque = true
+        
+        //change textfield for search bar color
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.textColor = UIColor.black
+            textfield.backgroundColor = UIColor.white
+            textfield.layer.cornerRadius = 10
+            textfield.clipsToBounds = true
+        }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.navigationBar.sizeToFit()
+        }
     }
 
     func loadData(predicate: NSPredicate, searchPredicate: NSPredicate? = nil) {
@@ -87,6 +128,13 @@ class JourneyViewController: UIViewController {
         
         do {
             journeyArray = try context.fetch(request)
+            if journeyArray.count != 0 {
+                
+                defaults.set(true, forKey: "IsNotFirstTime")
+                if defaults.bool(forKey: "IsNotFirstTime") == true {
+                    tabView.isHidden = false
+                }
+            }
         } catch {
             print("Error fatching from context, \(error)")
         }
@@ -100,10 +148,9 @@ class JourneyViewController: UIViewController {
 extension JourneyViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         emptyView.isHidden = true
-//        tabView.isHidden = false
         if journeyArray.count == 0 {
             emptyView.isHidden = false
-//            tabView.isHidden = true
+            
         }
         return journeyArray.count
     }
