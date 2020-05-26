@@ -64,7 +64,7 @@ class ExploreViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         //navbar background color
         let appearance = UINavigationBarAppearance()
-        appearance.configureWithOpaqueBackground()
+        appearance.configureWithTransparentBackground()
         appearance.backgroundColor = UIColor(red: 0, green: 0.711, blue: 0.867, alpha: 1)
         
         //change title color
