@@ -146,18 +146,18 @@ extension ActivityViewController: UICollectionViewDelegate, UICollectionViewData
 
         let cell = mediaCollectionView.dequeueReusableCell(withReuseIdentifier: "mediaCell", for: indexPath) as! ActivityMediaCollectionViewCell
             
-        if let vc = cell.viewWithTag(111) as? UIImageView {
+        //if let vc = cell.viewWithTag(111) as? UIImageView {
 
             let imageView = UIImage(data: mediaResourcesCollections[indexPath.row]["images"] as! Data)
             
             cell.configure(controller: self, media: imageView!, videoURL: mediaResourcesCollections[indexPath.row]["videoUrl"] as! String)
-
+       // }
             //vc.image = mediaImages[indexPath.row]
-        } else if let ab = cell.viewWithTag(222) as?
-            UIPageControl {
-            
-            ab.currentPage = indexPath.row
-        }
+//        } else if let ab = cell.viewWithTag(222) as?
+//            UIPageControl {
+//
+//            ab.currentPage = indexPath.row
+//        }
         
         return cell
     }
