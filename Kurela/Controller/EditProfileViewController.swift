@@ -92,9 +92,6 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         weightTextField.inputView = pickerView
         heightTextField.inputView = pickerView
        
-        
-        let name: String = "abcd"
-        print(name.MyString())
     }
     
     
@@ -102,23 +99,35 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func prepareScreen(){
         // this code to get value of UsersProfile in coreData
         profileData = UsersProfile.fetchData(viewContext: getViewContext())
-        print(profileData)
+//        print(profileData)
         setDefaultStyleExcept(type: "about")
         createBirthdayPicker()
         
-        if (profileData?.name != nil) {
-            nameTextField.text = profileData?.name!
-        }
+        // Opsi macam-macam unwrap
+//        if (profileData?.name != nil) {
+//            nameTextField.text = profileData?.name!
+//        }
+//
+//        if let name = profileData?.name  {
+//            nameTextField.text = name
+//        }
         
-        if let name = profileData?.name  {
-            nameTextField.text = name
+        // Bikin default gender kosong
+        var genderValue = ""
+        
+        if let gender = profileData?.genderIsMale {
+            if (gender) {
+                genderValue = "Male"
+            } else {
+                genderValue = "Female"
+            }
         }
                         
         nameTextField.text = profileData?.name ?? ""
         emailTextField.text = profileData?.email ?? ""
         birthdayPicker.date = profileData?.birthDay ?? Date()
         phoneTextField.text = profileData?.phone ?? ""
-        genderTextField.text = (profileData?.genderIsMale ?? false) ? "Male" : "Female"
+        genderTextField.text = genderValue
         addressTextField.text = profileData?.address ?? ""
         bloodTextField.text = profileData?.bloodType
         weightTextField.text = profileData?.weight

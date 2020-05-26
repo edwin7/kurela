@@ -23,7 +23,6 @@
 		E6F75A04247BC61A00DD285B /* ProfileDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F75A03247BC61A00DD285B /* ProfileDocument.swift */; };
 		E6F75A06247BC66E00DD285B /* ProfileEmergency.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F75A05247BC66E00DD285B /* ProfileEmergency.swift */; };
 		E6F75A08247BCFB200DD285B /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F75A07247BCFB200DD285B /* UIViewController+Extension.swift */; };
-		E6F75A0A247BE70100DD285B /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F75A09247BE70100DD285B /* String+Extension.swift */; };
 		EC9A8279247399AB007DF9B1 /* JourneyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9A8278247399AA007DF9B1 /* JourneyDetailViewController.swift */; };
 		ECBA861B2464F7430067AE70 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861A2464F7430067AE70 /* AppDelegate.swift */; };
 		ECBA861D2464F7430067AE70 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECBA861C2464F7430067AE70 /* SceneDelegate.swift */; };
@@ -55,7 +54,6 @@
 		E6F75A03247BC61A00DD285B /* ProfileDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDocument.swift; sourceTree = "<group>"; };
 		E6F75A05247BC66E00DD285B /* ProfileEmergency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEmergency.swift; sourceTree = "<group>"; };
 		E6F75A07247BCFB200DD285B /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		E6F75A09247BE70100DD285B /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		EC9A8278247399AA007DF9B1 /* JourneyDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JourneyDetailViewController.swift; sourceTree = "<group>"; };
 		ECBA86172464F7430067AE70 /* Kurela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurela.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECBA861A2464F7430067AE70 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 				ECBA86252464F7440067AE70 /* LaunchScreen.storyboard */,
 				ECBA86282464F7440067AE70 /* Info.plist */,
 				ECBA863D246511C20067AE70 /* Assets.xcassets */,
-				E6F75A09247BE70100DD285B /* String+Extension.swift */,
 			);
 			path = Kurela;
 			sourceTree = "<group>";
@@ -254,7 +251,6 @@
 				BA41509E247039B20062B613 /* ActivityHeaderTableViewCell.swift in Sources */,
 				ECBA86322464FBCF0067AE70 /* ExploreViewController.swift in Sources */,
 				EC9A8279247399AB007DF9B1 /* JourneyDetailViewController.swift in Sources */,
-				E6F75A0A247BE70100DD285B /* String+Extension.swift in Sources */,
 				E6F75A08247BCFB200DD285B /* UIViewController+Extension.swift in Sources */,
 				E6F75A00247BBFA400DD285B /* ProfileAbout.swift in Sources */,
 				ECDFB067246FA8FA00D4558B /* DataPreparation.swift in Sources */,
