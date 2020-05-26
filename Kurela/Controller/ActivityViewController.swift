@@ -106,6 +106,38 @@ class ActivityViewController: UIViewController {
     
     @IBAction func applyButtonPressed(_ sender: UIButton) {
         
+        
+        var userProfile: UsersProfile?
+        userProfile = UsersProfile.fetchData(viewContext: getViewContext())
+        if(userProfile?.name == "" || userProfile?.name == nil) {
+            let showAlert = UIAlertController(title: "Ohh Snap!!", message: "Please complete your Profile", preferredStyle: .alert)
+            
+            let imageView = UIImageView(frame: CGRect(x: 100, y: 70, width: 74, height: 142))
+            imageView.image = #imageLiteral(resourceName: "standing")
+            
+            showAlert.view.addSubview(imageView)
+                        
+            let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 280)
+            let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+            
+            showAlert.view.addConstraint(height)
+            showAlert.view.addConstraint(width)
+            
+
+            let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            
+                  
+            showAlert.addAction(action)
+            //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
+            //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
+            //        }))
+            
+            self.present(showAlert, animated: true)
+            
+            return
+        }
+        
+        
         let newJourney = UserJourney(context: self.context)
         newJourney.infoDetail = data
         newJourney.status = 1
