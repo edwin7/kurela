@@ -208,7 +208,7 @@ struct DataPreparation {
                                            - Semangat dalam tujuan membantu sesama
                                            - Mampu menerapkan praktek "social distancing" dalam setiap aktivitas memberikan kado
                                            """),
-                       DataPreparation(activityImage: #imageLiteral(resourceName: "card5"),
+                       DataPreparation(activityImage: #imageLiteral(resourceName: "Sosialisasi Huruf 1"),
                                        activityImage2: #imageLiteral(resourceName: "Sosialisasi Huruf 2"),
                                        activityImage3: #imageLiteral(resourceName: "Sosialisasi Huruf 3"),
                                        activityVideoUrl: "https://www.pexels.com/video/4265183/",
@@ -330,7 +330,7 @@ struct DataPreparation {
                                                - Berjiwa sosial
                                                - Berdonasi seikhlasnya
                                                """),
-                           DataPreparation(activityImage: #imageLiteral(resourceName: "Rectangle 52"),
+                           DataPreparation(activityImage: #imageLiteral(resourceName: "Pelatihan Internet 1"),
                                            activityImage2: #imageLiteral(resourceName: "Pelatihan Internet 2"),
                                            activityImage3: #imageLiteral(resourceName: "Pelatihan Internet 3"),
                                            activityVideoUrl: "https://www.pexels.com/video/women-of-tribe-performing-a-traditional-dance-2927943/",
