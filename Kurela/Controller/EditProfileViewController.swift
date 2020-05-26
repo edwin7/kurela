@@ -122,10 +122,21 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 genderValue = "Female"
             }
         }
-            print(genderValue)
+        
+        print(profileData)
+        
+        var dateValue: String?
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "MMM dd, yyyy"
+        
+        if let date = profileData?.birthDay{
+            dateValue = dateFormatterPrint.string(from: date)
+            birthdayPicker.setDate(date, animated: true)
+        }
+        
         nameTextField.text = profileData?.name ?? ""
         emailTextField.text = profileData?.email ?? ""
-        birthdayPicker.date = profileData?.birthDay ?? Date()
+        birthdayTextField.text = dateValue ?? ""
         phoneTextField.text = profileData?.phone ?? ""
         genderTextField.text = genderValue
         addressTextField.text = profileData?.address ?? ""
@@ -141,8 +152,6 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         relationshipTextField.text = profileData?.relative ?? ""
         phoneEmergencyTextField.text = profileData?.emergencyPhone ?? ""
         addressEmergencyTextField.text = profileData?.emergencyAddress ?? ""
-        
-        
     }
     
     func prepareAboutView () {
@@ -302,6 +311,25 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         }
     }
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        profileAbout.nameAbout = nameTextField.text
+        profileAbout.emailAbout = emailTextField.text
+        profileAbout.birthdayAbout = birthdayPicker.date
+        profileAbout.phoneAbout = phoneTextField.text
+        profileAbout.genderAbout = genderTextField.text! == "Male"
+        profileAbout.addressAbout = addressTextField.text
+        profileMedical.bloodTypesMed = bloodTextField.text
+        profileMedical.weightMed = weightTextField.text
+        profileMedical.heightMed = heightTextField.text
+        profileMedical.insuranceMed = insuranceTextField.text
+        profileMedical.allergyMed = allergyTextField.text
+        profileMedical.medicalSheetMed = medsheetTextField.text
+        profileDocument.curriculumVitaeDoc = cvTextField.text
+        profileDocument.portfolioDoc = portfolioTextField.text
+        profileEmergency.nameEmergency = nameEmergencyTextField.text
+        profileEmergency.relativeEmergency = relationshipTextField.text
+        profileEmergency.phoneEmergency = phoneEmergencyTextField.text
+        profileEmergency.addressEmergency = addressEmergencyTextField.text
+        
         UsersProfile.saveProfile(viewContext: getViewContext(), profileAbout: profileAbout, profileMedical: profileMedical, profileDocument: profileDocument, profileEmergency: profileEmergency)
     }
     
