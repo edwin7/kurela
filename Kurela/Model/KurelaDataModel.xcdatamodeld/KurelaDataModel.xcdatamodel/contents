@@ -18,16 +18,21 @@
         <attribute name="allergy" optional="YES" attributeType="String"/>
         <attribute name="birthDay" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="bloodType" optional="YES" attributeType="String"/>
-        <attribute name="email" attributeType="String"/>
+        <attribute name="curriculumVitae" optional="YES" attributeType="String"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="emergencyAddress" optional="YES" attributeType="String"/>
+        <attribute name="emergencyName" optional="YES" attributeType="String"/>
+        <attribute name="emergencyPhone" optional="YES" attributeType="String"/>
         <attribute name="genderIsMale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="height" optional="YES" attributeType="String"/>
         <attribute name="insurance" optional="YES" attributeType="String"/>
         <attribute name="medicalSheet" optional="YES" attributeType="String"/>
-        <attribute name="name" attributeType="String"/>
-        <attribute name="password" attributeType="String"/>
-        <attribute name="phone" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="phone" optional="YES" attributeType="String"/>
+        <attribute name="portfolio" optional="YES" attributeType="String"/>
+        <attribute name="relative" optional="YES" attributeType="String"/>
         <attribute name="usersPhoto" optional="YES" attributeType="Binary"/>
-        <attribute name="weight" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="String"/>
     </entity>
     <entity name="VolunteeringInfo" representedClassName="VolunteeringInfo" syncable="YES" codeGenerationType="class">
         <attribute name="activityImage" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
@@ -49,7 +54,7 @@
     </entity>
     <elements>
         <element name="UserJourney" positionX="-243" positionY="171" width="128" height="208"/>
-        <element name="UsersProfile" positionX="-54" positionY="63" width="128" height="253"/>
+        <element name="UsersProfile" positionX="-54" positionY="63" width="128" height="328"/>
         <element name="VolunteeringInfo" positionX="-461.12890625" positionY="75.9375" width="128" height="283"/>
     </elements>
 </model>

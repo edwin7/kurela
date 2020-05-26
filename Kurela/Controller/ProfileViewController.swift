@@ -13,11 +13,27 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var settingsView: UIView!
     @IBOutlet weak var helpView: UIView!
     @IBOutlet weak var signoutView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    var userProfile: UsersProfile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
         configureView()
+        prepareData()
     }
+    
+    func prepareData() {
+        userProfile = UsersProfile.fetchData(viewContext: getViewContext())
+        nameLabel.text = userProfile?.name ?? "Your Name"
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        prepareData()
+    }
+        
     func setupNavBar(){
         
         //large title for navbar
@@ -35,6 +51,7 @@ class ProfileViewController: UIViewController {
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
     }
+    
     func configureView(){
       settingsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
         settingsView.layer.shadowOpacity = 0.5

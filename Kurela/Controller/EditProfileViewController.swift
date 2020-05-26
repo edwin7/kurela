@@ -65,11 +65,17 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     let weightPickerData: [String] = ["20 kg", "45 kg"]
     let heightPickerData: [String] = ["150 cm", "160 cm"]
     
+    var profileAbout: ProfileAbout = ProfileAbout()
+    var profileMedical: ProfileMedical = ProfileMedical()
+    var profileDocument: ProfileDocument = ProfileDocument()
+    var profileEmergency: ProfileEmergency = ProfileEmergency()
     
+    var profileData: UsersProfile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
+        backgroundScrollView.adjustedContentInsetDidChange()
 //        print(backgroundScrollView.description)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.backgroundTap))
         self.backgroundView.addGestureRecognizer(tapGestureRecognizer)
@@ -111,13 +117,23 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
 //        relationshipTextField.delegate = self
 //        addressEmergencyTextField.delegate = self
 //        phoneEmergencyTextField.delegate = self
+        
+        let name: String = "Rahmat Zulfikri"
+        print(name.MyString())
     }
     
+    
+    
     func prepareScreen(){
+        // this code to get value of UsersProfile in coreData
+        profileData = UsersProfile.fetchData(viewContext: getViewContext())
+        print(profileData)
         setDefaultStyleExcept(type: "about")
         createBirthdayPicker()
         
+        nameTextField.text = profileData?.name ?? ""
     }
+    
     func prepareAboutView () {
         aboutView.isHidden = false
         medicalView.isHidden = true
@@ -210,12 +226,14 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             formatter.dateStyle = .medium
             formatter.timeStyle = .none
             birthdayTextField.text = formatter.string(from: birthdayPicker.date)
-            self.view.endEditing(true)
         }
-        else {
-        //Direct to:
-          self.view.endEditing(true)
+        
+        if genderTextField.isFirstResponder {
+            genderTextField.text = genderPickerData[pickerView.selectedRow(inComponent: 0)]
         }
+        
+        
+        self.view.endEditing(true)
     }
     func createBirthdayPicker(){
         //Toolbar
@@ -264,6 +282,11 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             heightTextField.text = heightPickerData[row]
         }
     }
+    @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        UsersProfile.saveProfile(viewContext: getViewContext(), profileAbout: profileAbout, profileMedical: profileMedical, profileDocument: profileDocument, profileEmergency: profileEmergency)
+    }
+    
+    
     @IBAction func aboutTapped(_ sender: UIButton) {
         setDefaultStyleExcept(type: "about")
         prepareAboutView()
@@ -280,19 +303,72 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         setDefaultStyleExcept(type: "emergency")
         prepareEmergencyView()
     }
-    @IBAction func birthdayPicker(_ sender: UITextField) {
+    @IBAction func onChangeInput(_ sender: UITextField) {
+        switch sender {
+        case nameTextField:
+            profileAbout.nameAbout = nameTextField.text ?? ""
+            break
+        case emailTextField:
+            profileAbout.emailAbout = emailTextField.text ?? ""
+            break
+        case phoneTextField:
+            profileAbout.phoneAbout = phoneTextField.text ?? ""
+            break
+        case addressTextField:
+            profileAbout.addressAbout = addressTextField.text ?? ""
+            break
+        case insuranceTextField:
+            profileMedical.insuranceMed = insuranceTextField.text ?? ""
+            break
+        case allergyTextField:
+            profileMedical.allergyMed = allergyTextField.text ?? ""
+            break
+        case medsheetTextField:
+            profileMedical.medicalSheetMed = medsheetTextField.text ?? ""
+            break
+        case cvTextField:
+            profileDocument.curriculumVitaeDoc = cvTextField.text ?? ""
+            break
+        case portfolioTextField:
+            profileDocument.portfolioDoc = portfolioTextField.text ?? ""
+            break
+        case nameEmergencyTextField:
+            profileEmergency.nameEmergency = nameEmergencyTextField.text ?? ""
+            break
+        case relationshipTextField:
+            profileEmergency.relativeEmergency = relationshipTextField.text ?? ""
+            break
+        case addressEmergencyTextField:
+            profileEmergency.addressEmergency = addressEmergencyTextField.text ?? ""
+            break
+        case phoneEmergencyTextField:
+            profileEmergency.phoneEmergency = phoneEmergencyTextField.text ?? ""
+            break
+        default:
+            break
+        }
     }
-    
-    @IBAction func genderPicker(_ sender: UITextField) {
-    }
-    
-    @IBAction func bloodTypePicker(_ sender: UITextField) {
-    }
-    
-    @IBAction func weightPicker(_ sender: UITextField) {
-    }
-    
-    @IBAction func heightPicker(_ sender: UITextField) {
+    @IBAction func pickerDidEnd (_ sender: UITextField) {
+//        profileAbout.nameAbout = nameTextField.text ?? ""
+        switch sender {
+        case birthdayTextField:
+            profileAbout.birthdayAbout = birthdayPicker.date
+            break
+        case genderTextField:
+            profileAbout.genderAbout = genderTextField.text! == "Male"
+            break
+        case bloodTextField:
+            profileMedical.bloodTypesMed = bloodTextField.text ?? ""
+            break
+        case weightTextField:
+            profileMedical.weightMed = weightTextField.text ?? ""
+            break
+        case heightTextField:
+            profileMedical.heightMed = heightTextField.text ?? ""
+            break
+        default:
+            break
+        }
     }
     //Keyboard functions
     @objc func keyboardWillShow(notification: NSNotification){
@@ -301,19 +377,6 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             // if keyboard size is not available for some reason, dont do anything
             return
         }
-//        var shouldMoveViewUp = false
-//
-//        if let activateTextField = activeTextField {
-//            let bottomOfTextField = activateTextField.convert(activateTextField.bounds, to: self.backgroundView).maxY;
-//            let topOfKeyboard = self.backgroundView.frame.height - keyboardSize.height
-//            if bottomOfTextField > topOfKeyboard {
-//                shouldMoveViewUp = true
-//            }
-//        }
-//
-//        if (shouldMoveViewUp) {
-//            self.backgroundView.frame.origin.y = 0 - keyboardSize.height
-//        }
         
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0)
         
@@ -334,12 +397,12 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         self.backgroundView.endEditing(true)
         }
 }
-extension EditProfileViewController : UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.activeTextField = textField
-    }
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        self.activeTextField = nil
-    }
-    
-}
+
+//extension EditProfileViewController : UITextFieldDelegate {
+//    func textFieldDidBeginEditing(_ textField: UITextField) {
+//        self.activeTextField = textField
+//    }
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        self.activeTextField = nil
+//    }
+//}

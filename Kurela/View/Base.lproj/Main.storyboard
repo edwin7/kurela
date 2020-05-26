@@ -1468,6 +1468,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="80B-Y3-KCy"/>
                     <connections>
                         <outlet property="helpView" destination="bFT-kG-Hay" id="9dS-eu-TwA"/>
+                        <outlet property="nameLabel" destination="dgC-B0-NdY" id="GoH-du-WLw"/>
                         <outlet property="settingsView" destination="6PP-Vg-vMb" id="bEy-SB-zmG"/>
                         <outlet property="signoutView" destination="IEM-qp-K3h" id="TQh-T5-fq8"/>
                     </connections>
@@ -1534,24 +1535,36 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="MXE-1p-PhN"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your relationship with relative" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WKE-sc-zsE">
                                                         <rect key="frame" x="128" y="141" width="254" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="23e-5I-1gO"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your home address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opL-XV-zGe">
                                                         <rect key="frame" x="130" y="249" width="250" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="WqX-ob-6PA"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4lQ-ZY-fPq">
                                                         <rect key="frame" x="130" y="194" width="250" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="agI-eI-HJU"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1601,7 +1614,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
                                                         <connections>
-                                                            <action selector="bloodTypePicker:" destination="22g-0F-J8z" eventType="editingDidEnd" id="dh2-KX-mf1"/>
+                                                            <action selector="pickerDidEnd:" destination="22g-0F-J8z" eventType="editingDidEnd" id="pLI-2I-JuP"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your weight" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dSC-HO-J9N">
@@ -1610,7 +1623,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                                         <connections>
-                                                            <action selector="weightPicker:" destination="22g-0F-J8z" eventType="editingDidEnd" id="yRP-oi-VM9"/>
+                                                            <action selector="pickerDidEnd:" destination="22g-0F-J8z" eventType="editingDidEnd" id="Iyd-PY-KYW"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your insurance number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sZ2-jG-umq">
@@ -1618,6 +1631,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="K5F-9q-Ayo"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your height" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ksu-H8-WtY">
                                                         <rect key="frame" x="128" y="143" width="250" height="34"/>
@@ -1625,7 +1641,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="heightPicker:" destination="22g-0F-J8z" eventType="editingDidEnd" id="WSn-lx-ebM"/>
+                                                            <action selector="pickerDidEnd:" destination="22g-0F-J8z" eventType="editingDidEnd" id="BsC-mw-Guu"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your allergy &amp; reactions" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-C5-G4m">
@@ -1633,12 +1649,18 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="Wkc-GF-Zzx"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your medical sheet" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-v9-Ypb">
                                                         <rect key="frame" x="128" y="305" width="250" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="street-address"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="XLV-1z-wih"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Allergy / Reactions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eD0-b1-eoT">
                                                         <rect key="frame" x="33" y="244" width="95" height="46"/>
@@ -1673,12 +1695,18 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="0Er-5Z-Qdb"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Upload PDF file" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f9F-To-4fy">
                                                         <rect key="frame" x="128" y="90" width="250" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="EMY-AL-qrP"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1727,18 +1755,27 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="name"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="nVb-Qp-lv4"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7rT-wa-e8l">
                                                         <rect key="frame" x="128" y="90" width="250" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="email"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="O5G-WL-LgZ"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KfN-le-Ok9">
                                                         <rect key="frame" x="128" y="198" width="250" height="34"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="SN4-Dh-RIL"/>
+                                                        </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your birthday date " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrf-1q-peq">
                                                         <rect key="frame" x="128" y="143" width="250" height="34"/>
@@ -1746,7 +1783,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="birthdayPicker:" destination="22g-0F-J8z" eventType="editingDidEnd" id="bke-g7-Jbx"/>
+                                                            <action selector="pickerDidEnd:" destination="22g-0F-J8z" eventType="editingDidEnd" id="6HQ-aE-7sv"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Fz-zA-yEi">
@@ -1755,7 +1792,7 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <connections>
-                                                            <action selector="genderPicker:" destination="22g-0F-J8z" eventType="editingDidEnd" id="W2f-px-vyx"/>
+                                                            <action selector="pickerDidEnd:" destination="22g-0F-J8z" eventType="editingDidEnd" id="vgR-rV-Nyf"/>
                                                         </connections>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input your home address" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="P7C-cX-jq5">
@@ -1763,6 +1800,9 @@
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" textContentType="street-address"/>
+                                                        <connections>
+                                                            <action selector="onChangeInput:" destination="22g-0F-J8z" eventType="editingChanged" id="K9h-fk-Avp"/>
+                                                        </connections>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztz-dG-VRI">
                                                         <rect key="frame" x="33" y="313" width="66" height="21"/>
@@ -1774,9 +1814,8 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oHg-su-UaF">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oHg-su-UaF">
                                                 <rect key="frame" x="0.0" y="291" width="414" height="78"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q4A-Pa-19U">
                                                         <rect key="frame" x="47" y="8" width="49" height="54"/>
@@ -1840,10 +1879,13 @@
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="414" id="eM8-2I-imO"/>
+                                                    <constraint firstAttribute="height" constant="78" id="qJp-F3-P2J"/>
+                                                </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="49g-0d-nsp">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49g-0d-nsp">
                                                 <rect key="frame" x="132" y="141" width="150" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profilepicture" translatesAutoresizingMaskIntoConstraints="NO" id="abv-tM-NN5">
                                                         <rect key="frame" x="17" y="6" width="116" height="116"/>
@@ -1864,10 +1906,20 @@
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="128" id="7uB-xQ-V4q"/>
+                                                    <constraint firstAttribute="width" constant="150" id="ghN-KX-g1D"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="oHg-su-UaF" secondAttribute="trailing" id="4my-Yk-lbc"/>
+                                            <constraint firstItem="49g-0d-nsp" firstAttribute="leading" secondItem="z5b-nM-owr" secondAttribute="leading" constant="132" id="GuV-CC-dPD"/>
+                                            <constraint firstItem="oHg-su-UaF" firstAttribute="leading" secondItem="z5b-nM-owr" secondAttribute="leading" id="LYz-lL-TUf"/>
+                                            <constraint firstItem="49g-0d-nsp" firstAttribute="top" secondItem="z5b-nM-owr" secondAttribute="top" constant="141" id="QiC-cz-VGC"/>
+                                            <constraint firstAttribute="trailing" secondItem="49g-0d-nsp" secondAttribute="trailing" constant="132" id="Qqx-hG-ybg"/>
+                                            <constraint firstItem="oHg-su-UaF" firstAttribute="top" secondItem="49g-0d-nsp" secondAttribute="bottom" constant="22" id="cCp-OY-2wb"/>
                                             <constraint firstAttribute="height" constant="1000" id="oJC-Bq-meS"/>
                                         </constraints>
                                     </view>
@@ -1896,6 +1948,9 @@
                     <navigationItem key="navigationItem" title="Edit Profile" largeTitleDisplayMode="never" id="t1K-zY-gVh">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="QZy-LB-Ecx">
                             <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveButton:" destination="22g-0F-J8z" id="r4H-v1-E9B"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -2042,8 +2097,8 @@
     <resources>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar" width="19" height="21"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
