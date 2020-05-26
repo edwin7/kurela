@@ -91,34 +91,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         bloodTextField.inputView = pickerView
         weightTextField.inputView = pickerView
         heightTextField.inputView = pickerView
-        //About View
-//        nameTextField.delegate = self
-//        nameTextField.delegate = self
-//        emailTextField.delegate = self
-//        phoneTextField.delegate = self
-//        birthdayTextField.delegate = self
-//        genderTextField.delegate = self
-//        addressTextField.delegate = self
-//
-//        //Medical View
-//        bloodTextField.delegate = self
-//        weightTextField.delegate = self
-//        insuranceTextField.delegate = self
-//        heightTextField.delegate = self
-//        allergyTextField.delegate = self
-//        medsheetTextField.delegate = self
-//
-//        //Document View
-//        cvTextField.delegate = self
-//        portfolioTextField.delegate = self
-//
-//        //Emergency View
-//        nameEmergencyTextField.delegate = self
-//        relationshipTextField.delegate = self
-//        addressEmergencyTextField.delegate = self
-//        phoneEmergencyTextField.delegate = self
+       
         
-        let name: String = "Rahmat Zulfikri"
+        let name: String = "abcd"
         print(name.MyString())
     }
     
@@ -131,7 +106,34 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         setDefaultStyleExcept(type: "about")
         createBirthdayPicker()
         
+        if (profileData?.name != nil) {
+            nameTextField.text = profileData?.name!
+        }
+        
+        if let name = profileData?.name  {
+            nameTextField.text = name
+        }
+                        
         nameTextField.text = profileData?.name ?? ""
+        emailTextField.text = profileData?.email ?? ""
+        birthdayPicker.date = profileData?.birthDay ?? Date()
+        phoneTextField.text = profileData?.phone ?? ""
+        genderTextField.text = (profileData?.genderIsMale ?? false) ? "Male" : "Female"
+        addressTextField.text = profileData?.address ?? ""
+        bloodTextField.text = profileData?.bloodType
+        weightTextField.text = profileData?.weight
+        heightTextField.text = profileData?.height
+        insuranceTextField.text = profileData?.insurance ?? ""
+        allergyTextField.text = profileData?.allergy ?? ""
+        medsheetTextField.text = profileData?.medicalSheet ?? ""
+        cvTextField.text = profileData?.curriculumVitae ?? ""
+        portfolioTextField.text = profileData?.portfolio ?? ""
+        nameEmergencyTextField.text = profileData?.emergencyName ?? ""
+        relationshipTextField.text = profileData?.relative ?? ""
+        phoneEmergencyTextField.text = profileData?.emergencyPhone ?? ""
+        addressEmergencyTextField.text = profileData?.emergencyAddress ?? ""
+        
+        
     }
     
     func prepareAboutView () {
@@ -227,9 +229,17 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             formatter.timeStyle = .none
             birthdayTextField.text = formatter.string(from: birthdayPicker.date)
         }
-        
         if genderTextField.isFirstResponder {
             genderTextField.text = genderPickerData[pickerView.selectedRow(inComponent: 0)]
+        }
+        if bloodTextField.isFirstResponder {
+            bloodTextField.text = bloodTypesPickerData[pickerView.selectedRow(inComponent: 0)]
+        }
+        if weightTextField.isFirstResponder {
+            weightTextField.text = weightPickerData[pickerView.selectedRow(inComponent: 0)]
+        }
+        if heightTextField.isFirstResponder {
+            heightTextField.text = heightPickerData[pickerView.selectedRow(inComponent: 0)]
         }
         
         
