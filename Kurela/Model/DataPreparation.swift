@@ -28,6 +28,7 @@ struct DataPreparation {
     let organizationImage: UIImage
     let organizationName: String
     let organizationPhone: String
+    let organizationWebsite: String
     let peopleApplied: Int
     let requirement: String
     
@@ -75,10 +76,11 @@ struct DataPreparation {
                                            """,
                                        location: "Sumatera Barat",
                                        organizationAddress: "Jl. Prof. Dr. Hamka No.2A, Air Tawar Tim., Kec. Padang Utara, Kota Padang, Sumatera Barat 25173",
-                                       organizationEmail: "https://www.who.int/",
+                                       organizationEmail: "-",
                                        organizationImage: #imageLiteral(resourceName: "logo3"),
-                                       organizationName: "WHO",
+                                       organizationName: "World Health Organization",
                                        organizationPhone: "Mega (0869-3645-3733-2344)",
+                                       organizationWebsite: "https://www.who.int/",
                                        peopleApplied: 115,
                                        requirement: """
                                            Adapun kriteria relawan yang kami butuhkan:
@@ -132,8 +134,9 @@ struct DataPreparation {
                                        organizationAddress: "Graha BNPB - Jl. Pramuka Kav.38 Jakarta Timur 13120",
                                        organizationEmail: "contact@bnpb.go.id",
                                        organizationImage: #imageLiteral(resourceName: "logo1"),
-                                       organizationName: "BNPB",
+                                       organizationName: "Badan National Penanggulangan Bencana",
                                        organizationPhone: "Pusdalop BNPB (+62 21 29827444)",
+                                       organizationWebsite: "https://bnpb.go.id/",
                                        peopleApplied: 89,
                                        requirement: """
                                            Persyaratan:
@@ -146,7 +149,7 @@ struct DataPreparation {
                                            - Memahami skenario evakuasi jika terjadi erupsi
                                            """),
                        
-                       DataPreparation(activityImage: #imageLiteral(resourceName: "card6"),
+                       DataPreparation(activityImage: #imageLiteral(resourceName: "Donasi Masker"),
                                        activityImage2: #imageLiteral(resourceName: "Donas Masker 2"),
                                        activityImage3: #imageLiteral(resourceName: "Donasi Masker 3"),
                                        activityVideoUrl: "https://www.pexels.com/video/a-doctor-removing-his-latex-gloves-4159177/",
@@ -175,6 +178,7 @@ struct DataPreparation {
                                        organizationImage: #imageLiteral(resourceName: "logo6"),
                                        organizationName: "Apple Peduli",
                                        organizationPhone: "(+62 5194 8414 944)",
+                                       organizationWebsite: "-",
                                        peopleApplied: 47,
                                        requirement: """
                                            Persyaratan:
@@ -195,10 +199,11 @@ struct DataPreparation {
                                        descriptions: "Kado untuk anak jalanan merupakan program rutin setiap 3 bulan untuk memberikan kado kepada anak jalanan yang telah kami himpun. Saat ini Sahabat Anak telah menghimpun kurang lebih 50 anak jalanan. Kami ingin memberikan rasa keceriaan kepada anak-anak kami ditengah wabah covid-19 dengan memberikan kado surprise untuk mereka.",
                                        location: "Jakarta Barat",
                                        organizationAddress: "Jl. Kemang Raya No.10, RT.9/RW.1, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan 12730",
-                                       organizationEmail: "contact@sahabatanak.id",
+                                       organizationEmail: "info@sahabatanak.com",
                                        organizationImage: #imageLiteral(resourceName: "logo2"),
-                                       organizationName: "ahabat Anak",
-                                       organizationPhone: "(+62 2129 8274 944)",
+                                       organizationName: "Sahabat Anak",
+                                       organizationPhone: "(+62 21 3918505)",
+                                       organizationWebsite: "https://sahabatanak.org/",
                                        peopleApplied: 56,
                                        requirement: """
                                            Persyaratan:
@@ -244,6 +249,7 @@ struct DataPreparation {
                                        organizationImage: #imageLiteral(resourceName: "logo5"),
                                        organizationName: "Payung Pantai",
                                        organizationPhone: "(+62 5194 2164 984)",
+                                       organizationWebsite: "-",
                                        peopleApplied: 23,
                                        requirement: """
                                            Persyaratan:
@@ -277,10 +283,11 @@ struct DataPreparation {
                                          """,
                                      location: "Kalimantan Timur",
                                      organizationAddress: "Jl. Palang Merah No.1 Komp. RSU Samarinda Kalimantan Timur 75123",
-                                     organizationEmail: "https://www.pmi.or.id/",
+                                     organizationEmail: "hrd@pmi.or.id",
                                      organizationImage: #imageLiteral(resourceName: "Donor Darah untuk Dinda Logo"),
-                                     organizationName: "PMI",
-                                     organizationPhone: "(+62 541 - 732085)",
+                                     organizationName: "Palang Merah Indonesia",
+                                     organizationPhone: "(+62 021 7992325)",
+                                     organizationWebsite: "http://www.pmi.or.id/",
                                      peopleApplied: 12,
                                      requirement: """
                                          Persyaratan:
@@ -321,8 +328,9 @@ struct DataPreparation {
                                            organizationAddress: "Jl. Kemang Raya No.10, RT.9/RW.1, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan 12730",
                                            organizationEmail: "contact@applepeduli.id",
                                            organizationImage: #imageLiteral(resourceName: "Donasi APD Logo"),
-                                           organizationName: "WHO",
+                                           organizationName: "Apple Peduli",
                                            organizationPhone: "(+62 5194 8414 944)",
+                                           organizationWebsite: "-",
                                            peopleApplied: 147,
                                            requirement: """
                                                Persyaratan:
@@ -361,10 +369,11 @@ struct DataPreparation {
                                                """,
                                            location: "Papua Nugini",
                                            organizationAddress: "Waigani Drive, Port Moresby 121 Papua New Guinea",
-                                           organizationEmail: "https://www.who.int/",
+                                           organizationEmail: "-",
                                            organizationImage: #imageLiteral(resourceName: "Donasi APD Logo"),
                                            organizationName: "WHO",
                                            organizationPhone: "John (0869-3645-3733-2344)",
+                                           organizationWebsite: "https://www.who.int/",
                                            peopleApplied: 141,
                                            requirement: """
                                                Persyaratan:
@@ -396,6 +405,7 @@ struct DataPreparation {
                        newInfoData.organizationImage = dataArray[index].organizationImage.pngData()
                        newInfoData.organizationName = dataArray[index].organizationName
                        newInfoData.organizationPhone = dataArray[index].organizationPhone
+                       newInfoData.organizationWebsite = dataArray[index].organizationWebsite
                        newInfoData.peopleApplied = Int32(dataArray[index].peopleApplied)
                        newInfoData.requirement = dataArray[index].requirement
                        

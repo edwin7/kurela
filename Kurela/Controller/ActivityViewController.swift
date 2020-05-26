@@ -342,7 +342,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         leftButton.setTitle("Back", for: .normal)
         
-        leftButton.titleLabel!.font = .systemFont(ofSize: 14)
+        leftButton.titleLabel!.font = .systemFont(ofSize: 17)
         //leftButton.frame.size = CGSize(width: 80, height: 30)
         //leftButton.frame = CGRect.init(x: -40, y: 0, width: 130, height: 30)
         leftButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.65)
@@ -423,7 +423,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
                 
         let cell = activityTableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityHeaderTableViewCell
         
-        activityTitle = "Berbagi "
+        //activityTitle = "Berbagi"
 
         cell.activityLabel.text = data?.activityName
         cell.organizationLabel.text = data?.organizationName
@@ -438,6 +438,8 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         cell.phoneLabel.text = data?.organizationPhone
         cell.emailLabel.text = data?.organizationEmail
         cell.addressLabel.text = data?.organizationAddress
+        cell.websiteLabel.text = data?.organizationWebsite
+        cell.organizationInfoLabel.text = data?.contactDetail
 
         var tmp = [UserJourney]()
         let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
