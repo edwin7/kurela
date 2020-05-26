@@ -75,7 +75,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
-        backgroundScrollView.adjustedContentInsetDidChange()
+//        backgroundScrollView.adjustedContentInsetDidChange()
 //        print(backgroundScrollView.description)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.backgroundTap))
         self.backgroundView.addGestureRecognizer(tapGestureRecognizer)
@@ -435,7 +435,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @objc func keyboardWillHide(notification: NSNotification){
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         backgroundScrollView.contentInset = contentInsets
-        backgroundScrollView.contentInset = contentInsets
+        backgroundScrollView.scrollIndicatorInsets = contentInsets
     }
     
     @objc func backgroundTap(_ sender: UITapGestureRecognizer) {
