@@ -122,7 +122,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 genderValue = "Female"
             }
         }
-                        
+            print(genderValue)
         nameTextField.text = profileData?.name ?? ""
         emailTextField.text = profileData?.email ?? ""
         birthdayPicker.date = profileData?.birthDay ?? Date()
