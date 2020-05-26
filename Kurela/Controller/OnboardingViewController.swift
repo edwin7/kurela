@@ -46,15 +46,24 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     
         
     @IBAction func startButton(_ sender: Any) {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let tabBarViewController = storyboard.instantiateViewController(withIdentifier: "TabBarIdentifier")
+//        let targetNavigationController = UINavigationController(rootViewController: tabBarViewController)
+//        targetNavigationController.modalPresentationStyle = .fullScreen
+//        targetNavigationController.isModalInPresentation = false
+//        present(targetNavigationController, animated: false)
+//        
+//       // let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "viewController") as! ViewController
+//
+//        //return vcf
+        
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let tabBarViewController = storyboard.instantiateViewController(withIdentifier: "TabBarIdentifier")
-        let targetNavigationController = UINavigationController(rootViewController: tabBarViewController)
-        targetNavigationController.modalPresentationStyle = .fullScreen
-        present(targetNavigationController, animated: false)
-        targetNavigationController.isModalInPresentation = false
+        let controller = storyboard.instantiateViewController(withIdentifier: "TabBarIdentifier")
+        self.present(controller, animated: false, completion: nil) //ganti animated true kalau mau ada efek dari bawah ke atas
+
     }
     
-    
-    
+  
     
 }
