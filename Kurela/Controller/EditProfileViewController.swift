@@ -62,8 +62,8 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     let birthdayFormatter = DateFormatter()
     let genderPickerData: [String] = ["Female", "Male"]
     let bloodTypesPickerData: [String] = ["A", "B", "O", "AB"]
-    let weightPickerData: [String] = ["20 kg", "45 kg"]
-    let heightPickerData: [String] = ["150 cm", "160 cm"]
+    let weightPickerData: [String] = (30...100).map { String($0) }
+    let heightPickerData: [String] = (100...190).map { String($0) }
     
     var profileAbout: ProfileAbout = ProfileAbout()
     var profileMedical: ProfileMedical = ProfileMedical()
