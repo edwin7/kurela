@@ -62,8 +62,8 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     let birthdayFormatter = DateFormatter()
     let genderPickerData: [String] = ["Female", "Male"]
     let bloodTypesPickerData: [String] = ["A", "B", "O", "AB"]
-    let weightPickerData: [String] = ["20 kg", "45 kg"]
-    let heightPickerData: [String] = ["150 cm", "160 cm"]
+    let weightPickerData: [String] = (30...100).map { String($0) }
+    let heightPickerData: [String] = (100...190).map { String($0) }
     
     var profileAbout: ProfileAbout = ProfileAbout()
     var profileMedical: ProfileMedical = ProfileMedical()
@@ -75,8 +75,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareScreen()
-        backgroundScrollView.adjustedContentInsetDidChange()
+//        backgroundScrollView.adjustedContentInsetDidChange()
 //        print(backgroundScrollView.description)
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.backgroundTap))
         self.backgroundView.addGestureRecognizer(tapGestureRecognizer)
         // Do any additional setup after loading the view.
@@ -85,16 +86,30 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         //Texfield delegate
         pickerView.delegate = self
-        
         birthdayTextField.inputView = birthdayPicker
         genderTextField.inputView = pickerView
         bloodTextField.inputView = pickerView
         weightTextField.inputView = pickerView
         heightTextField.inputView = pickerView
-       
     }
     
-    
+    func setupNavBar(){
+        
+        //title for navbar
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
+        //navbar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white
+        
+        //change title color
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+    }
     
     func prepareScreen(){
         // this code to get value of UsersProfile in coreData
@@ -331,6 +346,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         profileEmergency.addressEmergency = addressEmergencyTextField.text
         
         UsersProfile.saveProfile(viewContext: getViewContext(), profileAbout: profileAbout, profileMedical: profileMedical, profileDocument: profileDocument, profileEmergency: profileEmergency)
+        
+        // Perform Unwind Segue from ProfileVC
+        performSegue(withIdentifier: "unwind2profile", sender: self)
     }
     
     
@@ -417,6 +435,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             break
         }
     }
+    
     //Keyboard functions
     @objc func keyboardWillShow(notification: NSNotification){
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
@@ -435,7 +454,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @objc func keyboardWillHide(notification: NSNotification){
         let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         backgroundScrollView.contentInset = contentInsets
-        backgroundScrollView.contentInset = contentInsets
+        backgroundScrollView.scrollIndicatorInsets = contentInsets
     }
     
     @objc func backgroundTap(_ sender: UITapGestureRecognizer) {

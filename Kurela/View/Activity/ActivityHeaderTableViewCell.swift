@@ -25,10 +25,16 @@ class ActivityHeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var websiteLabel: UILabel!
+    @IBOutlet weak var organizationInfoLabel: UILabel!
     
     @IBOutlet weak var descriptionView: UIView!
     @IBOutlet weak var requirementView: UIView!
     @IBOutlet weak var contactView: UIView!
+    
+    @IBOutlet weak var descriptionButtonLabel: UILabel!
+    @IBOutlet weak var requirementButtonLabel: UILabel!
+    @IBOutlet weak var contactButtonLabel: UILabel!
     
     @IBOutlet weak var descriptionButton: UIButton!
     
@@ -41,6 +47,11 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         // Initialization code
         
         stateButton.layer.cornerRadius = 15
+        
+        descriptionTextLabel.sizeToFit()
+        requirementTextLabel.sizeToFit()
+        contactTextLabel.sizeToFit()
+
 
     }
 
@@ -48,7 +59,12 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         
         descriptionButton.setImage(#imageLiteral(resourceName: "profileactive3"), for: .normal)
         requirementButton.setImage(#imageLiteral(resourceName: "iconinactive2"), for: .normal)
-        contactButton.setImage(#imageLiteral(resourceName: "iconinactive3"), for: .normal)
+        contactButton.setImage(#imageLiteral(resourceName: "Contact-disable"), for: .normal)
+        
+        descriptionButtonLabel.textColor = UIColor(named: "AppColor")
+        requirementButtonLabel.textColor = .black
+        contactButtonLabel.textColor = .black
+        
         descriptionView.isHidden = false
         requirementView.isHidden = true
         contactView.isHidden = true
@@ -58,7 +74,11 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         
         descriptionButton.setImage(#imageLiteral(resourceName: "profileinactive3"), for: .normal)
         requirementButton.setImage(#imageLiteral(resourceName: "iconactive2"), for: .normal)
-        contactButton.setImage(#imageLiteral(resourceName: "iconinactive3"), for: .normal)
+        contactButton.setImage(#imageLiteral(resourceName: "Contact-disable"), for: .normal)
+        
+        descriptionButtonLabel.textColor = .black
+        requirementButtonLabel.textColor = UIColor(named: "AppColor")
+        contactButtonLabel.textColor = .black
         
         descriptionView.isHidden = true
         requirementView.isHidden = false
@@ -69,7 +89,11 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         
         descriptionButton.setImage(#imageLiteral(resourceName: "iconinactive1"), for: .normal)
         requirementButton.setImage(#imageLiteral(resourceName: "iconinactive2"), for: .normal)
-        contactButton.setImage(#imageLiteral(resourceName: "iconactive3"), for: .normal)
+        contactButton.setImage(#imageLiteral(resourceName: "Contact"), for: .normal)
+        
+        descriptionButtonLabel.textColor = .black
+        requirementButtonLabel.textColor = .black
+        contactButtonLabel.textColor = UIColor(named: "AppColor")
         
         descriptionView.isHidden = true
         requirementView.isHidden = true

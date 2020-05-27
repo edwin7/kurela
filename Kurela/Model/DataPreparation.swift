@@ -28,6 +28,7 @@ struct DataPreparation {
     let organizationImage: UIImage
     let organizationName: String
     let organizationPhone: String
+    let organizationWebsite: String
     let peopleApplied: Int
     let requirement: String
     
@@ -47,7 +48,7 @@ struct DataPreparation {
                        DataPreparation(activityImage: #imageLiteral(resourceName: "card3"),
                                        activityImage2: #imageLiteral(resourceName: "Berbagi Sembako 2"),
                                        activityImage3: #imageLiteral(resourceName: "Berbagi Sembako 3"),
-                                       activityVideoUrl: "https://www.pexels.com/video/uber-motorcycle-ride-1149555/",
+                                       activityVideoUrl: "https://assets.mixkit.co/videos/preview/mixkit-elegant-casinos-in-monaco-4300-large.mp4",
 
                                        activityName: "Berbagi Sembako untuk Driver Online",
                                        category: "Donation",
@@ -75,10 +76,11 @@ struct DataPreparation {
                                            """,
                                        location: "Sumatera Barat",
                                        organizationAddress: "Jl. Prof. Dr. Hamka No.2A, Air Tawar Tim., Kec. Padang Utara, Kota Padang, Sumatera Barat 25173",
-                                       organizationEmail: "https://www.who.int/",
+                                       organizationEmail: "-",
                                        organizationImage: #imageLiteral(resourceName: "logo3"),
-                                       organizationName: "WHO",
+                                       organizationName: "World Health Organization",
                                        organizationPhone: "Mega (0869-3645-3733-2344)",
+                                       organizationWebsite: "https://www.who.int/",
                                        peopleApplied: 115,
                                        requirement: """
                                            Adapun kriteria relawan yang kami butuhkan:
@@ -94,7 +96,7 @@ struct DataPreparation {
                        DataPreparation(activityImage: #imageLiteral(resourceName: "card1"),
                                        activityImage2: #imageLiteral(resourceName: "Gunung Merapi 2"),
                                        activityImage3: #imageLiteral(resourceName: "Gunung Merapi 3"),
-                                       activityVideoUrl: "https://www.pexels.com/video/aerial-view-of-a-volcanic-crater-4237838/",
+                                       activityVideoUrl: "https://assets.mixkit.co/videos/preview/mixkit-active-volcano-smoking-during-the-starry-night-4428-large.mp4",
                                        activityName: "Relawan Siaga Erupsi Gunung Merapi",
                                        category: "Disaster",
                                        contactDetail: "BNPB (Badan Nasional Penanggulangan Bencana) merupakan Lembaga yang memberikan pedoman dan pengarahan terhadap usaha penanggulangan bencana yang mencakup pencegahan bencana, penanganan keadaan darurat bencana, rehabilitasi, dan rekonstruksi secara adil dan setara",
@@ -132,8 +134,9 @@ struct DataPreparation {
                                        organizationAddress: "Graha BNPB - Jl. Pramuka Kav.38 Jakarta Timur 13120",
                                        organizationEmail: "contact@bnpb.go.id",
                                        organizationImage: #imageLiteral(resourceName: "logo1"),
-                                       organizationName: "BNPB",
+                                       organizationName: "Badan National Penanggulangan Bencana",
                                        organizationPhone: "Pusdalop BNPB (+62 21 29827444)",
+                                       organizationWebsite: "https://bnpb.go.id/",
                                        peopleApplied: 89,
                                        requirement: """
                                            Persyaratan:
@@ -146,10 +149,10 @@ struct DataPreparation {
                                            - Memahami skenario evakuasi jika terjadi erupsi
                                            """),
                        
-                       DataPreparation(activityImage: #imageLiteral(resourceName: "card6"),
+                       DataPreparation(activityImage: #imageLiteral(resourceName: "Donasi Masker"),
                                        activityImage2: #imageLiteral(resourceName: "Donas Masker 2"),
                                        activityImage3: #imageLiteral(resourceName: "Donasi Masker 3"),
-                                       activityVideoUrl: "https://www.pexels.com/video/a-doctor-removing-his-latex-gloves-4159177/",
+                                       activityVideoUrl: "https://assets.mixkit.co/videos/preview/mixkit-scientist-wearing-masks-and-gloves-in-a-laboratory-4707-large.mp4",
                                        activityName: "Donasi Masker & Gloves",
                                        category: "COVID-19",
                                        contactDetail: "Apple Peduli merupakan NGO yang bergerak di bidang sosial dan kesehatan. Concern saat ini adalah untuk memenuhi perlengkapan tenaga medis antara lain masker, APD, sarung tangan, kacamata, dll. Untuk disalurkan ke RS yang sedang kekurangan perlengkapan tenaga medis.",
@@ -175,6 +178,7 @@ struct DataPreparation {
                                        organizationImage: #imageLiteral(resourceName: "logo6"),
                                        organizationName: "Apple Peduli",
                                        organizationPhone: "(+62 5194 8414 944)",
+                                       organizationWebsite: "-",
                                        peopleApplied: 47,
                                        requirement: """
                                            Persyaratan:
@@ -186,7 +190,7 @@ struct DataPreparation {
                        DataPreparation(activityImage: #imageLiteral(resourceName: "card2"),
                                        activityImage2: #imageLiteral(resourceName: "Kado anak Jalanan 2"),
                                        activityImage3: #imageLiteral(resourceName: "Kado anak Jalanan 3"),
-                                       activityVideoUrl: "https://www.pexels.com/video/mini-ferris-wheel-1149572/",
+                                       activityVideoUrl: "https://assets.mixkit.co/videos/preview/mixkit-little-girl-crying-4543-large.mp4",
                                        activityName: "Kado untuk Anak Jalanan",
                                        category: "Children",
                                        contactDetail: "Sahabat Anak merupakan NGO yang bergerak di bidang sosial kemanusiaan. Concern utamanya tertuju pada anak jalanan dan anak yatim piatu. Melihat semakin banyaknya anak jalanan di Kota Kendari khususnya di seputaran kawasan pusat perekonomian seperti pasar ataupun pertokoan yang bekerja pada saat saat sekolah, dimana mereka seharusnya mendapatkan pendidikan yang layak, mendapatkan hak untuk bermain, dan hak-hak anak lainnya tidak diperoleh, namun karena kondisi ekonomi yang tidak memungkinkan maka memaksa mereka untuk memenuhi kebutuhan diri sendiri dan keluarganya. Hal inilah yang memotivasi kami untuk menghimpun dan mewadahi mereka.",
@@ -195,10 +199,11 @@ struct DataPreparation {
                                        descriptions: "Kado untuk anak jalanan merupakan program rutin setiap 3 bulan untuk memberikan kado kepada anak jalanan yang telah kami himpun. Saat ini Sahabat Anak telah menghimpun kurang lebih 50 anak jalanan. Kami ingin memberikan rasa keceriaan kepada anak-anak kami ditengah wabah covid-19 dengan memberikan kado surprise untuk mereka.",
                                        location: "Jakarta Barat",
                                        organizationAddress: "Jl. Kemang Raya No.10, RT.9/RW.1, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan 12730",
-                                       organizationEmail: "contact@sahabatanak.id",
+                                       organizationEmail: "info@sahabatanak.com",
                                        organizationImage: #imageLiteral(resourceName: "logo2"),
-                                       organizationName: "ahabat Anak",
-                                       organizationPhone: "(+62 2129 8274 944)",
+                                       organizationName: "Sahabat Anak",
+                                       organizationPhone: "(+62 21 3918505)",
+                                       organizationWebsite: "https://sahabatanak.org/",
                                        peopleApplied: 56,
                                        requirement: """
                                            Persyaratan:
@@ -211,7 +216,7 @@ struct DataPreparation {
                        DataPreparation(activityImage: #imageLiteral(resourceName: "Sosialisasi Huruf 1"),
                                        activityImage2: #imageLiteral(resourceName: "Sosialisasi Huruf 2"),
                                        activityImage3: #imageLiteral(resourceName: "Sosialisasi Huruf 3"),
-                                       activityVideoUrl: "https://www.pexels.com/video/4265183/",
+                                       activityVideoUrl: "https://assets.mixkit.co/videos/preview/mixkit-boy-with-face-mask-coughs-and-rubs-his-eyes-4799-large.mp4",
                                        activityName: "Sosialisasi Huruf Braille",
                                        category: "Disable",
                                        contactDetail: "",
@@ -244,6 +249,7 @@ struct DataPreparation {
                                        organizationImage: #imageLiteral(resourceName: "logo5"),
                                        organizationName: "Payung Pantai",
                                        organizationPhone: "(+62 5194 2164 984)",
+                                       organizationWebsite: "-",
                                        peopleApplied: 23,
                                        requirement: """
                                            Persyaratan:
@@ -257,7 +263,7 @@ struct DataPreparation {
                        DataPreparation(activityImage: #imageLiteral(resourceName: "Donor Darah untuk Dinda 1"),
                                      activityImage2: #imageLiteral(resourceName: "Donor Darah untuk Dinda 2"),
                                      activityImage3: #imageLiteral(resourceName: "Donor Darah untuk Dinda 3"),
-                                     activityVideoUrl: "https://www.pexels.com/video/a-medical-practitioner-taking-a-patient-s-blood-pressure-3197788/",
+                                     activityVideoUrl: "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/qmraJpx/volunteers-making-blood-donation-in-hospital_ejc_xpjf__ffd8c611a09510ab070eb4545ef40c63__P360.mp4",
                                      activityName: "Donor Darah untuk Dinda",
                                      category: "Donation",
                                      contactDetail: "",
@@ -277,10 +283,11 @@ struct DataPreparation {
                                          """,
                                      location: "Kalimantan Timur",
                                      organizationAddress: "Jl. Palang Merah No.1 Komp. RSU Samarinda Kalimantan Timur 75123",
-                                     organizationEmail: "https://www.pmi.or.id/",
+                                     organizationEmail: "hrd@pmi.or.id",
                                      organizationImage: #imageLiteral(resourceName: "Donor Darah untuk Dinda Logo"),
-                                     organizationName: "PMI",
-                                     organizationPhone: "(+62 541 - 732085)",
+                                     organizationName: "Palang Merah Indonesia",
+                                     organizationPhone: "(+62 021 7992325)",
+                                     organizationWebsite: "http://www.pmi.or.id/",
                                      peopleApplied: 12,
                                      requirement: """
                                          Persyaratan:
@@ -297,7 +304,7 @@ struct DataPreparation {
                            DataPreparation(activityImage: #imageLiteral(resourceName: "Donasi APD 1"),
                                            activityImage2: #imageLiteral(resourceName: "Donasi APD 2"),
                                            activityImage3: #imageLiteral(resourceName: "Donasi APD 3"),
-                                           activityVideoUrl: "https://www.pexels.com/video/a-woman-disinfecting-a-home-table-4151331/",
+                                           activityVideoUrl: "https://st3.depositphotos.com/11169126/36091/v/600/depositphotos_360913558-stock-video-portrait-of-a-male-doctor.mp4",
                                            activityName: "Donasi APD & Disinfektan",
                                            category: "COVID-19",
                                            contactDetail: "Apple Peduli merupakan NGO yang bergerak di bidang sosial dan kesehatan. Concern saat ini adalah untuk memenuhi perlengkapan tenaga medis antara lain masker, APD, sarung tangan, kacamata, dll. Untuk disalurkan ke RS yang sedang kekurangan perlengkapan tenaga medis.",
@@ -321,8 +328,9 @@ struct DataPreparation {
                                            organizationAddress: "Jl. Kemang Raya No.10, RT.9/RW.1, Bangka, Kec. Mampang Prapatan, Kota Jakarta Selatan 12730",
                                            organizationEmail: "contact@applepeduli.id",
                                            organizationImage: #imageLiteral(resourceName: "Donasi APD Logo"),
-                                           organizationName: "WHO",
+                                           organizationName: "Apple Peduli",
                                            organizationPhone: "(+62 5194 8414 944)",
+                                           organizationWebsite: "-",
                                            peopleApplied: 147,
                                            requirement: """
                                                Persyaratan:
@@ -333,7 +341,7 @@ struct DataPreparation {
                            DataPreparation(activityImage: #imageLiteral(resourceName: "Pelatihan Internet 1"),
                                            activityImage2: #imageLiteral(resourceName: "Pelatihan Internet 2"),
                                            activityImage3: #imageLiteral(resourceName: "Pelatihan Internet 3"),
-                                           activityVideoUrl: "https://www.pexels.com/video/women-of-tribe-performing-a-traditional-dance-2927943/",
+                                           activityVideoUrl: "https://st2.depositphotos.com/4616321/6910/v/600/depositphotos_69102873-stock-video-african-lady-teaching-a-village.mp4",
                                            activityName: "Relawan Pelatihan Internet untuk Desa Kapak",
                                            category: "Education",
                                            contactDetail: "",
@@ -361,10 +369,11 @@ struct DataPreparation {
                                                """,
                                            location: "Papua Nugini",
                                            organizationAddress: "Waigani Drive, Port Moresby 121 Papua New Guinea",
-                                           organizationEmail: "https://www.who.int/",
+                                           organizationEmail: "-",
                                            organizationImage: #imageLiteral(resourceName: "Donasi APD Logo"),
-                                           organizationName: "WHO",
+                                           organizationName: "World Health Organization",
                                            organizationPhone: "John (0869-3645-3733-2344)",
+                                           organizationWebsite: "https://www.who.int/",
                                            peopleApplied: 141,
                                            requirement: """
                                                Persyaratan:
@@ -396,6 +405,7 @@ struct DataPreparation {
                        newInfoData.organizationImage = dataArray[index].organizationImage.pngData()
                        newInfoData.organizationName = dataArray[index].organizationName
                        newInfoData.organizationPhone = dataArray[index].organizationPhone
+                       newInfoData.organizationWebsite = dataArray[index].organizationWebsite
                        newInfoData.peopleApplied = Int32(dataArray[index].peopleApplied)
                        newInfoData.requirement = dataArray[index].requirement
                        

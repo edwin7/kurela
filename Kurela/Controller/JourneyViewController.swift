@@ -33,6 +33,8 @@ class JourneyViewController: UIViewController {
         } else {
             loadData(predicate: NSPredicate(format: "status = 4"))
         }
+        UserDefaults.standard.set(0, forKey: "newJourneyBadgeCounter")
+        tabBarController?.tabBar.items?[1].badgeValue = nil
         
     }
     @IBAction func ongoingPressed(_ sender: UIButton) {
@@ -65,7 +67,6 @@ class JourneyViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "JourneyCardCell", bundle: nil), forCellReuseIdentifier: "JourneyReusableCell")
-        
         
     }
     
