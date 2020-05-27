@@ -578,7 +578,7 @@
                                                             <rect key="frame" x="0.0" y="134" width="354" height="352"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0h-VP-bdi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="352"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="354" height="18"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -588,7 +588,7 @@
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
                                                                 <constraint firstItem="P0h-VP-bdi" firstAttribute="top" secondItem="3tO-PU-Es7" secondAttribute="top" id="LSj-iZ-RGl"/>
-                                                                <constraint firstAttribute="bottom" secondItem="P0h-VP-bdi" secondAttribute="bottom" id="Trt-fE-jF3"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="P0h-VP-bdi" secondAttribute="bottom" id="Trt-fE-jF3"/>
                                                                 <constraint firstItem="P0h-VP-bdi" firstAttribute="leading" secondItem="3tO-PU-Es7" secondAttribute="leading" id="VEQ-F8-QnV"/>
                                                                 <constraint firstAttribute="trailing" secondItem="P0h-VP-bdi" secondAttribute="trailing" id="eWc-Xd-adI"/>
                                                             </constraints>
@@ -680,6 +680,7 @@
                                                                 <constraint firstItem="2RI-ul-UlL" firstAttribute="leading" secondItem="D9S-ah-uzg" secondAttribute="trailing" constant="8" id="2d0-e8-8Ds"/>
                                                                 <constraint firstItem="CYm-Bk-wnq" firstAttribute="top" secondItem="2nK-Ux-Byj" secondAttribute="bottom" constant="22" id="6i4-CS-Mij"/>
                                                                 <constraint firstItem="tQd-ew-KWC" firstAttribute="top" secondItem="AKI-cS-Gl6" secondAttribute="bottom" constant="18" id="7jh-3C-Iqp"/>
+                                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tQd-ew-KWC" secondAttribute="bottom" id="8Pj-lJ-74J"/>
                                                                 <constraint firstItem="CYm-Bk-wnq" firstAttribute="leading" secondItem="azX-3B-Vlg" secondAttribute="leading" id="LEl-pA-GQz"/>
                                                                 <constraint firstItem="2RI-ul-UlL" firstAttribute="top" secondItem="azX-3B-Vlg" secondAttribute="top" id="NUM-3K-QFn"/>
                                                                 <constraint firstItem="D9S-ah-uzg" firstAttribute="top" secondItem="azX-3B-Vlg" secondAttribute="top" id="RTO-dG-KBu"/>
@@ -2168,8 +2169,8 @@
         <image name="Globe" width="23" height="23"/>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
-        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="calendar" width="19" height="21"/>
+        <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="duedate" width="22" height="20"/>

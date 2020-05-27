@@ -47,6 +47,11 @@ class ActivityHeaderTableViewCell: UITableViewCell {
         // Initialization code
         
         stateButton.layer.cornerRadius = 15
+        
+        descriptionTextLabel.sizeToFit()
+        requirementTextLabel.sizeToFit()
+        contactTextLabel.sizeToFit()
+
 
     }
 
