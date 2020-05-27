@@ -33,6 +33,10 @@ class ProfileViewController: UIViewController {
         super.viewWillAppear(true)
         prepareData()
     }
+    
+    // Action to perform unwind segue
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+    }
         
     func setupNavBar(){
         
@@ -53,17 +57,17 @@ class ProfileViewController: UIViewController {
     }
     
     func configureView(){
-      settingsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+      settingsView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.15).cgColor
         settingsView.layer.shadowOpacity = 0.5
-      settingsView.layer.shadowRadius = 5
+      settingsView.layer.shadowRadius = 7
         settingsView.layer.cornerRadius = 10
-      helpView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+      helpView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.20).cgColor
         helpView.layer.shadowOpacity = 0.5
-      helpView.layer.shadowRadius = 10
+      helpView.layer.shadowRadius = 7
         helpView.layer.cornerRadius = 10
-      signoutView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+      signoutView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.20).cgColor
         signoutView.layer.shadowOpacity = 0.5
-      signoutView.layer.shadowRadius = 10
+      signoutView.layer.shadowRadius = 7
         signoutView.layer.cornerRadius = 10
         // inside viewDidLoad
 
@@ -80,5 +84,7 @@ class ProfileViewController: UIViewController {
 //        // opacity of the shadow
 //        settingsView.layer.shadowOpacity = 0.9
     }
+    
+    
 }
 
