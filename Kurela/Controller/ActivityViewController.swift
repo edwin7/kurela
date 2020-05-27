@@ -91,7 +91,38 @@ class ActivityViewController: UIViewController {
     
     @IBAction func applyButtonPressed(_ sender: UIButton) {
              
-        var userProfile: UsersProfile?
+        if !validateEmptyUserProfile() {
+            return
+        }
+        
+        let newJourney = UserJourney(context: self.context)
+        newJourney.infoDetail = data
+        newJourney.status = 1
+        newJourney.applyDate = Date()
+        saveData()
+        
+        sender.setTitle("Applied", for: .normal)
+        sender.isEnabled = false
+        sender.backgroundColor = .gray
+        
+        rightButton.setTitle("Applied", for: .normal)
+        rightButton.isEnabled = false
+        rightButton.backgroundColor = .gray
+        
+//        let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+//        //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
+//        //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
+//        //        }))
+//        self.present(alert, animated: true)
+
+
+        setJourneyBadge()
+        
+    }
+    
+    func validateEmptyUserProfile() -> Bool {
+       var userProfile: UsersProfile?
         userProfile = UsersProfile.fetchData(viewContext: getViewContext())
         if(userProfile?.name == "" || userProfile?.name == nil) {
             let showAlert = UIAlertController(title: "Ohh Snap!!", message: "Please complete your Profile", preferredStyle: .alert)
@@ -118,34 +149,10 @@ class ActivityViewController: UIViewController {
             
             self.present(showAlert, animated: true)
             
-            return
+            return false
+        } else {
+            return true
         }
-        
-        
-        let newJourney = UserJourney(context: self.context)
-        newJourney.infoDetail = data
-        newJourney.status = 1
-        newJourney.applyDate = Date()
-        saveData()
-        
-        sender.setTitle("Applied", for: .normal)
-        sender.isEnabled = false
-        sender.backgroundColor = .gray
-        
-        rightButton.setTitle("Applied", for: .normal)
-        rightButton.isEnabled = false
-        rightButton.backgroundColor = .gray
-        
-        let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-        //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
-        //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
-        //        }))
-        
-
-        setJourneyBadge()
-        
-        self.present(alert, animated: true)
     }
     
     func setJourneyBadge(){
@@ -411,6 +418,11 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func pressed(sender: UIButton!) {
+        
+        if !validateEmptyUserProfile() {
+            return
+        }
+        
         var tmp = [UserJourney]()
         let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()
         let predicate = NSPredicate(format: "infoDetail.activityName MATCHES %@", data!.activityName!)
@@ -427,14 +439,14 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
                 sender.isEnabled = false
                 sender.backgroundColor = .gray
                 
-                let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
-                //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
-                //        }))
-                
+//                let alert = UIAlertController(title: "Added to your Journey", message: "Open the Journey page to see your status", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+//                //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
+//                //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
+//                //        }))
+//                self.present(alert, animated: true)
+
                 setJourneyBadge()
-                self.present(alert, animated: true)
                 
                 activityTableView.reloadData()
             }
