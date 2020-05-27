@@ -18,6 +18,7 @@ class ActivityViewController: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
     
+    @IBOutlet weak var cornerRadiusImageView: UIView!
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -66,7 +67,10 @@ class ActivityViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+               
+        cornerRadiusImageView.layer.cornerRadius = 9
+        cornerRadiusImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        
         activityTableView.delegate = self
         activityTableView.dataSource = self
         
@@ -105,6 +109,38 @@ class ActivityViewController: UIViewController {
 //    }
     
     @IBAction func applyButtonPressed(_ sender: UIButton) {
+        
+        
+        var userProfile: UsersProfile?
+        userProfile = UsersProfile.fetchData(viewContext: getViewContext())
+        if(userProfile?.name == "" || userProfile?.name == nil) {
+            let showAlert = UIAlertController(title: "Ohh Snap!!", message: "Please complete your Profile", preferredStyle: .alert)
+            
+            let imageView = UIImageView(frame: CGRect(x: 100, y: 70, width: 74, height: 142))
+            imageView.image = #imageLiteral(resourceName: "standing")
+            
+            showAlert.view.addSubview(imageView)
+                        
+            let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 280)
+            let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+            
+            showAlert.view.addConstraint(height)
+            showAlert.view.addConstraint(width)
+            
+
+            let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            
+                  
+            showAlert.addAction(action)
+            //        alert.addAction(UIAlertAction(title: "Go to Journey", style: .default, handler: { (alert) in
+            //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
+            //        }))
+            
+            self.present(showAlert, animated: true)
+            
+            return
+        }
+        
         
         let newJourney = UserJourney(context: self.context)
         newJourney.infoDetail = data
@@ -157,7 +193,6 @@ extension ActivityViewController: UICollectionViewDelegate, UICollectionViewData
             let imageView = UIImage(data: mediaResourcesCollections[indexPath.row]["images"] as! Data)
             
             cell.configure(controller: self, media: imageView!, videoURL: mediaResourcesCollections[indexPath.row]["videoUrl"] as! String)
-        
         return cell
     }
     
@@ -342,7 +377,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         leftButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         leftButton.setTitle("Back", for: .normal)
         
-        leftButton.titleLabel!.font = .systemFont(ofSize: 14)
+        leftButton.titleLabel!.font = .systemFont(ofSize: 17)
         //leftButton.frame.size = CGSize(width: 80, height: 30)
         //leftButton.frame = CGRect.init(x: -40, y: 0, width: 130, height: 30)
         leftButton.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.65)
@@ -423,7 +458,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
                 
         let cell = activityTableView.dequeueReusableCell(withIdentifier: "activityCell", for: indexPath) as! ActivityHeaderTableViewCell
         
-        activityTitle = "Berbagi "
+        //activityTitle = "Berbagi"
 
         cell.activityLabel.text = data?.activityName
         cell.organizationLabel.text = data?.organizationName
@@ -438,6 +473,8 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
         cell.phoneLabel.text = data?.organizationPhone
         cell.emailLabel.text = data?.organizationEmail
         cell.addressLabel.text = data?.organizationAddress
+        cell.websiteLabel.text = data?.organizationWebsite
+        cell.organizationInfoLabel.text = data?.contactDetail
 
         var tmp = [UserJourney]()
         let request: NSFetchRequest<UserJourney> = UserJourney.fetchRequest()

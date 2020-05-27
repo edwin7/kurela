@@ -51,6 +51,7 @@
         <attribute name="organizationImage" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
         <attribute name="organizationName" attributeType="String"/>
         <attribute name="organizationPhone" attributeType="String"/>
+        <attribute name="organizationWebsite" optional="YES" attributeType="String"/>
         <attribute name="peopleApplied" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="requirement" attributeType="String"/>
         <relationship name="userJourneys" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserJourney" inverseName="infoDetail" inverseEntity="UserJourney"/>
@@ -58,6 +59,6 @@
     <elements>
         <element name="UserJourney" positionX="-243" positionY="171" width="128" height="208"/>
         <element name="UsersProfile" positionX="-54" positionY="63" width="128" height="253"/>
-        <element name="VolunteeringInfo" positionX="-461.12890625" positionY="75.9375" width="128" height="328"/>
+        <element name="VolunteeringInfo" positionX="-461.12890625" positionY="75.9375" width="128" height="343"/>
     </elements>
 </model>
