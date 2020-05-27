@@ -433,6 +433,7 @@ extension ActivityViewController: UITableViewDelegate, UITableViewDataSource {
                 //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
                 //        }))
                 
+                setJourneyBadge()
                 self.present(alert, animated: true)
                 
                 activityTableView.reloadData()
