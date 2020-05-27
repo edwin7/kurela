@@ -33,6 +33,10 @@ class ProfileViewController: UIViewController {
         super.viewWillAppear(true)
         prepareData()
     }
+    
+    // Action to perform unwind segue
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
+    }
         
     func setupNavBar(){
         
@@ -80,5 +84,7 @@ class ProfileViewController: UIViewController {
 //        // opacity of the shadow
 //        settingsView.layer.shadowOpacity = 0.9
     }
+    
+    
 }
 

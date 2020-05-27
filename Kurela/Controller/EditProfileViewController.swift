@@ -77,6 +77,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         prepareScreen()
 //        backgroundScrollView.adjustedContentInsetDidChange()
 //        print(backgroundScrollView.description)
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EditProfileViewController.backgroundTap))
         self.backgroundView.addGestureRecognizer(tapGestureRecognizer)
         // Do any additional setup after loading the view.
@@ -85,16 +86,30 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         //Texfield delegate
         pickerView.delegate = self
-        
         birthdayTextField.inputView = birthdayPicker
         genderTextField.inputView = pickerView
         bloodTextField.inputView = pickerView
         weightTextField.inputView = pickerView
         heightTextField.inputView = pickerView
-       
     }
     
-    
+    func setupNavBar(){
+        
+        //title for navbar
+        navigationController?.navigationBar.prefersLargeTitles = false
+        
+        //navbar background color
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor.white
+        
+        //change title color
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
+        
+        navigationItem.standardAppearance = appearance
+        navigationItem.scrollEdgeAppearance = appearance
+    }
     
     func prepareScreen(){
         // this code to get value of UsersProfile in coreData
@@ -331,6 +346,9 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
         profileEmergency.addressEmergency = addressEmergencyTextField.text
         
         UsersProfile.saveProfile(viewContext: getViewContext(), profileAbout: profileAbout, profileMedical: profileMedical, profileDocument: profileDocument, profileEmergency: profileEmergency)
+        
+        // Perform Unwind Segue from ProfileVC
+        performSegue(withIdentifier: "unwind2profile", sender: self)
     }
     
     
@@ -417,6 +435,7 @@ class EditProfileViewController: UIViewController, UIPickerViewDelegate, UIPicke
             break
         }
     }
+    
     //Keyboard functions
     @objc func keyboardWillShow(notification: NSNotification){
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
