@@ -46,25 +46,6 @@ class ActivityViewController: UIViewController {
 
     var mediaResourcesCollections: [Dictionary<String, Any>] = []
 
-    func createDummyData() {
-        
-        mediaResources["images"] = data!.activityImage!
-        mediaResources["videoUrl"] = data!.activityVideoUrl!
-        
-        mediaResourcesCollections.append(mediaResources)
-        
-        mediaResources["images"] = data!.activityImage2!
-        mediaResources["videoUrl"] = ""
-        mediaResourcesCollections.append(mediaResources)
-        
-        
-        mediaResources["images"] = data!.activityImage3!
-        mediaResources["videoUrl"] = ""
-        mediaResourcesCollections.append(mediaResources)
-              
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
                
@@ -109,8 +90,7 @@ class ActivityViewController: UIViewController {
 //    }
     
     @IBAction func applyButtonPressed(_ sender: UIButton) {
-        
-        
+             
         var userProfile: UsersProfile?
         userProfile = UsersProfile.fetchData(viewContext: getViewContext())
         if(userProfile?.name == "" || userProfile?.name == nil) {
@@ -162,13 +142,41 @@ class ActivityViewController: UIViewController {
         //            tabBarController.selectedIndex = indexToWhichYouWantToMove;
         //        }))
         
+
+        setJourneyBadge()
+        
         self.present(alert, animated: true)
+    }
+    
+    func setJourneyBadge(){
+        let currentJourneyBadgeValue = UserDefaults.standard.integer(forKey: "newJourneyBadgeCounter")
+        let afterJourneyBadgeValue = currentJourneyBadgeValue + 1
+        UserDefaults.standard.set(afterJourneyBadgeValue, forKey: "newJourneyBadgeCounter")
+        tabBarController?.tabBar.items?[1].badgeValue = "\(afterJourneyBadgeValue)"
     }
     
     func setData() {
         
         createDummyData()
         organizationImage.image = UIImage(data: data!.organizationImage!)
+    }
+    
+    func createDummyData() {
+        
+        mediaResources["images"] = data!.activityImage!
+        mediaResources["videoUrl"] = data!.activityVideoUrl!
+        
+        mediaResourcesCollections.append(mediaResources)
+        
+        mediaResources["images"] = data!.activityImage2!
+        mediaResources["videoUrl"] = ""
+        mediaResourcesCollections.append(mediaResources)
+        
+        
+        mediaResources["images"] = data!.activityImage3!
+        mediaResources["videoUrl"] = ""
+        mediaResourcesCollections.append(mediaResources)
+              
     }
 
 }

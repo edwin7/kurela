@@ -2155,8 +2155,8 @@
         <image name="Globe" width="23" height="23"/>
         <image name="address" width="20.5" height="20.5"/>
         <image name="applied" width="21" height="19"/>
-        <image name="calendar" width="19" height="21"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="calendar" width="19" height="21"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="duedate" width="22" height="20"/>
